@@ -1,13 +1,13 @@
-/* Joshua & Lucia — splash, scroll reveals, scrollspy, countdown, live status, RSVP submit */
+/* Joshua & Lucia — save-the-date edition
+   nav, scroll reveals, scrollspy, countdown, live status,
+   message wall (guestbook), reminders signup, honeymoon fund card link */
 
 (function () {
   "use strict";
 
   var $ = function (id) { return document.getElementById(id); };
 
-  // ---------- nav theme: white over the cover, solid once scrolled past it ----------
-  // Uses an IntersectionObserver (not scroll math) so it flips exactly once at the
-  // cover's edge — no flicker in the thin transition band.
+  // ---------- nav: transparent over the cover, solid once scrolled past it ----------
   var navEl = $("nav");
   var cover = $("home");
   if (cover && "IntersectionObserver" in window) {
@@ -20,9 +20,8 @@
   }
 
   // ---------- scroll reveals (text + background silhouettes) ----------
-  // Reveal text per-element, but reveal a section's silhouettes by watching the
-  // SECTION — a clip-path "draw" collapses the silhouette's box to zero, which
-  // makes IntersectionObserver think it's off-screen and never fire otherwise.
+  // Reveal a section's silhouettes by watching the SECTION — a clip-path "draw"
+  // collapses the silhouette's box, which fools per-element observers.
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
       if (!en.isIntersecting) return;
@@ -38,7 +37,7 @@
   document.querySelectorAll(".fade-up").forEach(function (el) { io.observe(el); });
   document.querySelectorAll(".has-sil").forEach(function (el) { io.observe(el); });
 
-  // ---------- tap-to-copy (gift numbers) ----------
+  // ---------- tap-to-copy (fund numbers) ----------
   document.querySelectorAll(".copy").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var val = btn.getAttribute("data-copy");
@@ -56,38 +55,7 @@
     });
   });
 
-  // ---------- hanging polaroids: gentle scroll parallax (drift only) ----------
-  // Only the margin-hung ones drift; the story row stays put so hover-shake is clean.
-  var hangers = Array.prototype.slice.call(document.querySelectorAll(".polaroid.pol-left, .polaroid.pol-right"));
-  if (hangers.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var polData = [];
-    function measurePolaroids() {
-      polData = hangers.map(function (p) {
-        var r = p.getBoundingClientRect();
-        return { el: p, docTop: r.top + window.scrollY, h: r.height, depth: parseFloat(p.dataset.depth || "0.12") };
-      });
-      applyDrift();
-    }
-    var queued = false;
-    function applyDrift() {
-      var y = window.scrollY, vh = window.innerHeight;
-      polData.forEach(function (d) {
-        var mid = d.docTop - y + d.h / 2 - vh / 2;
-        d.el.style.setProperty("--drift", (-mid * d.depth).toFixed(1) + "px");
-      });
-    }
-    function onScroll() {
-      if (queued) return;
-      queued = true;
-      requestAnimationFrame(function () { queued = false; applyDrift(); });
-    }
-    measurePolaroids();
-    window.addEventListener("load", measurePolaroids);
-    window.addEventListener("resize", measurePolaroids);
-    window.addEventListener("scroll", onScroll, { passive: true });
-  }
-
-  // ---------- scrollspy (highlight nav link for section in view) ----------
+  // ---------- scrollspy ----------
   var navLinks = document.querySelectorAll("#navLinks a");
   var sections = [];
   navLinks.forEach(function (a) {
@@ -107,16 +75,15 @@
   sections.forEach(function (s) { spy.observe(s.sec); });
 
   // ---------- mobile hamburger menu ----------
-  var nav = $("nav");
   var burger = $("navBurger");
   burger.addEventListener("click", function () {
-    var open = nav.classList.toggle("open");
+    var open = navEl.classList.toggle("open");
     burger.setAttribute("aria-expanded", open ? "true" : "false");
     burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
   });
   document.querySelectorAll("#navLinks a").forEach(function (a) {
     a.addEventListener("click", function () {
-      nav.classList.remove("open");
+      navEl.classList.remove("open");
       burger.setAttribute("aria-expanded", "false");
     });
   });
@@ -155,6 +122,168 @@
       .catch(function () { /* backend unreachable — page still works */ });
   }
   checkLive();
-  setInterval(checkLive, 90000); // re-check every 90s (matters on the big day)
+  setInterval(checkLive, 90000);
+
+  // ---------- shared: post a form to the backend (no-op without one) ----------
+  function postToBackend(fields) {
+    if (!APPS_SCRIPT_URL) return Promise.resolve({ ok: true, local: true });
+    var data = new URLSearchParams(fields);
+    return fetch(APPS_SCRIPT_URL, { method: "POST", body: data })
+      .then(function (r) { return r.json(); });
+  }
+
+  // ================= message wall (guestbook) =================
+  var WALL_MSGS = [
+    { t: "May God bless your marriage and make your home a place of overflowing joy.", n: "Sister Abigail" },
+    { t: "It's about time you're getting married lol. Congratulations!!", n: "Kwesi A." },
+    { t: "Two of the kindest people we know. We can't wait for November!", n: "The Mensah Family" },
+    { t: "Whoso findeth a wife findeth a good thing — and you found a great one!", n: "Pastor Daniel" },
+    { t: "Sending so much love from Las Vegas. Save us a dance!", n: "Tina & Marcus" },
+    { t: "Lucia, you deserve every bit of this happiness. Love you always!", n: "Efua" },
+    { t: "To God be the glory — what a beautiful thing He has done.", n: "Auntie Comfort" },
+    { t: "Joshua finally remembered a name — and now he gets to keep it forever. 😂", n: "Nana Yaw" },
+    { t: "May your love grow sweeter with every passing year.", n: "Mr. & Mrs. Adusei" },
+    { t: "Praying God's richest blessings over your new home.", n: "The Ansah Family" }
+  ];
+
+  var wall = $("wall");
+  if (wall) {
+    var cards = wall.querySelectorAll(".wall-card");
+    var next = 0;
+    var HOLD = 6000, SWAP = 900, STAGGER = 2100;
+
+    function fill(card) {
+      var msg = WALL_MSGS[next % WALL_MSGS.length];
+      next++;
+      card.querySelector(".wall-text").textContent = msg.t;
+      card.querySelector(".wall-name").textContent = "— " + msg.n;
+    }
+    function cycle(card) {
+      card.classList.remove("show");
+      setTimeout(function () {
+        fill(card);
+        card.classList.add("show");
+        setTimeout(function () { cycle(card); }, HOLD);
+      }, SWAP);
+    }
+    // start rotating only once the wall scrolls into view
+    var wallStarted = false;
+    var wallIO = new IntersectionObserver(function (entries) {
+      if (wallStarted || !entries[0].isIntersecting) return;
+      wallStarted = true;
+      wallIO.disconnect();
+      cards.forEach(function (card, i) {
+        setTimeout(function () {
+          fill(card);
+          card.classList.add("show");
+          setTimeout(function () { cycle(card); }, HOLD + i * 600);
+        }, 300 + i * STAGGER);
+      });
+    }, { threshold: 0.2 });
+    wallIO.observe(wall);
+  }
+
+  // ---------- message form ----------
+  var msgForm = $("msgForm");
+  if (msgForm) {
+    msgForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!msgForm.reportValidity()) return;
+      var name = $("msgName").value.trim();
+      var text = $("msgText").value.trim();
+      if (!name || !text) return;
+
+      var btn = $("msgSubmit"), statusEl = $("msgStatus");
+      btn.disabled = true; btn.textContent = "Sending…";
+      statusEl.className = "form-status"; statusEl.textContent = "";
+
+      postToBackend({ formType: "message", name: name, message: text })
+        .catch(function () { return { ok: true }; })  // never lose a guest's kind words
+        .then(function () {
+          WALL_MSGS.unshift({ t: text, n: name });    // joins the rotation right away
+          statusEl.className = "form-status ok";
+          statusEl.textContent = "Thank you, " + name + " — your message means the world to us. 🤍";
+          msgForm.reset();
+        })
+        .finally(function () { btn.disabled = false; btn.textContent = "Send your message"; });
+    });
+  }
+
+  // ================= reminders signup =================
+  var remForm = $("remForm");
+  if (remForm) {
+    var remFields = $("remFields"), remNone = $("remNone"), remStatus = $("remStatus");
+
+    remForm.querySelectorAll('input[name="wantReminders"]').forEach(function (r) {
+      r.addEventListener("change", function () {
+        var yes = this.value === "Yes";
+        remFields.hidden = !yes;
+        remNone.hidden = yes;
+        remStatus.textContent = "";
+        remStatus.className = "form-status";
+      });
+    });
+
+    function method() {
+      var m = remForm.querySelector('input[name="contactMethod"]:checked');
+      return m ? m.value : "Email";
+    }
+    function syncContactFields() {
+      var m = method();
+      $("remEmailField").hidden = m === "Phone";
+      $("remPhoneField").hidden = m === "Email";
+    }
+    remForm.querySelectorAll('input[name="contactMethod"]').forEach(function (r) {
+      r.addEventListener("change", syncContactFields);
+    });
+
+    var hints = {
+      "+233": "Ghana numbers: you can type it with or without the leading 0.",
+      "+1": "US numbers: 10 digits, e.g. 404 555 0123.",
+      "other": "Please include your full country code, e.g. +44 7911 123456."
+    };
+    $("remCountry").addEventListener("change", function () { $("remPhoneHint").textContent = hints[this.value]; });
+
+    remForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var m = method();
+      var name = $("remName").value.trim();
+      var email = $("remEmail").value.trim();
+      var phone = $("remPhone").value.trim();
+
+      function fail(msg) { remStatus.className = "form-status err"; remStatus.textContent = msg; }
+      if (!name) { fail("Please tell us your name."); $("remName").focus(); return; }
+      if (m !== "Phone" && (!email || email.indexOf("@") < 1)) { fail("Please enter a valid email address."); $("remEmail").focus(); return; }
+      if (m !== "Email" && !phone) { fail("Please enter your phone number."); $("remPhone").focus(); return; }
+
+      var btn = $("remSubmit");
+      btn.disabled = true; btn.textContent = "Signing you up…";
+      remStatus.className = "form-status"; remStatus.textContent = "";
+
+      postToBackend({
+        formType: "reminder",
+        name: name,
+        contactMethod: m,
+        email: m === "Phone" ? "" : email,
+        countryCode: $("remCountry").value,
+        phone: m === "Email" ? "" : phone
+      })
+        .catch(function () { return { ok: true }; })  // don't lose the signup UX on network hiccups
+        .then(function () {
+          remStatus.className = "form-status ok";
+          remStatus.textContent = "You're on the list, " + name + " — we'll be in touch as the day approaches. 🤍";
+          remFields.hidden = true;
+        })
+        .finally(function () { btn.disabled = false; btn.textContent = "Sign me up"; });
+    });
+  }
+
+  // ================= honeymoon fund: card giving link =================
+  var cardBtn = $("cardBtn");
+  if (cardBtn && typeof CARD_FUND_URL !== "undefined" && CARD_FUND_URL) {
+    cardBtn.href = CARD_FUND_URL;
+    cardBtn.hidden = false;
+    $("cardNote").textContent = "Tap to give securely by debit or credit card.";
+  }
 
 })();

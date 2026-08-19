@@ -3,19 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Joshua &amp; Lucia — 07.11.26 · Mampong, Ghana</title>
-<meta name="description" content="Joshua & Lucia are getting married! Saturday, November 7, 2026 at Anagkazo Campus, Mampong-Akuapem, Ghana. RSVP and watch live.">
-<meta property="og:title" content="Joshua & Lucia — 07.11.26">
-<meta property="og:description" content="Join us in person in Mampong, Ghana — or live online. RSVP here.">
+<title>Joshua &amp; Lucia — Save the Date · November 7, 2026</title>
+<meta name="description" content="Joshua & Lucia are getting married! Saturday, November 7, 2026 at Anagkazo Campus, Mampong-Akuapem, Ghana. Leave a message, sign up for reminders, and watch live.">
+<meta property="og:title" content="Joshua & Lucia — Save the Date">
+<meta property="og:description" content="Saturday, November 7, 2026 · Anagkazo Campus, Mampong, Ghana. Formal invitation to follow.">
 <meta property="og:image" content="photos/joshua-lucia-33.jpg">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<!-- shared svg defs: gold gradient + embossed leaf branch -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8f6f2e"/>
+      <stop offset=".45" stop-color="#dcbe74"/>
+      <stop offset=".6" stop-color="#c49f4e"/>
+      <stop offset="1" stop-color="#8f6f2e"/>
+    </linearGradient>
+    <g id="leafBranch">
+      <path d="M97 298 C 93 230, 97 150, 116 18 L121 19 C 104 150, 101 230, 104 297 Z"/>
+      <path d="M104 258 C 88 250, 62 252, 46 270 C 60 284, 90 280, 104 264 Z"/>
+      <path d="M106 224 C 122 214, 148 214, 166 230 C 152 246, 122 244, 106 230 Z"/>
+      <path d="M107 186 C 91 176, 65 176, 47 192 C 61 208, 91 206, 107 192 Z"/>
+      <path d="M110 148 C 126 138, 152 138, 170 154 C 156 170, 126 168, 110 154 Z"/>
+      <path d="M112 112 C 96 102, 72 102, 54 118 C 68 134, 96 130, 112 118 Z"/>
+      <path d="M116 78 C 130 68, 154 68, 170 84 C 156 100, 130 96, 116 84 Z"/>
+      <path d="M119 46 C 105 36, 84 36, 68 50 C 82 66, 106 62, 119 52 Z"/>
+      <path d="M121 20 C 128 6, 142 -2, 158 2 C 154 20, 138 30, 122 28 Z"/>
+    </g>
+    <!-- presentation attributes (not classes) so this renders correctly through <use> -->
+    <g id="ornamentShape">
+      <g fill="none" stroke="url(#goldGrad)" stroke-width="3.4" stroke-linecap="round">
+        <path d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
+        <path d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
+        <g transform="rotate(90 60 60)">
+          <path d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
+          <path d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
+        </g>
+        <g transform="rotate(180 60 60)">
+          <path d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
+          <path d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
+        </g>
+        <g transform="rotate(270 60 60)">
+          <path d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
+          <path d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
+        </g>
+      </g>
+      <path fill="url(#goldGrad)" d="M60 43 L63.6 56.4 L77 60 L63.6 63.6 L60 77 L56.4 63.6 L43 60 L56.4 56.4 Z"/>
+    </g>
+  </defs>
+</svg>
 
 <!-- LIVE BANNER — hidden until the backend says we're live -->
 <a id="liveBanner" class="live-banner" href="#" target="_blank" rel="noopener" hidden>
@@ -31,22 +74,49 @@
     <a href="#home">Home</a>
     <a href="#story">Our Story</a>
     <a href="#venue">Venue</a>
-    <a href="#day">On the Day</a>
+    <a href="#day">The Day</a>
     <a href="#live">Watch Live</a>
-    <a href="#rsvp">RSVP</a>
-    <a href="#gifts">Gifts</a>
+    <a href="#reminders">Reminders</a>
+    <a href="#messages">Messages</a>
+    <a href="#fund">Honeymoon Fund</a>
     <a href="#faq">Q &amp; A</a>
   </div>
 </nav>
 
-<!-- ================= COVER (permanent, textured) ================= -->
+<!-- ================= COVER — the save-the-date card ================= -->
 <header class="cover" id="home">
-  <div class="cover-texture" aria-hidden="true"></div>
+  <div class="emboss" style="width:clamp(190px,28vw,330px); left:clamp(-70px,-5vw,-30px); bottom:-36px; transform:rotate(14deg);" aria-hidden="true">
+    <svg viewBox="0 0 200 300"><use href="#leafBranch"/></svg>
+  </div>
+  <div class="emboss" style="width:clamp(170px,24vw,300px); right:clamp(-70px,-5vw,-30px); top:-30px; transform:rotate(195deg);" aria-hidden="true">
+    <svg viewBox="0 0 200 300"><use href="#leafBranch"/></svg>
+  </div>
   <div class="cover-inner">
-    <img class="cover-mono" src="assets/monogram-jl.png" alt="">
-    <h1 class="cover-names">Joshua&nbsp;&amp;&nbsp;Lucia</h1>
-    <p class="cover-date">Saturday, November 7, 2026</p>
-    <p class="cover-place">Mampong · Ghana</p>
+    <!-- inlined (not <use>) so the CSS draw-in animation can reach the paths -->
+    <svg class="ornament" viewBox="0 0 120 120" aria-hidden="true">
+      <g class="orn-stroke">
+        <path pathLength="1" d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
+        <path pathLength="1" d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
+        <g transform="rotate(90 60 60)">
+          <path pathLength="1" d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
+          <path pathLength="1" d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
+        </g>
+        <g transform="rotate(180 60 60)">
+          <path pathLength="1" d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
+          <path pathLength="1" d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
+        </g>
+        <g transform="rotate(270 60 60)">
+          <path pathLength="1" d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
+          <path pathLength="1" d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
+        </g>
+      </g>
+      <path class="orn-star" d="M60 43 L63.6 56.4 L77 60 L63.6 63.6 L60 77 L56.4 63.6 L43 60 L56.4 56.4 Z"/>
+    </svg>
+    <p class="cover-script">the wedding of</p>
+    <h1 class="cover-names">Joshua &amp; Lucia</h1>
+    <p class="cover-date">7 <span class="bar">|</span> November <span class="bar">|</span> 2026</p>
+    <div class="cover-rule"></div>
+    <p class="cover-place">Saturday at 9:30 am · Anagkazo Campus, Mampong, Ghana</p>
   </div>
   <a class="cover-hint" href="#welcome" aria-label="Scroll down">
     <span>scroll</span>
@@ -56,7 +126,7 @@
 
 <!-- ================= WELCOME ================= -->
 <section class="section has-sil" id="welcome">
-  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-couple-2.png); --sil-op:.2; width:clamp(280px,40vw,540px); aspect-ratio:788/1199; left:clamp(-20px,1vw,40px); top:8%;"></div>
+  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-couple-2.png); --sil-op:.14; width:clamp(280px,40vw,540px); aspect-ratio:788/1199; left:clamp(-20px,1vw,40px); top:8%;"></div>
   <p class="sec-script fade-up">together with their families</p>
   <p class="sec-body fade-up">
     Joshua &amp; Lucia, together with their families, kindly request the honour of
@@ -72,13 +142,15 @@
     <div><b id="cdSecs">–</b><span>seconds</span></div>
   </div>
 
-  <a class="btn fade-up" href="#rsvp">RSVP</a>
+  <p class="sec-body fade-up" style="font-style:italic; color:var(--muted);">formal invitation to follow</p>
+  <a class="btn fade-up" href="#reminders">Keep me posted</a>
 </section>
 
 <!-- ================= OUR STORY ================= -->
 <section class="section" id="story">
   <p class="sec-script fade-up">our story</p>
   <h2 class="sec-title fade-up">How it all began</h2>
+  <div class="sec-rule fade-up"></div>
   <div class="story-text fade-up">
     <p>It all started in a church car park. Lucia came by to ask Joshua's friend for a power bank — and from that very first sight, Joshua was smitten. He gladly offered to fetch his own power bank to save Lucia's day.</p>
     <p>Their paths kept crossing after that. Joshua kept forgetting her name, and each time Lucia would warmly, graciously remind him — and it was that softness and humility that drew him in. A quiet friendship began, and surely it blossomed into something neither of them could ignore — and now, into marriage.</p>
@@ -96,8 +168,8 @@
 </section>
 
 <!-- ================= VENUE ================= -->
-<section class="section section-blue has-sil" id="venue">
-  <div class="sil sil-draw" aria-hidden="true" style="--sil-img:url(../assets/sil-anagkazo.png); --sil-op:.34; --sil-color:#fff; --sil-fit:cover; top:0; left:0; right:0; bottom:0;"></div>
+<section class="section section-dark has-sil" id="venue">
+  <div class="sil sil-draw" aria-hidden="true" style="--sil-img:url(../assets/sil-anagkazo.png); --sil-op:.3; --sil-color:#ece5d6; --sil-fit:cover; top:0; left:0; right:0; bottom:0;"></div>
   <p class="sec-script light fade-up">where</p>
   <h2 class="sec-title light fade-up">Venue</h2>
   <div class="venue-card fade-up">
@@ -110,10 +182,11 @@
 
 <!-- ================= ON THE DAY ================= -->
 <section class="section has-sil" id="day">
-  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-rings.png); --sil-op:.18; width:clamp(120px,17vw,210px); aspect-ratio:983/785; top:8%; right:3%;"></div>
-  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-hand-ring.png); --sil-op:.17; width:clamp(120px,15vw,190px); aspect-ratio:456/450; bottom:5%; left:3%;"></div>
+  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-rings.png); --sil-op:.14; width:clamp(120px,17vw,210px); aspect-ratio:983/785; top:8%; right:3%;"></div>
+  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-hand-ring.png); --sil-op:.13; width:clamp(120px,15vw,190px); aspect-ratio:456/450; bottom:5%; left:3%;"></div>
   <p class="sec-script fade-up">schedule</p>
   <h2 class="sec-title fade-up">On the day</h2>
+  <div class="sec-rule fade-up"></div>
   <p class="sec-body fade-up">Saturday, November 7, 2026</p>
 
   <div class="timeline">
@@ -145,22 +218,22 @@
 </section>
 
 <!-- ================= WATCH LIVE ================= -->
-<section class="section section-blue has-sil" id="live">
-  <div class="sil-svg" aria-hidden="true" style="--sil-op:.26; --sil-color:#fff; width:clamp(130px,17vw,220px); aspect-ratio:200/168; top:11%; right:5%;">
+<section class="section section-dark has-sil" id="live">
+  <div class="sil-svg" aria-hidden="true" style="--sil-op:.22; --sil-color:#ece5d6; width:clamp(130px,17vw,220px); aspect-ratio:200/168; top:11%; right:5%;">
     <svg viewBox="0 0 200 168" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
       <rect x="10" y="12" width="180" height="118" rx="12"/>
       <path d="M82 48 L128 71 L82 94 Z"/>
       <path d="M70 148 h60 M100 130 v18"/>
     </svg>
   </div>
-  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-rings.png); --sil-op:.16; --sil-color:#fff; width:clamp(120px,16vw,200px); aspect-ratio:983/785; bottom:7%; left:4%;"></div>
+  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-rings.png); --sil-op:.13; --sil-color:#ece5d6; width:clamp(120px,16vw,200px); aspect-ratio:983/785; bottom:7%; left:4%;"></div>
   <p class="sec-script light fade-up">from anywhere</p>
   <h2 class="sec-title light fade-up">Watch live</h2>
   <div class="live-box fade-up" id="liveBox">
     <div class="live-waiting" id="liveWaiting">
       <p class="live-badge-idle">● not live yet</p>
       <p>The live link will appear right here on the wedding day.<br>
-      Want a message the moment we go live? Say yes in your RSVP below.</p>
+      Want a message the moment we go live? <a class="faq-link" href="#reminders" style="color:var(--gold-soft);">Sign up for reminders below.</a></p>
     </div>
     <div class="live-now" id="liveNow" hidden>
       <p class="live-badge-on">● LIVE NOW</p>
@@ -169,26 +242,107 @@
   </div>
 </section>
 
-<!-- ================= RSVP ================= -->
-<section class="section has-sil" id="rsvp">
-  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-couple-1.png); --sil-op:.18; width:clamp(380px,64vw,820px); aspect-ratio:1448/955; left:0; right:0; margin-inline:auto; top:16%;"></div>
-  <p class="sec-script fade-up">kindly reply</p>
-  <h2 class="sec-title fade-up">RSVP</h2>
-  <p class="sec-body fade-up">Kindly RSVP by <b>30 September 2026</b> — whether you're coming to Mampong or joining from your couch.</p>
-  <a class="btn fade-up" href="rsvp.html">RSVP here</a>
+<!-- ================= REMINDERS ================= -->
+<section class="section has-sil" id="reminders">
+  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-couple-1.png); --sil-op:.13; width:clamp(380px,64vw,820px); aspect-ratio:1448/955; left:0; right:0; margin-inline:auto; top:16%;"></div>
+  <p class="sec-script fade-up">stay in the loop</p>
+  <h2 class="sec-title fade-up">Wedding reminders</h2>
+  <div class="sec-rule fade-up"></div>
+  <p class="sec-body fade-up">Our formal invitation — and the RSVP — is on its way. In the meantime,
+  <b>would you like reminders about the wedding?</b> We'll send you a gentle note as the big day approaches,
+  and the livestream link the moment we go live.</p>
+
+  <form id="remForm" class="rem-form fade-up" novalidate>
+    <div class="field">
+      <div class="choice-row" role="radiogroup" aria-label="Would you like reminders?">
+        <label class="choice"><input type="radio" name="wantReminders" value="Yes"><span>Yes, please keep me posted</span></label>
+        <label class="choice"><input type="radio" name="wantReminders" value="No"><span>No, thank you</span></label>
+      </div>
+    </div>
+
+    <p class="rem-none" id="remNone" hidden>No problem at all — everything you need will always be right here on this page. 🤍</p>
+
+    <div class="rem-fields" id="remFields" hidden>
+      <div class="field">
+        <label for="remName">Your name *</label>
+        <input id="remName" name="name" type="text" autocomplete="name" placeholder="Ama Mensah">
+      </div>
+
+      <div class="field">
+        <span class="label">How should we reach you? *</span>
+        <div class="choice-row" role="radiogroup">
+          <label class="choice"><input type="radio" name="contactMethod" value="Email" checked><span>Email</span></label>
+          <label class="choice"><input type="radio" name="contactMethod" value="Phone"><span>Phone</span></label>
+          <label class="choice"><input type="radio" name="contactMethod" value="Both"><span>Both</span></label>
+        </div>
+      </div>
+
+      <div class="field" id="remEmailField">
+        <label for="remEmail">Email *</label>
+        <input id="remEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+      </div>
+
+      <div class="field" id="remPhoneField" hidden>
+        <label for="remPhone">Phone number *</label>
+        <div class="phone-row">
+          <select id="remCountry" name="countryCode" aria-label="Country code">
+            <option value="+233">🇬🇭 +233</option>
+            <option value="+1">🇺🇸 +1</option>
+            <option value="other">🌍 Other</option>
+          </select>
+          <input id="remPhone" name="phone" type="tel" autocomplete="tel" placeholder="24 123 4567">
+        </div>
+        <small class="field-hint" id="remPhoneHint">Ghana numbers: you can type it with or without the leading 0.</small>
+      </div>
+
+      <button type="submit" class="btn" id="remSubmit">Sign me up</button>
+    </div>
+    <p class="form-status" id="remStatus" role="status"></p>
+  </form>
 </section>
 
-<!-- ================= GIFTS ================= -->
-<section class="section section-blue has-sil" id="gifts">
-  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-doves.png); --sil-op:.16; --sil-color:#fff; width:clamp(150px,20vw,260px); aspect-ratio:290/180; top:5%; left:0; right:0; margin-inline:auto;"></div>
-  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-gift.png); --sil-op:.15; --sil-color:#fff; width:clamp(90px,11vw,140px); aspect-ratio:130/93; bottom:7%; left:4%;"></div>
-  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-cake.png); --sil-op:.14; --sil-color:#fff; width:clamp(96px,12vw,160px); aspect-ratio:227/350; bottom:6%; right:4%;"></div>
-  <p class="sec-script light fade-up">with gratitude</p>
-  <h2 class="sec-title light fade-up">Gifts</h2>
-  <p class="sec-body light-body fade-up">
+<!-- ================= MESSAGES ================= -->
+<section class="section has-emboss" id="messages" style="max-width:1100px;">
+  <div class="emboss" style="width:clamp(150px,20vw,240px); right:clamp(-60px,-4vw,-20px); bottom:-20px; transform:rotate(200deg);" aria-hidden="true">
+    <svg viewBox="0 0 200 300"><use href="#leafBranch"/></svg>
+  </div>
+  <p class="sec-script fade-up">with love</p>
+  <h2 class="sec-title fade-up">Messages for the couple</h2>
+  <div class="sec-rule fade-up"></div>
+  <p class="sec-body fade-up">Do you have a message for the bride and groom? Leave a few words below —
+  Joshua &amp; Lucia will treasure every single one.</p>
+
+  <div class="wall fade-up" id="wall" aria-label="Messages from loved ones">
+    <div class="wall-slot"><div class="wall-card"><p class="wall-text"></p><p class="wall-name"></p></div></div>
+    <div class="wall-slot"><div class="wall-card"><p class="wall-text"></p><p class="wall-name"></p></div></div>
+    <div class="wall-slot"><div class="wall-card"><p class="wall-text"></p><p class="wall-name"></p></div></div>
+  </div>
+
+  <form id="msgForm" class="msg-form fade-up" novalidate>
+    <div class="field">
+      <label for="msgName">Your name *</label>
+      <input id="msgName" name="name" type="text" autocomplete="name" placeholder="Ama Mensah" required>
+    </div>
+    <div class="field">
+      <label for="msgText">Your message *</label>
+      <textarea id="msgText" name="message" rows="4" placeholder="May God bless your marriage…" required></textarea>
+    </div>
+    <button type="submit" class="btn" id="msgSubmit" style="width:100%;">Send your message</button>
+    <p class="form-status" id="msgStatus" role="status"></p>
+  </form>
+</section>
+
+<!-- ================= HONEYMOON FUND ================= -->
+<section class="section section-dark has-sil" id="fund">
+  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-doves.png); --sil-op:.14; --sil-color:#ece5d6; width:clamp(150px,20vw,260px); aspect-ratio:290/180; top:5%; left:0; right:0; margin-inline:auto;"></div>
+  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-gift.png); --sil-op:.13; --sil-color:#ece5d6; width:clamp(90px,11vw,140px); aspect-ratio:130/93; bottom:7%; left:4%;"></div>
+  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-cake.png); --sil-op:.12; --sil-color:#ece5d6; width:clamp(96px,12vw,160px); aspect-ratio:227/350; bottom:6%; right:4%;"></div>
+  <p class="sec-script light fade-up">a blessing</p>
+  <h2 class="sec-title light fade-up">Honeymoon fund</h2>
+  <p class="sec-body fade-up">
     Your presence and your prayers are the greatest gift of all. But should you feel led
-    to bless us as we begin our life together, we receive it with grateful hearts.
-    Thank you for being such a blessing to us.
+    to sow into our new life together, we would be so grateful for a contribution to our
+    honeymoon fund — every gift, big or small, is a blessing to us.
   </p>
   <p class="gift-verse fade-up">"Every good and perfect gift is from above."<span>— James 1:17</span></p>
 
@@ -211,8 +365,12 @@
       <a class="venmo-btn" href="https://venmo.com/u/Joshuagbafa" target="_blank" rel="noopener">
         <span class="venmo-badge">V</span> Give on Venmo
       </a>
-      <p class="gift-line"><b>@Joshuagbafa</b></p>
       <p class="gift-note">Tap to open Venmo, already set to send to us.</p>
+    </div>
+    <div class="gift-card fade-up">
+      <h3>By card</h3>
+      <a class="card-btn" id="cardBtn" href="#" target="_blank" rel="noopener" hidden>💳 &nbsp;Give by card</a>
+      <p class="gift-note" id="cardNote">Card giving is nearly ready — check back soon, or use any of the options here in the meantime.</p>
     </div>
   </div>
 
@@ -223,10 +381,11 @@
 <section class="section" id="faq">
   <p class="sec-script fade-up">good to know</p>
   <h2 class="sec-title fade-up">Q &amp; A</h2>
+  <div class="sec-rule fade-up"></div>
   <div class="faq-list fade-up">
     <details>
-      <summary>When is the RSVP deadline?</summary>
-      <p>Please RSVP by 30 September 2026 — it helps us plan seats, food, and messages.</p>
+      <summary>How do I RSVP?</summary>
+      <p>Our formal invitation — with all the RSVP details — is on its way. For now, <a class="faq-link" href="#reminders">sign up for wedding reminders</a> and we'll let you know the moment RSVP opens.</p>
     </details>
     <details>
       <summary>What's the dress code?</summary>
@@ -247,10 +406,6 @@
       <p>Yes — there's a car park on site. Please note Anagkazo has a toll at the gate, so come prepared to pay <b>GH₵20 per car</b> on entry.</p>
     </details>
     <details>
-      <summary>Can I change my RSVP later?</summary>
-      <p>Yes — just fill the form again with the same email address and your answer updates automatically.</p>
-    </details>
-    <details>
       <summary>What time should I arrive?</summary>
       <p>Doors open at 8:30 am; please be seated by 9:00 am. The ceremony begins at 9:30 am sharp.</p>
     </details>
@@ -258,7 +413,10 @@
 </section>
 
 <footer class="footer">
-  <div class="footer-mono" aria-hidden="true"></div>
+  <div class="emboss" style="width:clamp(140px,18vw,220px); left:clamp(-60px,-4vw,-20px); bottom:-24px; transform:rotate(12deg);" aria-hidden="true">
+    <svg viewBox="0 0 200 300"><use href="#leafBranch"/></svg>
+  </div>
+  <svg class="ornament" viewBox="0 0 120 120" aria-hidden="true"><use href="#ornamentShape"/></svg>
   <p class="footer-script">Joshua &amp; Lucia</p>
   <p class="footer-date">Saturday, November 7, 2026 — Mampong, Ghana</p>
 </footer>
