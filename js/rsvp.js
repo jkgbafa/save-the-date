@@ -173,8 +173,13 @@
     }
     var contact = (form.querySelector('input[name="preferredContact"]:checked') || {}).value || "Email";
     var attending = attendingValue();
+    var SAVE_ERR = "We couldn’t save this yet — the guest list isn’t connected. Please write to joshuagbafa108@gmail.com, or try again in a little while.";
 
-    if (!APPS_SCRIPT_URL) { thankYou(name, contact, attending); return; }
+    if (!APPS_SCRIPT_URL) {
+      statusEl.className = "form-status err";
+      statusEl.textContent = SAVE_ERR;
+      return;
+    }
 
     btn.disabled = true; btn.textContent = "Sending…";
     fetch(APPS_SCRIPT_URL, { method: "POST", body: data })
@@ -184,7 +189,8 @@
         else { statusEl.className = "form-status err"; statusEl.textContent = (res && res.error) || "Something went wrong — please try again."; }
       })
       .catch(function () {
-        thankYou(name, contact, attending);
+        statusEl.className = "form-status err";
+        statusEl.textContent = SAVE_ERR;
       })
       .finally(function () { btn.disabled = false; btn.textContent = "Send my RSVP"; });
   }
@@ -204,6 +210,13 @@
     }
     stepForm.hidden = true; stepCode.hidden = true;
     stepThanks.hidden = false;
+    var popup = $("thanksModal");
+    if (popup) popup.hidden = false;
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  var thanksOk = $("thanksModalOk");
+  if (thanksOk) {
+    thanksOk.addEventListener("click", function () { $("thanksModal").hidden = true; });
   }
 })();

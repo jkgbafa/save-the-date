@@ -70,12 +70,7 @@
 
 <!-- ================= COVER — the save-the-date card ================= -->
 <header class="cover" id="home">
-  <div class="emboss" style="width:clamp(190px,28vw,330px); left:clamp(-70px,-5vw,-30px); bottom:-36px; transform:rotate(14deg);" aria-hidden="true">
-    <svg viewBox="0 0 200 300"><use href="#leafBranch"/></svg>
-  </div>
-  <div class="emboss" style="width:clamp(170px,24vw,300px); right:clamp(-70px,-5vw,-30px); top:-30px; transform:rotate(195deg);" aria-hidden="true">
-    <svg viewBox="0 0 200 300"><use href="#leafBranch"/></svg>
-  </div>
+  <div class="cover-damask" aria-hidden="true"></div>
   <div class="cover-inner">
     <img class="hero-mark" src="images/wedding-icon.png" width="200" height="200" alt="">
     <p class="cover-script">the wedding of</p>
@@ -392,6 +387,16 @@
     <a href="terms.html">Terms</a>
   </p>
 </footer>
+
+<div class="modal" id="thanksModal" hidden>
+  <div class="modal-card" role="dialog" aria-labelledby="thanksTitle" aria-modal="true">
+    <h3 id="thanksTitle">Thank you.</h3>
+    <p>We have received this. You will get a message from Joshua and Lucia soon.</p>
+    <div class="modal-actions">
+      <button class="btn" id="thanksModalOk" type="button">Close</button>
+    </div>
+  </div>
+</div>
 
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>

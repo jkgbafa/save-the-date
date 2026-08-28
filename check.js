@@ -65,8 +65,25 @@ mustNot(index, /Give a gift or something/i, "do not use Give a gift or something
 must(index, 'href="#fund"', "gifts button still scrolls to #fund");
 must(index, 'property="og:title" content="Joshua &amp; Lucia — Save the Date"', "OG title is save-the-date, not a fund link");
 must(index, "assets/og-share.png", "OG image is the cream invitation card");
-must(index, 'class="hero-mark"', "hero uses the static gold emblem");
+must(index, 'class="cover-damask"', "hero uses repeating damask, not leaf branches");
 must(index, "images/wedding-icon.png", "committed wedding emblem asset");
+must(index, "thanksModal", "thank-you popup on homepage");
+must(index, "We have received this.", "popup copy");
+must(index, "You will get a message from Joshua and Lucia soon.", "popup copy");
+must(rsvpHtml, "thanksModal", "thank-you popup on RSVP");
+must(rsvpHtml, "We have received this.", "RSVP popup copy");
+must(fs.readFileSync("js/main.js", "utf8"), "unconfigured", "empty APPS_SCRIPT_URL is an error, not a silent save");
+must(fs.readFileSync("js/rsvp.js", "utf8"), "guest list isn’t connected", "RSVP shows a clear error when backend URL is empty");
+mustNot(fs.readFileSync("js/main.js", "utf8"), /ok: true, local: true/, "do not fake a successful save without a backend");
+mustNot(fs.readFileSync("js/rsvp.js", "utf8"), /if \(!APPS_SCRIPT_URL\) \{ thankYou/, "do not thank-you RSVP when backend URL is empty");
+(function () {
+  var start = index.indexOf('id="home"');
+  var end = index.indexOf('id="welcome"');
+  var cover = start >= 0 && end > start ? index.slice(start, end) : "";
+  must(cover, "cover-damask", "cover has damask layer");
+  mustNot(cover, /emboss/, "cover must not keep the two embossed branches");
+  must(cover, "images/wedding-icon.png", "gold emblem stays on the hero");
+})();
 mustNot(index, /pathLength/, "hero must not use SVG path draw-in");
 mustNot(index, /id="remCountry"/, "no Ghana/USA country-code dropdown on reminders");
 mustNot(rsvpHtml, /id="fCountry"/, "no Ghana/USA country-code dropdown on RSVP");
@@ -131,8 +148,8 @@ mustNot(index, /og:(?:title|description|image)[^>]*honeymoon/i, "do not label OG
 mustNot(index, /twitter:(?:title|description|image)[^>]*honeymoon/i, "twitter cards must not be a fund link");
 mustNot(code, /honeymoon fund/i, "gift stays off reminder texts");
 
-if (!fs.existsSync("images/wedding-icon.png") || !fs.existsSync("assets/og-share.png")) {
-  console.error("images/wedding-icon.png and assets/og-share.png must exist");
+if (!fs.existsSync("images/wedding-icon.png") || !fs.existsSync("assets/og-share.png") || !fs.existsSync("assets/damask.svg")) {
+  console.error("images/wedding-icon.png, assets/og-share.png, and assets/damask.svg must exist");
   process.exitCode = 1;
 }
 
