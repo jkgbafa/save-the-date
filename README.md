@@ -1,6 +1,6 @@
 # Joshua & Lucia — Wedding Website 💍
 
-Saturday, November 7, 2026 · 9:30 AM · Anagkazo Campus, Mampong-Akuapem, Ghana
+Saturday, November 7, 2026 · 11:00 AM · Anagkazo Campus, Mampong-Akuapem, Ghana
 
 A free, self-hosted version of what The Knot / Zola charge for:
 
@@ -116,10 +116,10 @@ Website `doPost` `formType`s:
 **GO LIVE** / audience `notifylive` reads the **Reminders** tab (not RSVPs). Twilio stays in the Sheet **Settings** tab only (`TWILIO_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM`). Never commit those secrets.
 
 ### Manual blasts (Admin panel)
-Pick the audience (RSVPs / attending / in-person / online / reminder signups / live opt-ins from Reminders / Ghana / USA), the channel, write your message, test it on yourself, send. Merge tags personalize each message: `{{name}}`, `{{date}}`, `{{time}}`, `{{venue}}`, `{{website}}`, `{{livestream}}`.
+Pick the audience (RSVPs / attending / in-person / online / reminder signups / live opt-ins from Reminders / Ghana / USA), the channel, write your message, test it on yourself, send. Merge tags personalize each message: `{{name}}`, `{{joinhow}}`, `{{cannotwait}}`, `{{date}}`, `{{time}}`, `{{venue}}`, `{{website}}`, `{{livestream}}`. Website should be the last line.
 
 ### Automatic reminders
-A daily trigger (installed by `setup`) sends the templates in the **Reminder Templates** tab at **7 days before, 1 day before, and the day of** the wedding (Days Before = 0). Older 30- and 14-day rows are disabled if they already exist. Copy is short (SMS-first; email matches). `setup()` also seeds Joshua Gbafa (`+17029458407`) on **Reminders**, and every `sendBlast` includes the **COUPLE_PHONE** numbers from Settings so he sees what guests get. Gift / honeymoon-fund language stays off the texts.
+A daily trigger (installed by `setup`) sends the templates in the **Reminder Templates** tab at **7 days before, 1 day before, and the day of** the wedding (Days Before = 0). Older 30- and 14-day rows are disabled if they already exist. Copy is warm and first-name, with in-person vs online when we know it, and the website link on its own last line. `setup()` also seeds Joshua Gbafa (`+17029458407`) on **Reminders**, and every `sendBlast` includes the **COUPLE_PHONE** numbers from Settings so he sees what guests get. Gift / honeymoon-fund language stays off the texts.
 
 ### Go-live alert
 The **GO LIVE** button saves the stream link, flips the website to LIVE (red banner + watch button appear within ~90 seconds for anyone on the page), and messages everyone on **Reminders** with Notify When Live = Yes.

@@ -31,7 +31,7 @@
 var CONFIG = {
   COUPLE_NAMES: 'Joshua & Lucia',
   WEDDING_DATE: '2026-11-07',           // yyyy-MM-dd
-  WEDDING_TIME: '9:30 AM',
+  WEDDING_TIME: '11:00 AM',
   TIMEZONE: 'Africa/Accra',             // Ghana time (GMT)
   VENUE: 'Anagkazo Campus, Mampong-Akuapem, Ghana',
   SPREADSHEET_NAME: 'Joshua & Lucia Wedding — RSVPs',
@@ -165,12 +165,14 @@ function setupTemplatesSheet_(ss) {
     }
   }
 
-  var sms7 = 'Hi {{name}}. One week. Joshua and Lucia, Saturday 7 Nov, 9:30am. Details on the site.';
-  var sms1 = 'Tomorrow. Joshua and Lucia, 9:30am. If you are coming, please arrive by 9. Watching online, the live link will be on the site.';
-  var sms0 = 'Today. Ceremony at 9:30am. Arrive by 9 if you are in person. Online, the live link is on the site.';
-  upsertTemplate_(sh, 7, 'YES', 'One week — Joshua & Lucia', sms7 + '\n\n{{website}}', sms7);
-  upsertTemplate_(sh, 1, 'YES', 'Tomorrow — Joshua & Lucia', sms1 + '\n\n{{website}}', sms1);
-  upsertTemplate_(sh, 0, 'YES', 'Today — Joshua & Lucia', sms0 + '\n\n{{website}}', sms0);
+  // Warm, first-name copy. Website is always the last line. {{joinhow}} / {{cannotwait}}
+  // personalize when we know they are coming in person or online; otherwise we do not guess.
+  var sms7 = 'Hi {{name}}. Joshua and Lucia\'s wedding is in one week, and they are excited that you are going to join them{{joinhow}}.\nThe ceremony is Saturday, 7 November at 11am. If you want to know more about the day:\n{{website}}';
+  var sms1 = 'Hi {{name}}. Tomorrow is the day. Joshua and Lucia cannot wait {{cannotwait}}. Ceremony at 11am. If you are coming in person, please arrive by 10:30. More here:\n{{website}}';
+  var sms0 = 'Hi {{name}}. Today is Joshua and Lucia\'s wedding day, and they are so glad you are part of it. Ceremony at 11am. If you are watching online, the live link is on the site:\n{{website}}';
+  upsertTemplate_(sh, 7, 'YES', 'One week until Joshua & Lucia\'s wedding', sms7, sms7);
+  upsertTemplate_(sh, 1, 'YES', 'Tomorrow — Joshua & Lucia', sms1, sms1);
+  upsertTemplate_(sh, 0, 'YES', 'Today is the day — Joshua & Lucia', sms0, sms0);
 }
 
 function upsertTemplate_(sh, days, enabled, subject, emailBody, smsBody) {
@@ -554,9 +556,10 @@ function maybeSendReminderSms_(phone, name) {
   if (!phone) return;
   try {
     if (!twilioConfigured_()) return;
-    var first = String(name || '').split(/\s+/)[0] || 'friend';
-    var website = getSetting_('WEBSITE_URL') || '';
-    sendSms_(phone, 'Thank you, ' + first + '. Joshua and Lucia are glad you are with them. If you have not sent a note yet, you can here: ' + website);
+    sendSms_(phone, merge_(
+      'Hi {{name}}. Thank you for signing up. Joshua and Lucia are so glad you will be with them. If you would like to send a note or anything else, you can here:\n{{website}}',
+      { name: name, attending: '' }
+    ));
   } catch (e) { /* row is already saved */ }
 }
 
@@ -564,9 +567,9 @@ function sendConfirmation_(name, email, attending) {
   if (!email) return;
   try {
     var lines = {
-      'In person': 'We can\'t wait to see you at ' + CONFIG.VENUE + ' on Saturday, November 7, 2026 at ' + CONFIG.WEDDING_TIME + '. Please plan to arrive by 9:00 AM.',
-      'Online': 'We\'re so glad you\'ll join us online! The livestream link will appear on our website on the day, and we\'ll send it to you when we go live.',
-      'Not attending': 'We\'ll miss you — thank you for letting us know, and for your love and prayers.'
+      'In person': 'Joshua and Lucia cannot wait to see you at ' + CONFIG.VENUE + ' on Saturday, 7 November 2026 at ' + CONFIG.WEDDING_TIME + '. Please plan to arrive by 10:30 AM.',
+      'Online': 'Joshua and Lucia are so glad you will be with them online. The livestream link will appear on our website on the day, and we\'ll send it to you when we go live.',
+      'Not attending': 'Joshua and Lucia will miss you — thank you for letting them know, and for your love and prayers.'
     };
     MailApp.sendEmail({
       to: email,
@@ -958,11 +961,28 @@ function dedupeGuests_(list) {
   return out;
 }
 
+function joinHow_(g) {
+  var a = String((g && g.attending) || '').trim();
+  if (a === 'In person') return ' in person';
+  if (a === 'Online') return ' online';
+  return '';
+}
+
+function cannotWait_(g) {
+  var a = String((g && g.attending) || '').trim();
+  if (a === 'In person') return 'to see you';
+  if (a === 'Online') return 'to have you with them online';
+  return 'to have you with them';
+}
+
 function merge_(text, g) {
+  g = g || {};
   return String(text || '')
     .replace(/\{\{name\}\}/g, g.name ? String(g.name).split(' ')[0] : 'friend')
     .replace(/\{\{fullname\}\}/g, g.name || 'friend')
-    .replace(/\{\{date\}\}/g, 'Saturday, November 7, 2026')
+    .replace(/\{\{joinhow\}\}/g, joinHow_(g))
+    .replace(/\{\{cannotwait\}\}/g, cannotWait_(g))
+    .replace(/\{\{date\}\}/g, 'Saturday, 7 November 2026')
     .replace(/\{\{time\}\}/g, CONFIG.WEDDING_TIME)
     .replace(/\{\{venue\}\}/g, CONFIG.VENUE)
     .replace(/\{\{website\}\}/g, getSetting_('WEBSITE_URL') || '')
