@@ -68,6 +68,25 @@ must(index, 'property="og:title" content="Joshua &amp; Lucia — Save the Date"'
 must(index, "assets/og-share.png", "OG image is the cream invitation card");
 must(index, 'class="cover-damask"', "hero uses repeating damask, not leaf branches");
 must(fs.readFileSync("css/style.css", "utf8"), "texture-white.png", "hero tiles the original toile floral");
+must(fs.readFileSync("css/style.css", "utf8"), "width: 100%;", "cover / cover-inner are full width for centering");
+must(index, 'id="fund"', "gifts section exists");
+mustNot(index, /sil-doves/, "gifts must not use the doves silhouette");
+mustNot(index, /By card/, "no pay-by-card gift option");
+mustNot(index, /Give by card/, "no Give by card button");
+mustNot(index, /id="cardBtn"/, "no card giving button");
+mustNot(config, /CARD_FUND_URL/, "no CARD_FUND_URL stub");
+mustNot(fs.readFileSync("js/main.js", "utf8"), /cardBtn/, "main.js must not wire a card button");
+mustNot(index, /Stripe|PayPal/i, "no Stripe/PayPal stubs on the homepage");
+(function () {
+  var start = index.indexOf('id="fund"');
+  var end = index.indexOf('id="faq"');
+  var fund = start >= 0 && end > start ? index.slice(start, end) : "";
+  must(fund, "images/wedding-icon.png", "gifts section uses the gold emblem");
+  must(fund, "cover-damask", "gifts section tiles the floral damask");
+  must(fund, "MTN", "gifts keep MTN");
+  must(fund, "Zelle", "gifts keep Zelle");
+  must(fund, "Venmo", "gifts keep Venmo");
+})();
 mustNot(fs.readFileSync("css/style.css", "utf8"), /damask\.svg/, "do not use the simple sprig SVG on the hero");
 must(index, "images/wedding-icon.png", "committed wedding emblem asset");
 must(index, "thanksModal", "thank-you popup on homepage");

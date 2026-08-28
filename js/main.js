@@ -306,12 +306,4 @@
     });
   }
 
-  // ================= gifts: card giving link =================
-  var cardBtn = $("cardBtn");
-  if (cardBtn && typeof CARD_FUND_URL !== "undefined" && CARD_FUND_URL) {
-    cardBtn.href = CARD_FUND_URL;
-    cardBtn.hidden = false;
-    $("cardNote").textContent = "Tap to give securely by debit or credit card.";
-  }
-
 })();
