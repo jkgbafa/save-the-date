@@ -318,6 +318,11 @@ img { display: block; max-width: 100%; }
 .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--gold-line); }
 .btn-ghost:hover { background: var(--paper-soft); color: var(--ink); border-color: var(--gold-soft); transform: none; }
 .cover-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 8px; }
+.quiet-ctas {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+  margin: 8px auto 28px; max-width: 560px;
+}
+.quiet-ctas .btn { padding: 12px 28px 11px; font-size: 12px; letter-spacing: 2.2px; }
 
 /* ================= our story ================= */
 .story-text { max-width: 620px; margin: 4px auto 0; }

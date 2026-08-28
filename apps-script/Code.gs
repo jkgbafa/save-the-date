@@ -10,7 +10,7 @@
  *  - Builds a live Dashboard tab with counts from BOTH lists
  *  - Sends email blasts (free via Gmail) and SMS blasts (via Twilio, optional)
  *  - Generates WhatsApp click-to-chat links (free way to text Ghana numbers)
- *  - Sends automatic countdown reminders (30/14/7/1 days before, editable)
+ *  - Sends automatic countdown reminders (7 days before, 1 day before, and day of)
  *  - "Go Live" button: saves the livestream link, flips the website to LIVE,
  *    and notifies everyone on the Reminders tab who asked to be pinged
  *
@@ -86,6 +86,7 @@ function setup() {
   setupTemplatesSheet_(ss);
   setupLogSheet_(ss);
   migrateLegacyRows_(ss);
+  seedCoupleReminder_(ss);
   setupDashboard_(ss);
   installDailyTrigger_();
 
@@ -149,26 +150,49 @@ function setupSettingsSheet_(ss) {
 
 function setupTemplatesSheet_(ss) {
   var sh = getOrCreateSheet_(ss, SHEETS.TEMPLATES);
-  if (sh.getLastRow() > 0) return;
-  var d = '{{date}}', v = '{{venue}}';
-  var rows = [
-    ['Days Before', 'Enabled', 'Email Subject', 'Email Body', 'SMS Body'],
-    [30, 'YES', 'One month to go! 💍 Joshua & Lucia',
-      'Hi {{name}},\n\nJust one month until the big day! Joshua & Lucia are getting married on ' + d + ' at ' + v + '.\n\nIf your plans have changed you can update your RSVP anytime on our website: {{website}}\n\nWith love,\nJoshua & Lucia',
-      'Hi {{name}}! One month until Joshua & Lucia\'s wedding — ' + d + ' at ' + v + '. Details: {{website}}'],
-    [14, 'YES', 'Two weeks away — Joshua & Lucia\'s wedding',
-      'Hi {{name}},\n\nTwo weeks to go! We can\'t wait to celebrate with you on ' + d + ' at ' + v + ', starting at {{time}}.\n\nTravel tips and details: {{website}}\n\nJoshua & Lucia',
-      'Hi {{name}}! 2 weeks until Joshua & Lucia\'s wedding, ' + d + ' at {{time}}. Info: {{website}}'],
-    [7, 'YES', 'One week! 🎉 Joshua & Lucia',
-      'Hi {{name}},\n\nIt\'s wedding week! We are getting married this Saturday, ' + d + ', at ' + v + '. The ceremony starts at {{time}} sharp.\n\nJoining online? The livestream link will appear at {{website}} when we go live.\n\nSee you soon!\nJoshua & Lucia',
-      'Hi {{name}}! Joshua & Lucia get married THIS Saturday at {{time}}, ' + v + '. Livestream + details: {{website}}'],
-    [1, 'YES', 'Tomorrow is the day! — Joshua & Lucia',
-      'Hi {{name}},\n\nTomorrow\'s the day! The ceremony begins at {{time}} at ' + v + '.\n\nComing in person: please arrive by 9:00 AM.\nWatching online: the live link will be at {{website}} — we\'ll also send it to you when we go live.\n\nWith love,\nJoshua & Lucia',
-      'Tomorrow! Joshua & Lucia\'s wedding, {{time}} at ' + v + '. Arrive by 9AM. Live link: {{website}}']
-  ];
-  sh.getRange(1, 1, rows.length, 5).setValues(rows);
+  if (sh.getLastRow() === 0) {
+    sh.appendRow(['Days Before', 'Enabled', 'Email Subject', 'Email Body', 'SMS Body']);
+  }
   styleHeader_(sh, 5);
   sh.setColumnWidth(3, 280); sh.setColumnWidth(4, 500); sh.setColumnWidth(5, 400);
+
+  // Cadence is only 7 days, 1 day, and day of. Disable any leftover 30/14-day rows.
+  if (sh.getLastRow() >= 2) {
+    var existing = sh.getRange(2, 1, sh.getLastRow() - 1, 2).getValues();
+    for (var i = 0; i < existing.length; i++) {
+      var days = parseInt(existing[i][0], 10);
+      if (days === 30 || days === 14) sh.getRange(i + 2, 2).setValue('NO');
+    }
+  }
+
+  var sms7 = 'Hi {{name}}. One week. Joshua and Lucia, Saturday 7 Nov, 9:30am. Details on the site.';
+  var sms1 = 'Tomorrow. Joshua and Lucia, 9:30am. If you are coming, please arrive by 9. Watching online, the live link will be on the site.';
+  var sms0 = 'Today. Ceremony at 9:30am. Arrive by 9 if you are in person. Online, the live link is on the site.';
+  upsertTemplate_(sh, 7, 'YES', 'One week — Joshua & Lucia', sms7 + '\n\n{{website}}', sms7);
+  upsertTemplate_(sh, 1, 'YES', 'Tomorrow — Joshua & Lucia', sms1 + '\n\n{{website}}', sms1);
+  upsertTemplate_(sh, 0, 'YES', 'Today — Joshua & Lucia', sms0 + '\n\n{{website}}', sms0);
+}
+
+function upsertTemplate_(sh, days, enabled, subject, emailBody, smsBody) {
+  if (sh.getLastRow() >= 2) {
+    var col = sh.getRange(2, 1, sh.getLastRow() - 1, 1).getValues();
+    for (var i = 0; i < col.length; i++) {
+      if (parseInt(col[i][0], 10) === days) {
+        sh.getRange(i + 2, 1, 1, 5).setValues([[days, enabled, subject, emailBody, smsBody]]);
+        return;
+      }
+    }
+  }
+  sh.appendRow([days, enabled, subject, emailBody, smsBody]);
+}
+
+/** Joshua must be on the live-ping / reminder list so he receives every blast. */
+function seedCoupleReminder_(ss) {
+  var sh = ss.getSheetByName(SHEETS.REMINDERS);
+  if (!sh) return;
+  var phone = '+17029458407';
+  if (findRowByPhone_(sh, phone, REM.PHONE)) return;
+  sh.appendRow([new Date(), 'Joshua Gbafa', CONFIG.COUPLE_EMAIL, phone, 'USA', 'SMS', 'Yes', 'couple']);
 }
 
 function setupLogSheet_(ss) {
@@ -525,13 +549,14 @@ function reminderContact_(method, email, phone) {
   return 'Email';
 }
 
-/** Optional opt-in confirmation. Skips silently when Twilio isn't configured or sending fails. */
+/** Optional welcome SMS on reminder signup. One message. Skips silently without Twilio. */
 function maybeSendReminderSms_(phone, name) {
   if (!phone) return;
   try {
     if (!twilioConfigured_()) return;
-    var first = String(name || '').split(/\s+/)[0] || 'there';
-    sendSms_(phone, 'Hi ' + first + '! You\'re on Joshua & Lucia\'s reminder list for Nov 7, 2026. We\'ll text updates as the day approaches.');
+    var first = String(name || '').split(/\s+/)[0] || 'friend';
+    var website = getSetting_('WEBSITE_URL') || '';
+    sendSms_(phone, 'Thank you, ' + first + '. Joshua and Lucia are glad you are with them. If you have not sent a note yet, you can here: ' + website);
   } catch (e) { /* row is already saved */ }
 }
 
@@ -603,7 +628,7 @@ function countryFromCode_(countryCode) {
  * notifylive (and GO LIVE) always reads the Reminders tab — not RSVPs.
  */
 function sendBlast(opts) {
-  var guests = getAudience_(opts.audience || 'all');
+  var guests = withCoupleRecipients_(getAudience_(opts.audience || 'all'));
   var sent = 0, failed = 0, notes = [];
   var smsReady = twilioConfigured_();
 
@@ -641,7 +666,35 @@ function prefersSms_(contact) {
   return c === 'SMS' || c === 'WhatsApp' || c === 'Both' || c === 'Phone';
 }
 
+/**
+ * Always include Joshua's Settings numbers (and couple email) so he sees every blast.
+ * Dedupes against people already on the audience list. Guest-facing SMS is the template only — no extra legal footer.
+ */
+function withCoupleRecipients_(guests) {
+  var out = (guests || []).slice();
+  var seenPhone = {};
+  var seenEmail = {};
+  out.forEach(function (g) {
+    if (g.phone) seenPhone[String(g.phone).replace(/\s/g, '')] = true;
+    if (g.email) seenEmail[String(g.email).trim().toLowerCase()] = true;
+  });
+  var phones = String(getSetting_('COUPLE_PHONE') || CONFIG.COUPLE_PHONE || '')
+    .split(',').map(function (p) { return p.trim(); }).filter(String);
+  phones.forEach(function (p) {
+    var key = p.replace(/\s/g, '');
+    if (seenPhone[key]) return;
+    seenPhone[key] = true;
+    out.push({ name: 'Joshua Gbafa', email: '', phone: p, contact: 'SMS', notify: 'Yes', source: 'couple' });
+  });
+  var email = String(getSetting_('COUPLE_EMAIL') || CONFIG.COUPLE_EMAIL || '').trim().toLowerCase();
+  if (email && !seenEmail[email]) {
+    out.push({ name: 'Joshua Gbafa', email: email, phone: '', contact: 'Email', notify: 'Yes', source: 'couple' });
+  }
+  return out;
+}
+
 function sendSms_(to, body) {
+  // Guest copy only — do not append carrier opt-out or registry legal footers.
   var sid = getSetting_('TWILIO_SID'), token = getSetting_('TWILIO_AUTH_TOKEN'), from = getSetting_('TWILIO_FROM');
   var resp = UrlFetchApp.fetch('https://api.twilio.com/2010-04-01/Accounts/' + sid + '/Messages.json', {
     method: 'post',

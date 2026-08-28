@@ -40,6 +40,20 @@ must(code, "SHEETS.REMINDERS", "Code.gs must define Reminders tab");
 must(code, "SHEETS.RSVP", "Code.gs must define RSVPs tab");
 must(code, "setupRemindersSheet_", "setup() must create Reminders");
 must(code, "joshuagbafa108@gmail.com", "COUPLE_EMAIL default");
+must(code, "Hi {{name}}. One week. Joshua and Lucia, Saturday 7 Nov, 9:30am. Details on the site.", "7-day SMS copy");
+must(code, "Tomorrow. Joshua and Lucia, 9:30am. If you are coming, please arrive by 9. Watching online, the live link will be on the site.", "1-day SMS copy");
+must(code, "Today. Ceremony at 9:30am. Arrive by 9 if you are in person. Online, the live link is on the site.", "day-of SMS copy");
+must(code, "upsertTemplate_(sh, 0,", "day-of template (Days Before = 0)");
+must(code, "Joshua Gbafa", "seed Joshua on Reminders");
+must(code, "source: 'couple'", "couple source on seeded / blast recipients");
+must(code, "+17029458407", "Joshua's reminder phone");
+must(code, "withCoupleRecipients_", "every sendBlast includes couple phones");
+must(code, "Thank you, ' + first + '. Joshua and Lucia are glad you are with them. If you have not sent a note yet, you can here:", "welcome SMS copy");
+must(code, "do not append carrier opt-out", "do not SMS registry / opt-out footer copy");
+must(index, ">Send a message</a>", "quiet Send a message button");
+must(index, ">Give a gift</a>", "quiet Give a gift button");
+must(index, 'href="#fund"', "gift button goes to existing fund section");
+must(index, 'property="og:title" content="Joshua & Lucia — Save the Date"', "OG title is save-the-date, not a fund link");
 must(code, "audience: 'notifylive'", "goLive must blast notifylive");
 must(code, "case 'notifylive':", "notifylive audience must be handled");
 must(code, "getReminders_().filter", "notifylive must read Reminders tab");
@@ -59,6 +73,16 @@ must(config, 'var APPS_SCRIPT_URL = "";', "do not fill a fake APPS_SCRIPT_URL");
 mustNot(code, /SK[0-9a-fA-F]{20,}/, "no Twilio-looking secrets in Code.gs");
 mustNot(code, /AC[0-9a-fA-F]{20,}/, "no Twilio SID secrets in Code.gs");
 mustNot(fs.readFileSync("js/config.js", "utf8") + code, /AuthToken|auth_token\s*[:=]\s*['\"][^'\"]+['\"]/, "no auth tokens committed");
+mustNot(index, /og:(?:title|description|image)[^>]*honeymoon/i, "do not label OG / share preview a honeymoon-fund link");
+mustNot(code, /honeymoon fund/i, "gift stays off reminder texts");
+
+const guestSms = [
+  "Hi {{name}}. One week. Joshua and Lucia, Saturday 7 Nov, 9:30am. Details on the site.",
+  "Tomorrow. Joshua and Lucia, 9:30am. If you are coming, please arrive by 9. Watching online, the live link will be on the site.",
+  "Today. Ceremony at 9:30am. Arrive by 9 if you are in person. Online, the live link is on the site.",
+  "Joshua and Lucia are glad you are with them. If you have not sent a note yet, you can here:"
+].join("\n");
+mustNot(guestSms, /Campaign Registry|10DLC|\bTCR\b|Reply STOP|STOP to opt/i, "guest SMS copy must not include registry / opt-out legal text");
 
 if (!process.exitCode) console.log("OK — backend + RSVP contracts hold");
 else {

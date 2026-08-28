@@ -119,7 +119,7 @@ Website `doPost` `formType`s:
 Pick the audience (RSVPs / attending / in-person / online / reminder signups / live opt-ins from Reminders / Ghana / USA), the channel, write your message, test it on yourself, send. Merge tags personalize each message: `{{name}}`, `{{date}}`, `{{time}}`, `{{venue}}`, `{{website}}`, `{{livestream}}`.
 
 ### Automatic reminders
-A daily trigger (installed by `setup`) checks the calendar each morning and sends the templates in the **Reminder Templates** sheet tab at **30, 14, 7, and 1 days** before the wedding — to attending RSVPs **and** everyone on the Reminders tab (deduped). Edit the text, add rows, or set Enabled to NO — it's all in the sheet.
+A daily trigger (installed by `setup`) sends the templates in the **Reminder Templates** tab at **7 days before, 1 day before, and the day of** the wedding (Days Before = 0). Older 30- and 14-day rows are disabled if they already exist. Copy is short (SMS-first; email matches). `setup()` also seeds Joshua Gbafa (`+17029458407`) on **Reminders**, and every `sendBlast` includes the **COUPLE_PHONE** numbers from Settings so he sees what guests get. Gift / honeymoon-fund language stays off the texts.
 
 ### Go-live alert
 The **GO LIVE** button saves the stream link, flips the website to LIVE (red banner + watch button appear within ~90 seconds for anyone on the page), and messages everyone on **Reminders** with Notify When Live = Yes.
