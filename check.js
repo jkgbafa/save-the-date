@@ -78,6 +78,35 @@ must(config, 'var APPS_SCRIPT_URL = "";', "do not fill a fake APPS_SCRIPT_URL");
 must(config, "2026-11-07T11:00:00Z", "countdown target is 11:00 AM Ghana time");
 must(index, "11:00 am", "homepage shows 11:00 am");
 must(rsvpHtml, "11:00 am", "RSVP page shows 11:00 am");
+must(index, 'href="privacy.html"', "homepage footer links to privacy.html");
+must(index, 'href="terms.html"', "homepage footer links to terms.html");
+must(rsvpHtml, 'href="privacy.html"', "RSVP footer links to privacy.html");
+must(rsvpHtml, 'href="terms.html"', "RSVP footer links to terms.html");
+
+if (!fs.existsSync("privacy.html") || !fs.existsSync("terms.html")) {
+  console.error("privacy.html and terms.html must sit beside index.html");
+  process.exitCode = 1;
+} else {
+  const privacy = fs.readFileSync("privacy.html", "utf8");
+  const terms = fs.readFileSync("terms.html", "utf8");
+  must(privacy, "joshuagbafa108@gmail.com", "privacy contact email");
+  must(privacy, "Twilio", "privacy names Twilio");
+  must(privacy, "STOP", "privacy mentions STOP");
+  must(privacy, "We do not sell", "privacy says we do not sell data");
+  must(privacy, "name", "privacy mentions name");
+  must(privacy, "email", "privacy mentions email");
+  must(privacy, "phone", "privacy mentions phone");
+  must(privacy, "index,follow", "privacy is crawlable");
+  must(privacy, "https://jkgbafa.github.io/save-the-date/privacy.html", "privacy canonical URL");
+  must(terms, "STOP", "terms mention STOP");
+  must(terms, "11:00 AM", "terms have 11:00 AM");
+  must(terms, "7 November 2026", "terms have ceremony date");
+  must(terms, "index,follow", "terms are crawlable");
+  must(terms, "https://jkgbafa.github.io/save-the-date/terms.html", "terms canonical URL");
+  must(terms, "opt into", "terms describe opt-in via the site");
+  mustNot(privacy, /noindex/i, "privacy must not be noindex");
+  mustNot(terms, /noindex/i, "terms must not be noindex");
+}
 
 mustNot(code, /SK[0-9a-fA-F]{20,}/, "no Twilio-looking secrets in Code.gs");
 mustNot(code, /AC[0-9a-fA-F]{20,}/, "no Twilio SID secrets in Code.gs");

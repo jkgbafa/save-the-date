@@ -637,6 +637,15 @@ img { display: block; max-width: 100%; }
   font-size: clamp(34px, 5.6vw, 52px); color: var(--gold); line-height: 1.1;
 }
 .footer-date { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--muted); margin-top: 12px; }
+.footer-legal {
+  margin-top: 22px;
+  display: flex; justify-content: center; gap: 18px; flex-wrap: wrap;
+}
+.footer-legal a {
+  font-size: 12px; letter-spacing: 2.2px; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent;
+}
+.footer-legal a:hover { color: var(--gold); border-bottom-color: var(--gold-soft); }
 
 /* ================= rsvp page ================= */
 .rsvp-page { background: var(--paper); }
@@ -703,6 +712,27 @@ img { display: block; max-width: 100%; }
 .modal-card p { color: var(--ink-soft); font-size: 16.5px; margin-bottom: 22px; }
 .modal-actions { display: flex; flex-direction: column; gap: 10px; }
 .modal-actions .btn { width: 100%; }
+
+/* ================= privacy / terms ================= */
+.legal-page { background: var(--paper); }
+.legal-main {
+  max-width: 680px; margin: 0 auto;
+  padding: clamp(96px, 14vh, 140px) clamp(20px, 6vw, 40px) 48px;
+  text-align: center;
+}
+.legal-main .ornament { margin-bottom: 18px; }
+.legal {
+  text-align: left; margin: 28px auto 0;
+  color: var(--ink-soft); font-size: clamp(16.5px, 2.3vw, 18px);
+}
+.legal h2 {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(20px, 3vw, 24px); letter-spacing: 2px; text-transform: uppercase;
+  color: var(--ink); margin: 32px 0 12px;
+}
+.legal p { margin-bottom: 14px; }
+.legal a { color: var(--gold); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.legal a:hover { color: var(--gold-soft); }
 
 /* ================= scroll reveals ================= */
 @media (prefers-reduced-motion: no-preference) {
