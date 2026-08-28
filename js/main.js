@@ -1,6 +1,6 @@
 /* Joshua & Lucia — save-the-date edition
    nav, scroll reveals, scrollspy, countdown, live status,
-   message wall (guestbook), reminders signup, honeymoon fund card link */
+   message wall (guestbook), reminders signup, gifts card link */
 
 (function () {
   "use strict";
@@ -125,11 +125,22 @@
   setInterval(checkLive, 90000);
 
   // ---------- shared: post a form to the backend (no-op without one) ----------
+  var SAVE_ERR = "We couldn’t save this yet — the guest list isn’t connected. Please write to joshuagbafa108@gmail.com, or try again in a little while.";
+
   function postToBackend(fields) {
-    if (!APPS_SCRIPT_URL) return Promise.resolve({ ok: true, local: true });
+    if (!APPS_SCRIPT_URL) return Promise.reject(new Error("unconfigured"));
     var data = new URLSearchParams(fields);
     return fetch(APPS_SCRIPT_URL, { method: "POST", body: data })
       .then(function (r) { return r.json(); });
+  }
+
+  function showThanksModal() {
+    var m = $("thanksModal");
+    if (m) m.hidden = false;
+  }
+  var thanksOk = $("thanksModalOk");
+  if (thanksOk) {
+    thanksOk.addEventListener("click", function () { $("thanksModal").hidden = true; });
   }
 
   // ================= message wall (guestbook) =================
@@ -198,12 +209,21 @@
       statusEl.className = "form-status"; statusEl.textContent = "";
 
       postToBackend({ formType: "message", name: name, message: text })
-        .catch(function () { return { ok: true }; })  // never lose a guest's kind words
-        .then(function () {
-          WALL_MSGS.unshift({ t: text, n: name });    // joins the rotation right away
+        .then(function (res) {
+          if (!res || !res.ok) {
+            statusEl.className = "form-status err";
+            statusEl.textContent = (res && res.error) || SAVE_ERR;
+            return;
+          }
+          WALL_MSGS.unshift({ t: text, n: name });
           statusEl.className = "form-status ok";
-          statusEl.textContent = "Thank you, " + name + " — your message means the world to us. 🤍";
+          statusEl.textContent = "";
           msgForm.reset();
+          showThanksModal();
+        })
+        .catch(function () {
+          statusEl.className = "form-status err";
+          statusEl.textContent = SAVE_ERR;
         })
         .finally(function () { btn.disabled = false; btn.textContent = "Send your message"; });
     });
@@ -237,13 +257,6 @@
       r.addEventListener("change", syncContactFields);
     });
 
-    var hints = {
-      "+233": "Ghana numbers: you can type it with or without the leading 0.",
-      "+1": "US numbers: 10 digits, e.g. 404 555 0123.",
-      "other": "Please include your full country code, e.g. +44 7911 123456."
-    };
-    $("remCountry").addEventListener("change", function () { $("remPhoneHint").textContent = hints[this.value]; });
-
     remForm.addEventListener("submit", function (e) {
       e.preventDefault();
       var m = method();
@@ -265,20 +278,24 @@
         name: name,
         contactMethod: m,
         email: m === "Phone" ? "" : email,
-        countryCode: $("remCountry").value,
         phone: m === "Email" ? "" : phone
       })
-        .catch(function () { return { ok: true }; })  // don't lose the signup UX on network hiccups
-        .then(function () {
+        .then(function (res) {
+          if (!res || !res.ok) {
+            fail((res && res.error) || SAVE_ERR);
+            return;
+          }
           remStatus.className = "form-status ok";
-          remStatus.textContent = "You're on the list, " + name + " — we'll be in touch as the day approaches. 🤍";
+          remStatus.textContent = "";
           remFields.hidden = true;
+          showThanksModal();
         })
+        .catch(function () { fail(SAVE_ERR); })
         .finally(function () { btn.disabled = false; btn.textContent = "Sign me up"; });
     });
   }
 
-  // ================= honeymoon fund: card giving link =================
+  // ================= gifts: card giving link =================
   var cardBtn = $("cardBtn");
   if (cardBtn && typeof CARD_FUND_URL !== "undefined" && CARD_FUND_URL) {
     cardBtn.href = CARD_FUND_URL;

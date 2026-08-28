@@ -1,6 +1,6 @@
 # Joshua & Lucia — Wedding Website 💍
 
-Saturday, November 7, 2026 · 9:30 AM · Anagkazo Campus, Mampong-Akuapem, Ghana
+Saturday, November 7, 2026 · 11:00 AM · Anagkazo Campus, Mampong-Akuapem, Ghana
 
 A free, self-hosted version of what The Knot / Zola charge for:
 
@@ -43,11 +43,11 @@ You open the Admin panel (secret link)
 1. Go to **[script.new](https://script.new)** (creates a new Google Apps Script project — use the Google account you want to own the guest list).
 2. Name the project (top left) e.g. `Wedding RSVP Backend`.
 3. Delete the placeholder code, and paste the entire contents of **`apps-script/Code.gs`** from this repo.
-4. Near the top of the file, set `COUPLE_PHONE` to your number (for test SMS later). Everything else is pre-filled.
+4. Near the top of the file, `COUPLE_EMAIL` defaults to **joshuagbafa108@gmail.com**. Set `COUPLE_PHONE` if you need to. Twilio credentials are **not** in this file — they belong only in the Sheet **Settings** tab after `setup`.
 5. Click **+ → HTML** in the Files sidebar, name it exactly **`Admin`**, and paste the contents of **`apps-script/Admin.html`**.
-6. In the toolbar, pick the function **`setup`** and press **Run**. Google will ask you to authorize — approve it (it needs Sheets + Gmail on *your own account*).
+6. In the toolbar, pick the function **`setup`** and press **Run**. Google will ask you to authorize — approve it (it needs Sheets + Gmail on *your own account*). `setup` creates **two guest-list tabs**: **Reminders** and **RSVPs**, plus Settings, Reminder Templates, Message Log, Dashboard, and a small **Messages** tab for the guestbook.
 7. Open **Executions** (left sidebar) → click the run → the log shows:
-   - ✅ your **Google Sheet URL** (guest list + dashboard — bookmark it)
+   - ✅ your **Google Sheet URL** (guest lists + dashboard — bookmark it)
    - ✅ your **admin key** (keep it secret)
 
 ### Step 2 — Deploy the web app
@@ -87,28 +87,42 @@ Finally, open your Google Sheet → **Settings** tab → paste that URL into **W
 ### Step 5 — Test it right now ✅
 
 1. Open the site (GitHub Pages URL, or locally: `python3 -m http.server` then http://localhost:8000).
-2. Submit an RSVP with your own email + phone.
-3. Watch it appear in the **RSVPs** tab, and the **Dashboard** tab update.
-4. Check your inbox — you should have a confirmation email.
-5. Open the **Admin panel** → your RSVP is there. Write a message and hit **"Send test to me first."**
-6. Test go-live: paste any YouTube link → **GO LIVE** → refresh the website → red LIVE banner appears and opt-ins get messaged. Then hit **End live**.
+2. Submit an **RSVP** at `rsvp.html` with your own email and/or phone. Tick live-notify if you want the go-live ping.
+3. Watch it appear in the **RSVPs** tab. If you opted into live notify, a matching row appears on **Reminders** too. The **Dashboard** tab counts both lists.
+4. Submit a **reminder-only** signup from the homepage — that writes **Reminders** only, not RSVPs.
+5. Check your inbox — RSVPs get a confirmation email.
+6. Open the **Admin panel** → RSVPs and reminder signups are listed separately. Write a message and hit **"Send test to me first."**
+7. Test go-live: paste any YouTube link → **GO LIVE** → the site flips LIVE and **Reminders** (not RSVPs) who asked to be pinged get messaged. Then hit **End live**.
 
 ---
 
-## Sending reminders
+## Two guest lists (Google Sheet)
 
-The save-the-date site posts **reminder signups** (`formType=reminder`) and **guestbook messages** (`formType=message`) to the same Apps Script `doPost` handler as RSVPs. Both are stored in the **RSVPs** sheet (phone + email in the existing columns) so later blasts can still find people. Classic RSVP posts (no `formType`, or `formType=rsvp`) are unchanged.
+`setup()` creates two lists so reminder people are never mixed into RSVPs as the only roster:
 
-SMS — including an optional short confirmation when a reminder signup includes a phone number — still requires `TWILIO_SID`, `TWILIO_AUTH_TOKEN`, and `TWILIO_FROM` in the Sheet **Settings** tab. If those are empty, the row is still saved and SMS is skipped.
+| Tab | Who | Typical columns |
+|---|---|---|
+| **Reminders** | Everyone who signed up for email/SMS reminders or “ping me when we go live” | Timestamp, Name, Email, Phone, Country, Contact method (Email/SMS/WhatsApp/Both), Notify When Live, Source (`reminder form` / `RSVP` / `live opt-in`) |
+| **RSVPs** | People who filled the RSVP | Timestamp, Name, Email, Phone, Country, Attending (In person / Online / Not attending), Guests, Preferred contact, Notify When Live, Message, Status |
+
+Guestbook notes go on a small **Messages** tab so they don’t inflate reminder or RSVP counts. Settings, Reminder Templates, Message Log, and Dashboard stay. Dashboard formulas count **both** tabs (reminder signups vs RSVPs, in-person vs online vs not attending, live opt-ins).
+
+Website `doPost` `formType`s:
+
+- **`reminder`** — write **Reminders**. Notify When Live = Yes.
+- **`message`** — write **Messages**.
+- **`rsvp`** — write **RSVPs**. If `notifyLive=Yes`, also **upsert Reminders** (Source = RSVP) so the live-ping list is complete.
+
+**GO LIVE** / audience `notifylive` reads the **Reminders** tab (not RSVPs). Twilio stays in the Sheet **Settings** tab only (`TWILIO_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_FROM`). Never commit those secrets.
 
 ### Manual blasts (Admin panel)
-Pick the audience (everyone / in-person / online / Ghana / USA / live opt-ins), the channel, write your message, test it on yourself, send. Merge tags personalize each message: `{{name}}`, `{{date}}`, `{{time}}`, `{{venue}}`, `{{website}}`, `{{livestream}}`.
+Pick the audience (RSVPs / attending / in-person / online / reminder signups / live opt-ins from Reminders / Ghana / USA), the channel, write your message, test it on yourself, send. Merge tags personalize each message: `{{name}}`, `{{joinhow}}`, `{{cannotwait}}`, `{{date}}`, `{{time}}`, `{{venue}}`, `{{website}}`, `{{livestream}}`. Website should be the last line.
 
 ### Automatic reminders
-A daily trigger (installed by `setup`) checks the calendar each morning and sends the templates in the **Reminder Templates** sheet tab at **30, 14, 7, and 1 days** before the wedding. Edit the text, add rows, or set Enabled to NO — it's all in the sheet. Each guest is contacted on their **preferred channel**.
+A daily trigger (installed by `setup`) sends the templates in the **Reminder Templates** tab at **7 days before, 1 day before, and the day of** the wedding (Days Before = 0). Older 30- and 14-day rows are disabled if they already exist. Copy is warm and first-name, with in-person vs online when we know it, and the website link on its own last line. `setup()` also seeds Joshua Gbafa (`+17029458407`) on **Reminders**, and every `sendBlast` includes the **COUPLE_PHONE** numbers from Settings so he sees what guests get. Gift / honeymoon-fund language stays off the texts.
 
 ### Go-live alert
-The **GO LIVE** button saves the stream link, flips the website to LIVE (red banner + watch button appear within ~90 seconds for anyone on the page), and messages everyone who ticked *"Message me the moment the wedding goes live."*
+The **GO LIVE** button saves the stream link, flips the website to LIVE (red banner + watch button appear within ~90 seconds for anyone on the page), and messages everyone on **Reminders** with Notify When Live = Yes.
 
 ---
 
@@ -127,12 +141,14 @@ Everything else — hosting, database, dashboard, confirmation emails, automatic
 ## Files
 
 ```
-index.html              the website (RSVP form, countdown, livestream, FAQ)
+index.html              the website (countdown, livestream, reminders, guestbook)
+rsvp.html               RSVP + live-opt-in (cream/gold, matching the save-the-date)
 css/style.css           design
-js/config.js            ← the one file you edit (backend URL)
-js/main.js              countdown, live-status polling, reminder + guestbook + RSVP posts
+js/config.js            ← the one file you edit (backend URL) — leave empty until Joshua deploys Apps Script
+js/main.js              countdown, live-status polling, reminder + guestbook posts
+js/rsvp.js              invitation-code (optional) + RSVP form + live-notify confirm
 photos/                 your photos
-apps-script/Code.gs     backend: RSVP / reminder / guestbook intake, dashboard, messaging
+apps-script/Code.gs     backend: Reminders + RSVPs tabs, dashboard, messaging
 apps-script/Admin.html  admin dashboard UI
 ```
 
