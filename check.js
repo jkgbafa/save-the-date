@@ -1,16 +1,67 @@
-// Self-check: every element ID main.js touches must exist in index.html.
+// Self-check: every element ID the JS touches must exist in the matching HTML.
+// Also asserts backend contracts (two Sheet tabs, no secrets).
 // Run with: node check.js
 "use strict";
 const fs = require("fs");
-const html = fs.readFileSync("index.html", "utf8");
-const js = fs.readFileSync("js/main.js", "utf8");
 
-const ids = new Set();
-for (const m of js.matchAll(/\$\("([^"]+)"\)|getElementById\("([^"]+)"\)/g)) {
-  ids.add(m[1] || m[2]);
+function assertIds(htmlPath, jsPath, label) {
+  const html = fs.readFileSync(htmlPath, "utf8");
+  const js = fs.readFileSync(jsPath, "utf8");
+  const ids = new Set();
+  for (const m of js.matchAll(/\$\("([^"]+)"\)|getElementById\("([^"]+)"\)/g)) {
+    ids.add(m[1] || m[2]);
+  }
+  const missing = [...ids].filter((id) => !html.includes('id="' + id + '"'));
+  console.assert(ids.size > 5, label + ": expected to find IDs, found " + ids.size);
+  console.assert(missing.length === 0, label + ": IDs missing from HTML: " + missing.join(", "));
+  if (missing.length) process.exitCode = 1;
+  else console.log("OK — all " + ids.size + " IDs used by " + jsPath + " exist in " + htmlPath);
 }
-const missing = [...ids].filter((id) => !html.includes('id="' + id + '"'));
-console.assert(ids.size > 10, "expected to find IDs in main.js, found " + ids.size);
-console.assert(missing.length === 0, "IDs used in main.js but missing from index.html: " + missing.join(", "));
-if (missing.length === 0) console.log("OK — all " + ids.size + " IDs used by main.js exist in index.html");
-else process.exit(1);
+
+assertIds("index.html", "js/main.js", "main");
+assertIds("rsvp.html", "js/rsvp.js", "rsvp");
+
+const code = fs.readFileSync("apps-script/Code.gs", "utf8");
+const config = fs.readFileSync("js/config.js", "utf8");
+const rsvpHtml = fs.readFileSync("rsvp.html", "utf8");
+const rsvpJs = fs.readFileSync("js/rsvp.js", "utf8");
+const index = fs.readFileSync("index.html", "utf8");
+
+function must(hay, needle, msg) {
+  console.assert(hay.indexOf(needle) !== -1, msg);
+  if (hay.indexOf(needle) === -1) process.exitCode = 1;
+}
+function mustNot(hay, re, msg) {
+  console.assert(!re.test(hay), msg);
+  if (re.test(hay)) process.exitCode = 1;
+}
+
+must(code, "SHEETS.REMINDERS", "Code.gs must define Reminders tab");
+must(code, "SHEETS.RSVP", "Code.gs must define RSVPs tab");
+must(code, "setupRemindersSheet_", "setup() must create Reminders");
+must(code, "joshuagbafa108@gmail.com", "COUPLE_EMAIL default");
+must(code, "audience: 'notifylive'", "goLive must blast notifylive");
+must(code, "case 'notifylive':", "notifylive audience must be handled");
+must(code, "getReminders_().filter", "notifylive must read Reminders tab");
+must(code, "writeReminderRow_", "RSVP live-opt-in must upsert Reminders");
+must(code, "source: 'RSVP'", "RSVP notifyLive writes Source=RSVP");
+must(code, "SHEETS.MESSAGES", "guestbook should use Messages tab");
+must(code, "TWILIO_SID", "Twilio still read from Settings");
+must(rsvpHtml, 'name="notifyLive"', "RSVP form has live-opt-in");
+must(rsvpHtml, "confirmModal", "RSVP form has live-notify confirm modal");
+must(rsvpHtml, "I don’t have a code", "invitation code is optional");
+must(rsvpJs, 'formType', "RSVP posts formType");
+must(rsvpHtml, "Would you like to be reminded when we go live?", "modal copy");
+must(index, 'href="rsvp.html"', "main nav/live links to RSVP");
+must(index, 'id="remForm"', "homepage still has reminders form");
+must(config, 'var APPS_SCRIPT_URL = "";', "do not fill a fake APPS_SCRIPT_URL");
+
+mustNot(code, /SK[0-9a-fA-F]{20,}/, "no Twilio-looking secrets in Code.gs");
+mustNot(code, /AC[0-9a-fA-F]{20,}/, "no Twilio SID secrets in Code.gs");
+mustNot(fs.readFileSync("js/config.js", "utf8") + code, /AuthToken|auth_token\s*[:=]\s*['\"][^'\"]+['\"]/, "no auth tokens committed");
+
+if (!process.exitCode) console.log("OK — backend + RSVP contracts hold");
+else {
+  console.error("check.js failed");
+  process.exit(1);
+}

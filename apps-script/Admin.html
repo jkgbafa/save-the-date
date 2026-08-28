@@ -67,9 +67,10 @@
           <option value="attending">Attending (in person + online)</option>
           <option value="inperson">In person only</option>
           <option value="online">Online only</option>
-          <option value="notifylive">Wants livestream alert</option>
-          <option value="ghana">Ghana numbers</option>
-          <option value="usa">US numbers</option>
+          <option value="reminders">Reminder signups</option>
+          <option value="notifylive">Wants livestream alert (Reminders tab)</option>
+          <option value="ghana">Ghana numbers (RSVPs)</option>
+          <option value="usa">US numbers (RSVPs)</option>
         </select>
       </div>
       <div>
@@ -112,8 +113,13 @@
   </div>
 
   <div class="panel">
-    <h2>📋 Guest list</h2>
+    <h2>📋 RSVPs</h2>
     <div id="guestTable">Loading…</div>
+  </div>
+
+  <div class="panel">
+    <h2>🔔 Reminder list (live-ping + countdown)</h2>
+    <div id="reminderTable">Loading…</div>
   </div>
 </div>
 
@@ -135,9 +141,10 @@
 
     var s = d.stats;
     $('cards').innerHTML = [
-      ['Total RSVPs', s.total], ['In person', s.inPerson], ['Online', s.online],
+      ['RSVPs', s.total], ['Reminder signups', s.reminders],
+      ['In person', s.inPerson], ['Online', s.online],
       ['Can’t attend', s.notAttending], ['In-person guests', s.totalGuests],
-      ['Live alerts', s.notifyLive], ['Ghana 🇬🇭', s.ghana], ['USA 🇺🇸', s.usa],
+      ['Live opt-ins', s.notifyLive], ['Ghana 🇬🇭', s.ghana], ['USA 🇺🇸', s.usa],
       ['Prefer email', s.preferEmail], ['Prefer SMS', s.preferSms], ['Prefer WhatsApp', s.preferWhatsApp]
     ].map(function (c) { return '<div class="card"><b>' + c[1] + '</b><span>' + c[0] + '</span></div>'; }).join('');
 
@@ -154,6 +161,15 @@
         return '<tr><td><b>' + esc(g.name) + '</b><br><span class="hint">' + esc(g.country || '') + '</span></td><td>' + pill(g.attending) + '</td><td>' +
           (g.guests || '') + '</td><td>' + esc(g.contact) + '</td><td>' + esc(g.phone) + '</td><td>' + esc(g.email) + '</td><td>' +
           (g.notify === 'Yes' ? '🔔' : '') + '</td><td>' + esc(g.message || '') + '</td></tr>';
+      }).join('') + '</table>';
+
+    var rem = d.reminders || [];
+    $('reminderTable').innerHTML = !rem.length ? '<p class="hint">No reminder signups yet — the live-ping list is the Reminders tab.</p>' :
+      '<table><tr><th>Name</th><th>Contact method</th><th>Phone</th><th>Email</th><th>Live alert</th><th>Source</th></tr>' +
+      rem.map(function (g) {
+        return '<tr><td><b>' + esc(g.name) + '</b><br><span class="hint">' + esc(g.country || '') + '</span></td><td>' +
+          esc(g.contact) + '</td><td>' + esc(g.phone) + '</td><td>' + esc(g.email) + '</td><td>' +
+          (g.notify === 'Yes' ? '🔔' : '') + '</td><td>' + esc(g.source || '') + '</td></tr>';
       }).join('') + '</table>';
   }
 
