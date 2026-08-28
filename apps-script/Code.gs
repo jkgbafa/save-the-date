@@ -4,7 +4,7 @@
  * Runs as a Google Apps Script Web App. 100% free (Google account only).
  *
  * What it does:
- *  - Receives RSVPs from the website and stores them in a Google Sheet
+ *  - Receives RSVPs, reminder signups, and guestbook messages from the website and stores them in a Google Sheet
  *  - Builds a live Dashboard tab with all the numbers you care about
  *  - Sends email blasts (free via Gmail) and SMS blasts (via Twilio, optional)
  *  - Generates WhatsApp click-to-chat links (free way to text Ghana numbers)
@@ -218,51 +218,211 @@ function doGet(e) {
   return json_({ ok: true, service: 'Joshua & Lucia RSVP backend', time: new Date().toISOString() });
 }
 
-/** POST: RSVP submissions from the website (application/x-www-form-urlencoded → no CORS preflight) */
+/**
+ * POST from the website (application/x-www-form-urlencoded → no CORS preflight).
+ * Branches on formType:
+ *   reminder — save-the-date reminder signup (name / email / phone; attending not required)
+ *   message  — guestbook message (name + message; email optional)
+ *   rsvp     — classic RSVP (default when formType is missing)
+ */
 function doPost(e) {
   try {
     var p = e.parameter || {};
-    var name = String(p.name || '').trim();
-    var email = String(p.email || '').trim().toLowerCase();
-    var phoneRaw = String(p.phone || '').trim();
-    var countryCode = String(p.countryCode || '').trim(); // '+233', '+1', or 'other'
-    var attending = String(p.attending || '').trim();     // 'In person' | 'Online' | 'Not attending'
-    var guests = Math.max(1, Math.min(10, parseInt(p.guests, 10) || 1));
-    var contact = String(p.preferredContact || 'Email').trim();
-    var notify = String(p.notifyLive || 'No') === 'Yes' ? 'Yes' : 'No';
-    var message = String(p.message || '').trim().slice(0, 1000);
-    var rsvpCode = String(p.rsvpCode || '').trim().slice(0, 24);
-
-    if (!name || !email || !attending) {
-      return json_({ ok: false, error: 'Please fill in your name, email, and whether you can attend.' });
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return json_({ ok: false, error: 'That email address doesn\'t look right.' });
-    }
-
-    var norm = normalizePhone_(phoneRaw, countryCode);
-
-    var lock = LockService.getScriptLock();
-    lock.waitLock(10000);
-    try {
-      var sh = rsvpSheet_();
-      var existingRow = findRowByEmail_(sh, email);
-      var rowValues = [new Date(), name, email, norm.phone, norm.country, attending, attending === 'In person' ? guests : 0, contact, notify, message, existingRow ? 'Updated' : 'New', rsvpCode];
-      var updated = false;
-      if (existingRow) {
-        sh.getRange(existingRow, 1, 1, rowValues.length).setValues([rowValues]);
-        updated = true;
-      } else {
-        sh.appendRow(rowValues);
-      }
-      sendConfirmation_(name, email, attending);
-      return json_({ ok: true, updated: updated });
-    } finally {
-      lock.releaseLock();
-    }
+    var formType = String(p.formType || 'rsvp').trim().toLowerCase();
+    if (formType === 'reminder') return handleReminderPost_(p);
+    if (formType === 'message') return handleMessagePost_(p);
+    return handleRsvpPost_(p);
   } catch (err) {
     return json_({ ok: false, error: 'Something went wrong on our side. Please try again. (' + err.message + ')' });
   }
+}
+
+function handleRsvpPost_(p) {
+  var name = String(p.name || '').trim();
+  var email = String(p.email || '').trim().toLowerCase();
+  var phoneRaw = String(p.phone || '').trim();
+  var countryCode = String(p.countryCode || '').trim(); // '+233', '+1', or 'other'
+  var attending = String(p.attending || '').trim();     // 'In person' | 'Online' | 'Not attending'
+  var guests = Math.max(1, Math.min(10, parseInt(p.guests, 10) || 1));
+  var contact = String(p.preferredContact || 'Email').trim();
+  var notify = String(p.notifyLive || 'No') === 'Yes' ? 'Yes' : 'No';
+  var message = String(p.message || '').trim().slice(0, 1000);
+  var rsvpCode = String(p.rsvpCode || '').trim().slice(0, 24);
+
+  if (!name || !email || !attending) {
+    return json_({ ok: false, error: 'Please fill in your name, email, and whether you can attend.' });
+  }
+  if (!isValidEmail_(email)) {
+    return json_({ ok: false, error: 'That email address doesn\'t look right.' });
+  }
+
+  var norm = normalizePhone_(phoneRaw, countryCode);
+  var result = writeRsvpRow_({
+    name: name,
+    email: email,
+    phone: norm.phone,
+    country: norm.country,
+    attending: attending,
+    guests: attending === 'In person' ? guests : 0,
+    contact: contact,
+    notify: notify,
+    message: message,
+    statusNew: 'New',
+    rsvpCode: rsvpCode,
+    matchEmail: email,
+    overwrite: true
+  });
+  sendConfirmation_(name, email, attending);
+  return json_({ ok: true, updated: result.updated });
+}
+
+/** Save-the-date reminder signup. Does not require attending. Phone is normalized for later SMS blasts. */
+function handleReminderPost_(p) {
+  var name = String(p.name || '').trim();
+  var email = String(p.email || '').trim().toLowerCase();
+  var phoneRaw = String(p.phone || '').trim();
+  var countryCode = String(p.countryCode || '').trim();
+  var contactMethod = String(p.contactMethod || 'Email').trim();
+
+  if (!name) {
+    return json_({ ok: false, error: 'Please fill in your name.' });
+  }
+
+  var wantsEmail = contactMethod !== 'Phone';
+  var wantsPhone = contactMethod !== 'Email';
+  if (wantsEmail && !email) {
+    return json_({ ok: false, error: 'Please fill in your email.' });
+  }
+  if (email && !isValidEmail_(email)) {
+    return json_({ ok: false, error: 'That email address doesn\'t look right.' });
+  }
+  if (wantsPhone && !phoneRaw) {
+    return json_({ ok: false, error: 'Please fill in your phone number.' });
+  }
+
+  var norm = normalizePhone_(phoneRaw, countryCode);
+  var result = writeRsvpRow_({
+    name: name,
+    email: email,
+    phone: norm.phone,
+    country: norm.country,
+    attending: 'Reminder only',
+    guests: 0,
+    contact: reminderContact_(contactMethod),
+    notify: 'Yes',
+    message: '',
+    statusNew: 'Reminder',
+    rsvpCode: '',
+    matchEmail: email,
+    matchPhone: norm.phone,
+    overwrite: false
+  });
+
+  maybeSendReminderSms_(norm.phone, name);
+  return json_({ ok: true, updated: result.updated });
+}
+
+/** Guestbook / message wall. Name + message required; email optional. Always appends a new row. */
+function handleMessagePost_(p) {
+  var name = String(p.name || '').trim();
+  var message = String(p.message || '').trim().slice(0, 1000);
+  var email = String(p.email || '').trim().toLowerCase();
+
+  if (!name || !message) {
+    return json_({ ok: false, error: 'Please fill in your name and a message.' });
+  }
+  if (email && !isValidEmail_(email)) {
+    return json_({ ok: false, error: 'That email address doesn\'t look right.' });
+  }
+
+  writeRsvpRow_({
+    name: name,
+    email: email,
+    phone: '',
+    country: '',
+    attending: '',
+    guests: 0,
+    contact: 'Email',
+    notify: 'No',
+    message: message,
+    statusNew: 'Message',
+    rsvpCode: '',
+    overwrite: true,
+    alwaysAppend: true
+  });
+  return json_({ ok: true, updated: false });
+}
+
+/**
+ * Write (or update) a row on the RSVPs sheet.
+ * opts.overwrite = true  → replace the matched row entirely (RSVP resubmits).
+ * opts.overwrite = false → fill blanks / add phone+email without wiping an existing RSVP.
+ */
+function writeRsvpRow_(opts) {
+  var lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    var sh = rsvpSheet_();
+    var existingRow = 0;
+    if (!opts.alwaysAppend) {
+      if (opts.matchEmail) existingRow = findRowByEmail_(sh, opts.matchEmail);
+      if (!existingRow && opts.matchPhone) existingRow = findRowByPhone_(sh, opts.matchPhone);
+    }
+
+    var attending = opts.attending;
+    var guests = opts.guests;
+    var phone = opts.phone;
+    var country = opts.country;
+    var email = opts.email;
+    var contact = opts.contact;
+    var notify = opts.notify;
+    var message = opts.message;
+    var rsvpCode = opts.rsvpCode;
+    var status = existingRow ? 'Updated' : opts.statusNew;
+
+    if (existingRow && !opts.overwrite) {
+      var prev = sh.getRange(existingRow, 1, 1, RSVP_HEADERS.length).getValues()[0];
+      var prevAttending = String(prev[COL.ATTENDING - 1] || '').trim();
+      if (prevAttending && prevAttending !== 'Reminder only') {
+        attending = prevAttending;
+        guests = Number(prev[COL.GUESTS - 1]) || 0;
+      }
+      email = email || String(prev[COL.EMAIL - 1] || '').trim();
+      phone = phone || String(prev[COL.PHONE - 1] || '').trim();
+      country = country || prev[COL.COUNTRY - 1] || '';
+      message = message || prev[COL.MESSAGE - 1] || '';
+      rsvpCode = rsvpCode || prev[COL.CODE - 1] || '';
+      if (String(prev[COL.NOTIFY - 1] || '').trim() === 'Yes') notify = 'Yes';
+    }
+
+    var rowValues = [new Date(), opts.name, email, phone, country, attending, guests, contact, notify, message, status, rsvpCode];
+    if (existingRow) {
+      sh.getRange(existingRow, 1, 1, rowValues.length).setValues([rowValues]);
+      return { updated: true };
+    }
+    sh.appendRow(rowValues);
+    return { updated: false };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+/** Map save-the-date contactMethod (Email|Phone|Both) onto the RSVP Preferred Contact column (Email|SMS). */
+function reminderContact_(method) {
+  var m = String(method || '').trim();
+  if (m === 'Phone' || m === 'Both' || m === 'SMS') return 'SMS';
+  if (m === 'WhatsApp') return 'WhatsApp';
+  return 'Email';
+}
+
+/** Optional opt-in confirmation. Skips silently when Twilio isn't configured or sending fails. */
+function maybeSendReminderSms_(phone, name) {
+  if (!phone) return;
+  try {
+    if (!twilioConfigured_()) return;
+    var first = String(name || '').split(/\s+/)[0] || 'there';
+    sendSms_(phone, 'Hi ' + first + '! You\'re on Joshua & Lucia\'s reminder list for Nov 7, 2026. We\'ll text updates as the day approaches.');
+  } catch (e) { /* row is already saved */ }
 }
 
 function sendConfirmation_(name, email, attending) {
@@ -573,12 +733,25 @@ function logMessage_(channel, audience, preview, sent, failed, notes) {
 }
 
 function findRowByEmail_(sh, email) {
-  if (sh.getLastRow() < 2) return 0;
+  if (!email || sh.getLastRow() < 2) return 0;
   var emails = sh.getRange(2, COL.EMAIL, sh.getLastRow() - 1, 1).getValues();
   for (var i = 0; i < emails.length; i++) {
     if (String(emails[i][0]).trim().toLowerCase() === email) return i + 2;
   }
   return 0;
+}
+
+function findRowByPhone_(sh, phone) {
+  if (!phone || sh.getLastRow() < 2) return 0;
+  var phones = sh.getRange(2, COL.PHONE, sh.getLastRow() - 1, 1).getValues();
+  for (var i = 0; i < phones.length; i++) {
+    if (String(phones[i][0]).trim() === phone) return i + 2;
+  }
+  return 0;
+}
+
+function isValidEmail_(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 function ss_() {

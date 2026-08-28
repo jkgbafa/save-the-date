@@ -22,11 +22,11 @@ A free, self-hosted version of what The Knot / Zola charge for:
 
 ```
 Guest visits site (GitHub Pages, free)
-        │  submits RSVP form
+        │  submits RSVP, reminder signup, or guestbook message
         ▼
 Google Apps Script web app (free)
         │  saves to Google Sheet ──► Dashboard tab (live stats)
-        │  emails confirmation to guest (free)
+        │  emails confirmation to guest (free; RSVPs)
         ▼
 You open the Admin panel (secret link)
         │  see stats + guest list
@@ -97,6 +97,10 @@ Finally, open your Google Sheet → **Settings** tab → paste that URL into **W
 
 ## Sending reminders
 
+The save-the-date site posts **reminder signups** (`formType=reminder`) and **guestbook messages** (`formType=message`) to the same Apps Script `doPost` handler as RSVPs. Both are stored in the **RSVPs** sheet (phone + email in the existing columns) so later blasts can still find people. Classic RSVP posts (no `formType`, or `formType=rsvp`) are unchanged.
+
+SMS — including an optional short confirmation when a reminder signup includes a phone number — still requires `TWILIO_SID`, `TWILIO_AUTH_TOKEN`, and `TWILIO_FROM` in the Sheet **Settings** tab. If those are empty, the row is still saved and SMS is skipped.
+
 ### Manual blasts (Admin panel)
 Pick the audience (everyone / in-person / online / Ghana / USA / live opt-ins), the channel, write your message, test it on yourself, send. Merge tags personalize each message: `{{name}}`, `{{date}}`, `{{time}}`, `{{venue}}`, `{{website}}`, `{{livestream}}`.
 
@@ -126,9 +130,9 @@ Everything else — hosting, database, dashboard, confirmation emails, automatic
 index.html              the website (RSVP form, countdown, livestream, FAQ)
 css/style.css           design
 js/config.js            ← the one file you edit (backend URL)
-js/main.js              countdown, live-status polling, form submission
+js/main.js              countdown, live-status polling, reminder + guestbook + RSVP posts
 photos/                 your photos
-apps-script/Code.gs     backend: RSVP intake, dashboard, messaging, reminders
+apps-script/Code.gs     backend: RSVP / reminder / guestbook intake, dashboard, messaging
 apps-script/Admin.html  admin dashboard UI
 ```
 
