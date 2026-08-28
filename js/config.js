@@ -7,7 +7,7 @@
 
 var APPS_SCRIPT_URL = "";
 
-// Honeymoon fund "give by card" link (e.g. a PayPal.Me or Stripe Payment Link).
+// Card giving link for the Gifts section (e.g. a PayPal.Me or Stripe Payment Link).
 // Leave empty until it's set up — the site shows a "nearly ready" note instead.
 var CARD_FUND_URL = "";
 

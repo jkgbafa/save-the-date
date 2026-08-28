@@ -1,6 +1,6 @@
 /* Joshua & Lucia — save-the-date edition
    nav, scroll reveals, scrollspy, countdown, live status,
-   message wall (guestbook), reminders signup, honeymoon fund card link */
+   message wall (guestbook), reminders signup, gifts card link */
 
 (function () {
   "use strict";
@@ -237,13 +237,6 @@
       r.addEventListener("change", syncContactFields);
     });
 
-    var hints = {
-      "+233": "Ghana numbers: you can type it with or without the leading 0.",
-      "+1": "US numbers: 10 digits, e.g. 404 555 0123.",
-      "other": "Please include your full country code, e.g. +44 7911 123456."
-    };
-    $("remCountry").addEventListener("change", function () { $("remPhoneHint").textContent = hints[this.value]; });
-
     remForm.addEventListener("submit", function (e) {
       e.preventDefault();
       var m = method();
@@ -265,7 +258,6 @@
         name: name,
         contactMethod: m,
         email: m === "Phone" ? "" : email,
-        countryCode: $("remCountry").value,
         phone: m === "Email" ? "" : phone
       })
         .catch(function () { return { ok: true }; })  // don't lose the signup UX on network hiccups
@@ -278,7 +270,7 @@
     });
   }
 
-  // ================= honeymoon fund: card giving link =================
+  // ================= gifts: card giving link =================
   var cardBtn = $("cardBtn");
   if (cardBtn && typeof CARD_FUND_URL !== "undefined" && CARD_FUND_URL) {
     cardBtn.href = CARD_FUND_URL;

@@ -5,9 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Joshua &amp; Lucia — Save the Date · November 7, 2026</title>
 <meta name="description" content="Joshua & Lucia are getting married! Saturday, November 7, 2026 at Anagkazo Campus, Mampong-Akuapem, Ghana. Leave a message, sign up for reminders, and watch live.">
-<meta property="og:title" content="Joshua & Lucia — Save the Date">
-<meta property="og:description" content="Saturday, November 7, 2026 · Anagkazo Campus, Mampong, Ghana. Formal invitation to follow.">
-<meta property="og:image" content="photos/joshua-lucia-33.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jkgbafa.github.io/save-the-date/">
+<meta property="og:title" content="Joshua &amp; Lucia — Save the Date">
+<meta property="og:description" content="Saturday, 7 November 2026 · 11:00 AM · Anagkazo Campus, Mampong, Ghana.">
+<meta property="og:image" content="https://jkgbafa.github.io/save-the-date/assets/og-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Joshua &amp; Lucia — Save the Date">
+<meta name="twitter:description" content="Saturday, 7 November 2026 · 11:00 AM · Anagkazo Campus, Mampong, Ghana.">
+<meta name="twitter:image" content="https://jkgbafa.github.io/save-the-date/assets/og-share.png">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,12 +28,6 @@
 <!-- shared svg defs: gold gradient + embossed leaf branch -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#8f6f2e"/>
-      <stop offset=".45" stop-color="#dcbe74"/>
-      <stop offset=".6" stop-color="#c49f4e"/>
-      <stop offset="1" stop-color="#8f6f2e"/>
-    </linearGradient>
     <g id="leafBranch">
       <path d="M97 298 C 93 230, 97 150, 116 18 L121 19 C 104 150, 101 230, 104 297 Z"/>
       <path d="M104 258 C 88 250, 62 252, 46 270 C 60 284, 90 280, 104 264 Z"/>
@@ -37,26 +39,6 @@
       <path d="M119 46 C 105 36, 84 36, 68 50 C 82 66, 106 62, 119 52 Z"/>
       <path d="M121 20 C 128 6, 142 -2, 158 2 C 154 20, 138 30, 122 28 Z"/>
     </g>
-    <!-- presentation attributes (not classes) so this renders correctly through <use> -->
-    <g id="ornamentShape">
-      <g fill="none" stroke="url(#goldGrad)" stroke-width="3.4" stroke-linecap="round">
-        <path d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
-        <path d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
-        <g transform="rotate(90 60 60)">
-          <path d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
-          <path d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
-        </g>
-        <g transform="rotate(180 60 60)">
-          <path d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
-          <path d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
-        </g>
-        <g transform="rotate(270 60 60)">
-          <path d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
-          <path d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
-        </g>
-      </g>
-      <path fill="url(#goldGrad)" d="M60 43 L63.6 56.4 L77 60 L63.6 63.6 L60 77 L56.4 63.6 L43 60 L56.4 56.4 Z"/>
-    </g>
   </defs>
 </svg>
 
@@ -66,7 +48,9 @@
 </a>
 
 <nav class="nav" id="nav">
-  <a class="nav-mono" href="#home" aria-label="Joshua and Lucia — home"></a>
+  <a class="nav-brand" href="#home" aria-label="Joshua and Lucia — home">
+    <img src="images/wedding-icon.png" width="36" height="36" alt="">
+  </a>
   <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -79,7 +63,7 @@
     <a href="rsvp.html">RSVP</a>
     <a href="#reminders">Reminders</a>
     <a href="#messages">Messages</a>
-    <a href="#fund">Honeymoon Fund</a>
+    <a href="#fund">Gifts</a>
     <a href="#faq">Q &amp; A</a>
   </div>
 </nav>
@@ -93,26 +77,7 @@
     <svg viewBox="0 0 200 300"><use href="#leafBranch"/></svg>
   </div>
   <div class="cover-inner">
-    <!-- inlined (not <use>) so the CSS draw-in animation can reach the paths -->
-    <svg class="ornament" viewBox="0 0 120 120" aria-hidden="true">
-      <g class="orn-stroke">
-        <path pathLength="1" d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
-        <path pathLength="1" d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
-        <g transform="rotate(90 60 60)">
-          <path pathLength="1" d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
-          <path pathLength="1" d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
-        </g>
-        <g transform="rotate(180 60 60)">
-          <path pathLength="1" d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
-          <path pathLength="1" d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
-        </g>
-        <g transform="rotate(270 60 60)">
-          <path pathLength="1" d="M60 47 C 47 42, 41 30, 47 20 C 50 15, 55 13, 58 15.5"/>
-          <path pathLength="1" d="M60 47 C 73 42, 79 30, 73 20 C 70 15, 65 13, 62 15.5"/>
-        </g>
-      </g>
-      <path class="orn-star" d="M60 43 L63.6 56.4 L77 60 L63.6 63.6 L60 77 L56.4 63.6 L43 60 L56.4 56.4 Z"/>
-    </svg>
+    <img class="hero-mark" src="images/wedding-icon.png" width="200" height="200" alt="">
     <p class="cover-script">the wedding of</p>
     <h1 class="cover-names">Joshua &amp; Lucia</h1>
     <p class="cover-date">7 <span class="bar">|</span> November <span class="bar">|</span> 2026</p>
@@ -290,15 +255,8 @@
 
       <div class="field" id="remPhoneField" hidden>
         <label for="remPhone">Phone number *</label>
-        <div class="phone-row">
-          <select id="remCountry" name="countryCode" aria-label="Country code">
-            <option value="+233">🇬🇭 +233</option>
-            <option value="+1">🇺🇸 +1</option>
-            <option value="other">🌍 Other</option>
-          </select>
-          <input id="remPhone" name="phone" type="tel" autocomplete="tel" placeholder="24 123 4567">
-        </div>
-        <small class="field-hint" id="remPhoneHint">Ghana numbers: you can type it with or without the leading 0.</small>
+        <input id="remPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 … or +1 … or any country">
+        <small class="field-hint" id="remPhoneHint">Include your country code — +44, +234, +91, or anywhere. Ghana numbers starting with 0 and US 10-digit numbers are fine too.</small>
       </div>
 
       <button type="submit" class="btn" id="remSubmit">Sign me up</button>
@@ -320,7 +278,7 @@
 
   <div class="quiet-ctas fade-up">
     <a class="btn btn-ghost" href="#msgForm">Send a message</a>
-    <a class="btn btn-ghost" href="#fund">Give a gift</a>
+    <a class="btn btn-ghost" href="#fund">Gifts</a>
   </div>
 
   <div class="wall fade-up" id="wall" aria-label="Messages from loved ones">
@@ -343,17 +301,16 @@
   </form>
 </section>
 
-<!-- ================= HONEYMOON FUND ================= -->
+<!-- ================= GIFTS ================= -->
 <section class="section section-dark has-sil" id="fund">
   <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-doves.png); --sil-op:.14; --sil-color:#ece5d6; width:clamp(150px,20vw,260px); aspect-ratio:290/180; top:5%; left:0; right:0; margin-inline:auto;"></div>
   <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-gift.png); --sil-op:.13; --sil-color:#ece5d6; width:clamp(90px,11vw,140px); aspect-ratio:130/93; bottom:7%; left:4%;"></div>
   <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-cake.png); --sil-op:.12; --sil-color:#ece5d6; width:clamp(96px,12vw,160px); aspect-ratio:227/350; bottom:6%; right:4%;"></div>
   <p class="sec-script light fade-up">a blessing</p>
-  <h2 class="sec-title light fade-up">Honeymoon fund</h2>
+  <h2 class="sec-title light fade-up">Gifts</h2>
   <p class="sec-body fade-up">
-    Your presence and your prayers are the greatest gift of all. But should you feel led
-    to sow into our new life together, we would be so grateful for a contribution to our
-    honeymoon fund — every gift, big or small, is a blessing to us.
+    Your presence and your prayers are the greatest gift of all. Should you feel led
+    to give, every gift — big or small — is a quiet blessing as we begin this next season together.
   </p>
   <p class="gift-verse fade-up">"Every good and perfect gift is from above."<span>— James 1:17</span></p>
 
@@ -427,7 +384,7 @@
   <div class="emboss" style="width:clamp(140px,18vw,220px); left:clamp(-60px,-4vw,-20px); bottom:-24px; transform:rotate(12deg);" aria-hidden="true">
     <svg viewBox="0 0 200 300"><use href="#leafBranch"/></svg>
   </div>
-  <svg class="ornament" viewBox="0 0 120 120" aria-hidden="true"><use href="#ornamentShape"/></svg>
+  <img class="footer-mark" src="images/wedding-icon.png" width="72" height="72" alt="">
   <p class="footer-script">Joshua &amp; Lucia</p>
   <p class="footer-date">Saturday, November 7, 2026 — Mampong, Ghana</p>
   <p class="footer-legal">

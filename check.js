@@ -57,9 +57,25 @@ must(code, "withCoupleRecipients_", "every sendBlast includes couple phones");
 must(code, "Thank you for signing up. Joshua and Lucia are so glad you will be with them. If you would like to send a note or anything else, you can here:", "welcome SMS copy");
 must(code, "do not append carrier opt-out", "do not SMS registry / opt-out footer copy");
 must(index, ">Send a message</a>", "quiet Send a message button");
-must(index, ">Give a gift</a>", "quiet Give a gift button");
-must(index, 'href="#fund"', "gift button goes to existing fund section");
-must(index, 'property="og:title" content="Joshua & Lucia — Save the Date"', "OG title is save-the-date, not a fund link");
+must(index, 'href="#fund">Gifts</a>', "Gifts button/nav scrolls to gifts section");
+must(index, '<h2 class="sec-title light fade-up">Gifts</h2>', "section heading is Gifts");
+mustNot(index, />Give a gift</, "do not use Give a gift as a button");
+mustNot(index, /Honeymoon Fund/i, "do not use Honeymoon Fund as a heading or nav label");
+mustNot(index, /Give a gift or something/i, "do not use Give a gift or something");
+must(index, 'href="#fund"', "gifts button still scrolls to #fund");
+must(index, 'property="og:title" content="Joshua &amp; Lucia — Save the Date"', "OG title is save-the-date, not a fund link");
+must(index, "assets/og-share.png", "OG image is the cream invitation card");
+must(index, 'class="hero-mark"', "hero uses the static gold emblem");
+must(index, "images/wedding-icon.png", "committed wedding emblem asset");
+mustNot(index, /pathLength/, "hero must not use SVG path draw-in");
+mustNot(index, /id="remCountry"/, "no Ghana/USA country-code dropdown on reminders");
+mustNot(rsvpHtml, /id="fCountry"/, "no Ghana/USA country-code dropdown on RSVP");
+must(index, "or any country", "reminder phone accepts any country code");
+must(rsvpHtml, "or any country", "RSVP phone accepts any country code");
+must(code, "countryFromE164_", "normalizePhone_ maps any E.164 country");
+must(code, "return 'Other'", "do not reject Other country codes");
+must(code, "+44", "UK E.164 is accepted");
+must(rsvpHtml, 'href="index.html#fund">Gifts</a>', "RSVP nav label is Gifts");
 must(code, "audience: 'notifylive'", "goLive must blast notifylive");
 must(code, "case 'notifylive':", "notifylive audience must be handled");
 must(code, "getReminders_().filter", "notifylive must read Reminders tab");
@@ -112,7 +128,13 @@ mustNot(code, /SK[0-9a-fA-F]{20,}/, "no Twilio-looking secrets in Code.gs");
 mustNot(code, /AC[0-9a-fA-F]{20,}/, "no Twilio SID secrets in Code.gs");
 mustNot(fs.readFileSync("js/config.js", "utf8") + code, /AuthToken|auth_token\s*[:=]\s*['\"][^'\"]+['\"]/, "no auth tokens committed");
 mustNot(index, /og:(?:title|description|image)[^>]*honeymoon/i, "do not label OG / share preview a honeymoon-fund link");
+mustNot(index, /twitter:(?:title|description|image)[^>]*honeymoon/i, "twitter cards must not be a fund link");
 mustNot(code, /honeymoon fund/i, "gift stays off reminder texts");
+
+if (!fs.existsSync("images/wedding-icon.png") || !fs.existsSync("assets/og-share.png")) {
+  console.error("images/wedding-icon.png and assets/og-share.png must exist");
+  process.exitCode = 1;
+}
 
 ["index.html", "rsvp.html", "js/config.js", "apps-script/Code.gs", "apps-script/Admin.html", "README.md"].forEach(function (f) {
   mustNot(fs.readFileSync(f, "utf8"), /9:30/, f + " must not say 9:30");

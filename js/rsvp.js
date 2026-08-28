@@ -67,14 +67,7 @@
     var el = $("codeErr"); el.className = "form-status err"; el.textContent = msg;
   }
 
-  // ---- phone hint + guest count + live-notify nudge ----
-  var hints = {
-    "+233": "Ghana numbers: you can type it with or without the leading 0.",
-    "+1": "US numbers: 10 digits, e.g. 404 555 0123.",
-    "other": "Please include your full country code, e.g. +44 7911 123456."
-  };
-  $("fCountry").addEventListener("change", function () { $("phoneHint").textContent = hints[this.value]; });
-
+  // ---- guest count + live-notify nudge ----
   function attendingValue() {
     var r = form.querySelector('input[name="attending"]:checked');
     return r ? r.value : "";

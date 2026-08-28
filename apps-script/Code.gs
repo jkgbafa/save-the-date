@@ -583,35 +583,59 @@ function sendConfirmation_(name, email, attending) {
 }
 
 // ---------------------------------------------------------------------------
-// PHONE NORMALIZATION (Ghana + US aware)
+// PHONE NORMALIZATION — any country. E.164 if they type +44 / +234 / +91 / etc.
+// Ghana local 0XXXXXXXXX and bare US 10-digit are the only smart fallbacks.
+// Never reject "Other".
 // ---------------------------------------------------------------------------
 
 function normalizePhone_(raw, countryCode) {
-  var digits = String(raw).replace(/[^\d+]/g, '');
+  var s = String(raw == null ? '' : raw).trim();
+  if (!s) return { phone: '', country: '' };
+
+  var hadPlus = s.charAt(0) === '+';
+  var had00 = s.indexOf('00') === 0 && !hadPlus;
+  var digits = s.replace(/[^\d]/g, '');
   if (!digits) return { phone: '', country: '' };
 
-  if (digits.indexOf('+') === 0) {
-    // already international
-  } else if (countryCode === '+233') {
-    digits = '+233' + digits.replace(/^0/, '');
-  } else if (countryCode === '+1') {
-    digits = '+1' + digits.replace(/^1/, '');
+  var e164;
+  if (hadPlus || had00) {
+    if (had00) digits = digits.replace(/^00/, '');
+    e164 = '+' + digits;
+  } else if (countryCode && countryCode.charAt(0) === '+' && countryCode !== 'other') {
+    var cc = String(countryCode).replace(/[^\d]/g, '');
+    e164 = '+' + cc + digits.replace(/^0/, '');
   } else if (/^0\d{9}$/.test(digits)) {
-    digits = '+233' + digits.slice(1);          // Ghana local format 0XXXXXXXXX
+    e164 = '+233' + digits.slice(1);            // Ghana local 0XXXXXXXXX
   } else if (/^\d{10}$/.test(digits)) {
-    digits = '+1' + digits;                      // bare 10-digit US number
+    e164 = '+1' + digits;                        // bare US 10-digit
+  } else if (/^233\d{9}$/.test(digits)) {
+    e164 = '+' + digits;
+  } else if (/^1\d{10}$/.test(digits)) {
+    e164 = '+' + digits;
   } else {
-    digits = '+' + digits;
+    e164 = '+' + digits.replace(/^0/, '');       // any other national format — keep it
   }
 
-  var country = digits.indexOf('+233') === 0 ? 'Ghana' : digits.indexOf('+1') === 0 ? 'USA' : 'Other';
-  return { phone: digits, country: country };
+  return { phone: e164, country: countryFromE164_(e164) };
+}
+
+function countryFromE164_(phone) {
+  if (phone.indexOf('+233') === 0) return 'Ghana';
+  if (phone.indexOf('+44') === 0) return 'UK';
+  if (phone.indexOf('+234') === 0) return 'Nigeria';
+  if (phone.indexOf('+91') === 0) return 'India';
+  if (phone.indexOf('+1') === 0) return 'USA';
+  return 'Other';
 }
 
 function countryFromCode_(countryCode) {
+  if (!countryCode) return '';
   if (countryCode === '+233') return 'Ghana';
   if (countryCode === '+1') return 'USA';
-  return '';
+  if (countryCode === '+44') return 'UK';
+  if (countryCode === '+234') return 'Nigeria';
+  if (countryCode === '+91') return 'India';
+  return 'Other';
 }
 
 // ---------------------------------------------------------------------------
