@@ -44,7 +44,8 @@ must(code, "WEDDING_TIME: '11:00 AM'", "ceremony time is 11:00 AM");
 must(code, "arrive by 10:30", "in-person arrive-by is 10:30");
 must(code, "{{joinhow}}", "personalize in person / online when known");
 must(code, "{{cannotwait}}", "personalize cannot-wait line when known");
-must(code, "Hi {{name}}. Thank you for signing up. Joshua and Lucia are so glad you will be with them. If you would like to send a note or anything else, you can here:\\n{{website}}", "warm welcome SMS");
+must(code, "Hi {{name}}. These are reminders from Joshua and Lucia\\'s wedding. You are on the list. Ceremony is Saturday, 7 November 2026 at 11am. If you want to know more:\\n{{website}}", "welcome SMS — on the list, months away, website last");
+must(code, "You are on the list", "welcome SMS says they are on the list");
 must(code, "Joshua and Lucia\\'s wedding is in one week, and they are excited that you are going to join them{{joinhow}}.", "warm 7-day SMS");
 must(code, "Tomorrow is the day. Joshua and Lucia cannot wait {{cannotwait}}.", "warm day-before SMS");
 must(code, "Today is Joshua and Lucia\\'s wedding day, and they are so glad you are part of it.", "warm day-of SMS");
@@ -54,7 +55,7 @@ must(code, "Joshua Gbafa", "seed Joshua on Reminders");
 must(code, "source: 'couple'", "couple source on seeded / blast recipients");
 must(code, "+17029458407", "Joshua's reminder phone");
 must(code, "withCoupleRecipients_", "every sendBlast includes couple phones");
-must(code, "Thank you for signing up. Joshua and Lucia are so glad you will be with them. If you would like to send a note or anything else, you can here:", "welcome SMS copy");
+must(code, "These are reminders from Joshua and Lucia", "welcome SMS copy");
 must(code, "do not append carrier opt-out", "do not SMS registry / opt-out footer copy");
 must(index, ">Send a message</a>", "quiet Send a message button");
 must(index, 'href="#fund">Gifts</a>', "Gifts button/nav scrolls to gifts section");
@@ -66,12 +67,36 @@ must(index, 'href="#fund"', "gifts button still scrolls to #fund");
 must(index, 'property="og:title" content="Joshua &amp; Lucia — Save the Date"', "OG title is save-the-date, not a fund link");
 must(index, "assets/og-share.png", "OG image is the cream invitation card");
 must(index, 'class="cover-damask"', "hero uses repeating damask, not leaf branches");
+must(fs.readFileSync("css/style.css", "utf8"), "texture-white.png", "hero tiles the original toile floral");
+must(fs.readFileSync("css/style.css", "utf8"), "width: 100%;", "cover / cover-inner are full width for centering");
+must(index, 'id="fund"', "gifts section exists");
+mustNot(index, /sil-doves/, "gifts must not use the doves silhouette");
+mustNot(index, /By card/, "no pay-by-card gift option");
+mustNot(index, /Give by card/, "no Give by card button");
+mustNot(index, /id="cardBtn"/, "no card giving button");
+mustNot(config, /CARD_FUND_URL/, "no CARD_FUND_URL stub");
+mustNot(fs.readFileSync("js/main.js", "utf8"), /cardBtn/, "main.js must not wire a card button");
+mustNot(index, /Stripe|PayPal/i, "no Stripe/PayPal stubs on the homepage");
+(function () {
+  var start = index.indexOf('id="fund"');
+  var end = index.indexOf('id="faq"');
+  var fund = start >= 0 && end > start ? index.slice(start, end) : "";
+  must(fund, "images/wedding-icon.png", "gifts section uses the gold emblem");
+  must(fund, "cover-damask", "gifts section tiles the floral damask");
+  must(fund, "MTN", "gifts keep MTN");
+  must(fund, "Zelle", "gifts keep Zelle");
+  must(fund, "Venmo", "gifts keep Venmo");
+})();
+mustNot(fs.readFileSync("css/style.css", "utf8"), /damask\.svg/, "do not use the simple sprig SVG on the hero");
 must(index, "images/wedding-icon.png", "committed wedding emblem asset");
 must(index, "thanksModal", "thank-you popup on homepage");
-must(index, "We have received this.", "popup copy");
-must(index, "You will get a message from Joshua and Lucia soon.", "popup copy");
+must(index, "thanksModalBody", "popup body is set in HTML");
+must(index, ">Thank you</h3>", "popup title is Thank you");
+must(index, "You will get a message from Joshua and Lucia soon.", "popup fallback copy");
 must(rsvpHtml, "thanksModal", "thank-you popup on RSVP");
-must(rsvpHtml, "We have received this.", "RSVP popup copy");
+must(rsvpHtml, "thanksModalBody", "RSVP popup body");
+must(fs.readFileSync("js/main.js", "utf8"), "You will get a text from Joshua and Lucia soon.", "text signups get a text-from-us line");
+must(fs.readFileSync("js/main.js", "utf8"), "You will get an email from Joshua and Lucia soon.", "email-only signups get an email line");
 must(fs.readFileSync("js/main.js", "utf8"), "unconfigured", "empty APPS_SCRIPT_URL is an error, not a silent save");
 must(fs.readFileSync("js/rsvp.js", "utf8"), "guest list isn’t connected", "RSVP shows a clear error when backend URL is empty");
 mustNot(fs.readFileSync("js/main.js", "utf8"), /ok: true, local: true/, "do not fake a successful save without a backend");
@@ -148,8 +173,8 @@ mustNot(index, /og:(?:title|description|image)[^>]*honeymoon/i, "do not label OG
 mustNot(index, /twitter:(?:title|description|image)[^>]*honeymoon/i, "twitter cards must not be a fund link");
 mustNot(code, /honeymoon fund/i, "gift stays off reminder texts");
 
-if (!fs.existsSync("images/wedding-icon.png") || !fs.existsSync("assets/og-share.png") || !fs.existsSync("assets/damask.svg")) {
-  console.error("images/wedding-icon.png, assets/og-share.png, and assets/damask.svg must exist");
+if (!fs.existsSync("images/wedding-icon.png") || !fs.existsSync("assets/og-share.png") || !fs.existsSync("assets/texture-white.png")) {
+  console.error("images/wedding-icon.png, assets/og-share.png, and assets/texture-white.png must exist");
   process.exitCode = 1;
 }
 
@@ -158,7 +183,7 @@ if (!fs.existsSync("images/wedding-icon.png") || !fs.existsSync("assets/og-share
 });
 
 const guestSms = [
-  "Hi {{name}}. Thank you for signing up. Joshua and Lucia are so glad you will be with them. If you would like to send a note or anything else, you can here:",
+  "Hi {{name}}. These are reminders from Joshua and Lucia's wedding. You are on the list. Ceremony is Saturday, 7 November 2026 at 11am. If you want to know more:",
   "Joshua and Lucia's wedding is in one week, and they are excited that you are going to join them{{joinhow}}.",
   "Tomorrow is the day. Joshua and Lucia cannot wait {{cannotwait}}.",
   "Today is Joshua and Lucia's wedding day, and they are so glad you are part of it."
