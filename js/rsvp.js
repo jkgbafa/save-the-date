@@ -211,7 +211,20 @@
     stepForm.hidden = true; stepCode.hidden = true;
     stepThanks.hidden = false;
     var popup = $("thanksModal");
-    if (popup) popup.hidden = false;
+    if (popup) {
+      var title = $("thanksModalTitle");
+      var body = $("thanksModalBody");
+      if (title) title.textContent = "Thank you";
+      var k = String(contact || "").toLowerCase();
+      var text = "We have received this. You will get a message from Joshua and Lucia soon.";
+      if (k === "sms" || k === "whatsapp") {
+        text = "We have received this. You will get a text from Joshua and Lucia soon.";
+      } else if (k === "email") {
+        text = "We have received this. You will get an email from Joshua and Lucia soon.";
+      }
+      if (body) body.textContent = text;
+      popup.hidden = false;
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 

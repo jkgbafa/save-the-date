@@ -557,7 +557,7 @@ function maybeSendReminderSms_(phone, name) {
   try {
     if (!twilioConfigured_()) return;
     sendSms_(phone, merge_(
-      'Hi {{name}}. Thank you for signing up. Joshua and Lucia are so glad you will be with them. If you would like to send a note or anything else, you can here:\n{{website}}',
+      'Hi {{name}}. These are reminders from Joshua and Lucia\'s wedding. You are on the list. Ceremony is Saturday, 7 November 2026 at 11am. If you want to know more:\n{{website}}',
       { name: name, attending: '' }
     ));
   } catch (e) { /* row is already saved */ }

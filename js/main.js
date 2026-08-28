@@ -134,7 +134,18 @@
       .then(function (r) { return r.json(); });
   }
 
-  function showThanksModal() {
+  function showThanksModal(kind) {
+    var title = $("thanksModalTitle");
+    var body = $("thanksModalBody");
+    if (title) title.textContent = "Thank you";
+    var k = String(kind || "").toLowerCase();
+    var text = "We have received this. You will get a message from Joshua and Lucia soon.";
+    if (k === "phone" || k === "sms" || k === "whatsapp" || k === "both" || k === "text") {
+      text = "We have received this. You will get a text from Joshua and Lucia soon.";
+    } else if (k === "email") {
+      text = "We have received this. You will get an email from Joshua and Lucia soon.";
+    }
+    if (body) body.textContent = text;
     var m = $("thanksModal");
     if (m) m.hidden = false;
   }
@@ -288,7 +299,7 @@
           remStatus.className = "form-status ok";
           remStatus.textContent = "";
           remFields.hidden = true;
-          showThanksModal();
+          showThanksModal(m);
         })
         .catch(function () { fail(SAVE_ERR); })
         .finally(function () { btn.disabled = false; btn.textContent = "Sign me up"; });
