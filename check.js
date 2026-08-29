@@ -67,7 +67,9 @@ must(index, 'href="#fund"', "gifts button still scrolls to #fund");
 must(index, 'property="og:title" content="Joshua &amp; Lucia — Save the Date"', "OG title is save-the-date, not a fund link");
 must(index, "assets/og-share.png", "OG image is the cream invitation card");
 must(index, 'class="cover-damask"', "hero uses repeating damask, not leaf branches");
-must(fs.readFileSync("css/style.css", "utf8"), "texture-white.png", "hero tiles the original toile floral");
+must(fs.readFileSync("css/style.css", "utf8"), "floral-cream-gold.png", "hero tiles the cream-gold floral");
+mustNot(fs.readFileSync("css/style.css", "utf8"), /#243656|#152033/, "cover and Gifts must not use navy/blue fills");
+mustNot(fs.readFileSync("css/style.css", "utf8"), /texture-white\.png/, "do not tile the navy-era white toile on cover/Gifts");
 must(fs.readFileSync("css/style.css", "utf8"), "width: 100%;", "cover / cover-inner are full width for centering");
 must(index, 'id="fund"', "gifts section exists");
 mustNot(index, /sil-doves/, "gifts must not use the doves silhouette");
@@ -173,8 +175,8 @@ mustNot(index, /og:(?:title|description|image)[^>]*honeymoon/i, "do not label OG
 mustNot(index, /twitter:(?:title|description|image)[^>]*honeymoon/i, "twitter cards must not be a fund link");
 mustNot(code, /honeymoon fund/i, "gift stays off reminder texts");
 
-if (!fs.existsSync("images/wedding-icon.png") || !fs.existsSync("assets/og-share.png") || !fs.existsSync("assets/texture-white.png")) {
-  console.error("images/wedding-icon.png, assets/og-share.png, and assets/texture-white.png must exist");
+if (!fs.existsSync("images/wedding-icon.png") || !fs.existsSync("assets/og-share.png") || !fs.existsSync("assets/floral-cream-gold.png")) {
+  console.error("images/wedding-icon.png, assets/og-share.png, and assets/floral-cream-gold.png must exist");
   process.exitCode = 1;
 }
 
