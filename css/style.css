@@ -66,11 +66,6 @@ img { display: block; max-width: 100%; }
   background: transparent; border-bottom: 1px solid transparent;
   transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
 }
-.nav:not(.scrolled):not(.open) .nav-links a { color: #ece5d6; }
-.nav:not(.scrolled):not(.open) .nav-links a:hover,
-.nav:not(.scrolled):not(.open) .nav-links a.active { color: var(--gold-soft); }
-.nav:not(.scrolled):not(.open) .nav-burger span { background: #ece5d6; }
-
 .nav.scrolled, .nav.open {
   background: color-mix(in srgb, var(--paper) 94%, transparent);
   backdrop-filter: blur(10px);
@@ -136,15 +131,18 @@ img { display: block; max-width: 100%; }
   min-height: 100svh;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; padding: 108px 0 96px;
-  background: radial-gradient(120% 90% at 50% 15%, #243656 0%, #152033 72%);
+  background: radial-gradient(130% 100% at 50% 0%, var(--paper-soft) 0%, var(--paper) 100%);
   overflow: hidden;
 }
 .cover-damask {
   position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background-image: url("../assets/texture-white.png");
+  background-image: url("../assets/floral-cream-gold.png");
   background-size: clamp(320px, 34vw, 460px) auto;
   background-repeat: repeat;
-  opacity: .18;
+  opacity: .55;
+}
+.section-floral .cover-damask {
+  opacity: .14;
 }
 .cover-inner {
   position: relative; z-index: 1;
@@ -163,13 +161,13 @@ img { display: block; max-width: 100%; }
   filter: drop-shadow(0 10px 18px rgba(122, 92, 40, .16));
   pointer-events: none; user-select: none;
 }
-.cover .hero-mark,
-.fund-mark {
+.cover .hero-mark {
   margin: 0 auto 28px; display: block;
-  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, .45));
 }
 .fund-mark {
   width: clamp(88px, 16vw, 132px);
+  margin: 0 auto 28px; display: block;
+  filter: drop-shadow(0 12px 28px rgba(55, 50, 43, .45));
 }
 .hero-mark-legal { width: clamp(72px, 14vw, 96px); margin-bottom: 18px; }
 .footer-mark {
@@ -188,7 +186,7 @@ img { display: block; max-width: 100%; }
   font-size: clamp(34px, 7.4vw, 66px);
   letter-spacing: clamp(4px, 1.4vw, 12px);
   margin-right: calc(-1 * clamp(4px, 1.4vw, 12px));
-  text-transform: uppercase; color: var(--cream-on-dark); line-height: 1.15;
+  text-transform: uppercase; color: var(--ink); line-height: 1.15;
   opacity: 0; animation: coverRise 1s ease .55s forwards;
 }
 .cover-date {
@@ -197,7 +195,7 @@ img { display: block; max-width: 100%; }
   font-size: clamp(16px, 2.6vw, 22px); font-weight: 500;
   letter-spacing: clamp(3px, .9vw, 7px);
   margin-right: calc(-1 * clamp(3px, .9vw, 7px));
-  text-transform: uppercase; color: #d8cfbc;
+  text-transform: uppercase; color: var(--ink-soft);
   opacity: 0; animation: coverRise 1s ease .75s forwards;
 }
 .cover-date .bar { color: var(--gold-soft); padding: 0 .35em; font-weight: 400; }
@@ -212,7 +210,7 @@ img { display: block; max-width: 100%; }
 }
 .cover-place {
   margin-top: 24px; font-style: italic;
-  font-size: clamp(15.5px, 2.3vw, 19px); letter-spacing: 2.5px; color: #b3a88f;
+  font-size: clamp(15.5px, 2.3vw, 19px); letter-spacing: 2.5px; color: var(--muted);
   opacity: 0; animation: coverRise 1s ease 1.05s forwards;
 }
 @keyframes coverRise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
@@ -224,7 +222,7 @@ img { display: block; max-width: 100%; }
   position: absolute; bottom: 28px; left: 0; right: 0; z-index: 1;
   display: flex; flex-direction: column; align-items: center; gap: 9px;
   font-size: 10.5px; letter-spacing: 4px; text-transform: uppercase;
-  color: rgba(236, 229, 214, .88); text-decoration: none;
+  color: var(--muted); text-decoration: none;
   opacity: 0; animation: coverRise 1s ease 1.3s forwards;
 }
 .cover-hint-line {
@@ -283,7 +281,7 @@ img { display: block; max-width: 100%; }
   color: var(--cream-on-dark);
 }
 .section-dark.section-floral {
-  background: radial-gradient(120% 90% at 50% 15%, #243656 0%, #152033 72%);
+  background: linear-gradient(180deg, var(--dark), var(--dark-2));
   overflow: hidden;
 }
 .section-dark .sec-body { color: #cfc6b4; }
