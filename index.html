@@ -250,9 +250,11 @@
 
       <div class="field" id="remPhoneField" hidden>
         <label for="remPhone">Phone number *</label>
-        <input id="remPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 … or +1 … or any country">
+        <input id="remPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 … or +1 … or any country" aria-describedby="remPhoneHint remSmsConsent">
         <small class="field-hint" id="remPhoneHint">Include your country code — +44, +234, +91, or anywhere. Ghana numbers starting with 0 and US 10-digit numbers are fine too.</small>
       </div>
+
+      <p class="field-hint sms-consent" id="remSmsConsent">By sharing your number, you agree to receive wedding reminder and livestream-alert texts from Joshua and Lucia (up to 4 messages: welcome, 7 days before, 1 day before, and the day of). Message and data rates may apply. Reply STOP to unsubscribe. <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/privacy.html">Privacy</a> · <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/terms.html">Terms</a></p>
 
       <button type="submit" class="btn" id="remSubmit">Sign me up</button>
     </div>
