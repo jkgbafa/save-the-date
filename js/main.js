@@ -280,6 +280,7 @@
       if (m !== "Phone" && (!email || email.indexOf("@") < 1)) { fail("Please enter a valid email address."); $("remEmail").focus(); return; }
       if (m !== "Email" && !phone) { fail("Please enter your phone number."); $("remPhone").focus(); return; }
 
+      var smsOk = $("remSmsConsent") && $("remSmsConsent").checked;
       var btn = $("remSubmit");
       btn.disabled = true; btn.textContent = "Signing you up…";
       remStatus.className = "form-status"; remStatus.textContent = "";
@@ -289,7 +290,8 @@
         name: name,
         contactMethod: m,
         email: m === "Phone" ? "" : email,
-        phone: m === "Email" ? "" : phone
+        phone: m === "Email" ? "" : phone,
+        smsConsent: smsOk ? "Yes" : "No"
       })
         .then(function (res) {
           if (!res || !res.ok) {
@@ -299,7 +301,10 @@
           remStatus.className = "form-status ok";
           remStatus.textContent = "";
           remFields.hidden = true;
-          showThanksModal(m);
+          var thanksKind = smsOk && (m === "Phone" || m === "Both" || m === "SMS")
+            ? m
+            : (m === "Phone" ? "" : "email");
+          showThanksModal(thanksKind);
         })
         .catch(function () { fail(SAVE_ERR); })
         .finally(function () { btn.disabled = false; btn.textContent = "Sign me up"; });

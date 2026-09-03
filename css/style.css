@@ -533,6 +533,8 @@ img { display: block; max-width: 100%; }
 .choice:has(input:checked) { border-color: var(--gold); background: #f4ecdd; }
 .choice input { accent-color: var(--gold); width: 17px; height: 17px; flex: 0 0 auto; }
 .choice-wide { grid-column: 1 / -1; width: 100%; }
+.choice-consent { align-items: flex-start; }
+.choice-consent input { margin-top: 3px; }
 .choice-live { border-color: var(--gold-soft); background: #f7f1e4; }
 .notify-nudge .choice-live {
   border-color: var(--gold); background: #f4ecdd;

@@ -354,6 +354,7 @@ function handleRsvpPost_(p) {
   var guests = Math.max(1, Math.min(10, parseInt(p.guests, 10) || 1));
   var contact = String(p.preferredContact || '').trim();
   var notify = String(p.notifyLive || 'No') === 'Yes' ? 'Yes' : 'No';
+  var smsOk = smsConsented_(p);
   var message = String(p.message || '').trim().slice(0, 1000);
   var rsvpCode = String(p.rsvpCode || '').trim().slice(0, 24);
 
@@ -371,8 +372,11 @@ function handleRsvpPost_(p) {
   }
 
   var norm = normalizePhone_(phoneRaw, countryCode);
+  if (!smsOk && (contact === 'SMS' || contact === 'WhatsApp' || contact === 'Phone' || contact === 'Both')) {
+    contact = 'Email';
+  }
   if (!contact) {
-    contact = (norm.phone && !email) ? 'SMS' : 'Email';
+    contact = (smsOk && norm.phone && !email) ? 'SMS' : 'Email';
   }
 
   var result = withLock_(function () {
@@ -398,7 +402,7 @@ function handleRsvpPost_(p) {
         email: email,
         phone: norm.phone,
         country: norm.country || countryFromCode_(countryCode),
-        contact: reminderContact_(contact, email, norm.phone),
+        contact: reminderContact_(contact, email, norm.phone, smsOk),
         notify: 'Yes',
         source: 'RSVP',
         matchEmail: email,
@@ -419,6 +423,7 @@ function handleReminderPost_(p) {
   var phoneRaw = String(p.phone || '').trim();
   var countryCode = String(p.countryCode || '').trim();
   var contactMethod = String(p.contactMethod || 'Email').trim();
+  var smsOk = smsConsented_(p);
   var source = String(p.source || 'reminder form').trim() || 'reminder form';
   if (source !== 'reminder form' && source !== 'RSVP' && source !== 'live opt-in') {
     source = 'reminder form';
@@ -451,7 +456,7 @@ function handleReminderPost_(p) {
       email: email,
       phone: norm.phone,
       country: norm.country || countryFromCode_(countryCode),
-      contact: reminderContact_(contactMethod, email, norm.phone),
+      contact: reminderContact_(contactMethod, email, norm.phone, smsOk),
       notify: 'Yes',
       source: source,
       matchEmail: email,
@@ -459,7 +464,7 @@ function handleReminderPost_(p) {
     });
   });
 
-  maybeSendReminderSms_(norm.phone, name);
+  if (smsOk) maybeSendReminderSms_(norm.phone, name);
   return json_({ ok: true, updated: result.updated });
 }
 
@@ -536,7 +541,8 @@ function writeReminderRow_(opts) {
 /**
  * Map form contactMethod (Email|Phone|SMS|WhatsApp|Both) onto Reminders "Contact method".
  */
-function reminderContact_(method, email, phone) {
+function reminderContact_(method, email, phone, smsOk) {
+  if (smsOk === false) return 'Email';
   var m = String(method || '').trim();
   if (m === 'Both') return 'Both';
   if (m === 'WhatsApp') return 'WhatsApp';
@@ -549,6 +555,12 @@ function reminderContact_(method, email, phone) {
   if (phone && email) return 'Both';
   if (phone) return 'SMS';
   return 'Email';
+}
+
+/** True only when the guest actively ticked the SMS consent checkbox. */
+function smsConsented_(p) {
+  var v = String((p && (p.smsConsent || p.smsOptIn)) || '').trim().toLowerCase();
+  return v === 'yes' || v === 'on' || v === 'true' || v === '1';
 }
 
 /** Optional welcome SMS on reminder signup. One message. Skips silently without Twilio. */
