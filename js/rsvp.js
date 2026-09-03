@@ -158,12 +158,14 @@
     statusEl.className = "form-status"; statusEl.textContent = "";
 
     var data = new URLSearchParams(new FormData(form));
+    var smsOk = $("fSmsConsent") && $("fSmsConsent").checked;
     data.set("notifyLive", $("fNotify").checked ? "Yes" : "No");
+    data.set("smsConsent", smsOk ? "Yes" : "No");
     data.set("formType", "rsvp");
     var name = $("fName").value.trim();
     var email = $("fEmail").value.trim();
     var phone = $("fPhone").value.trim();
-    if (!email && phone) {
+    if (smsOk && !email && phone) {
       var prefEl = form.querySelector('input[name="preferredContact"]:checked');
       if (prefEl && prefEl.value === "Email") {
         var smsEl = form.querySelector('input[name="preferredContact"][value="SMS"]');
@@ -172,6 +174,10 @@
       }
     }
     var contact = (form.querySelector('input[name="preferredContact"]:checked') || {}).value || "Email";
+    if (!smsOk && (contact === "SMS" || contact === "WhatsApp")) {
+      contact = "Email";
+      data.set("preferredContact", "Email");
+    }
     var attending = attendingValue();
     var SAVE_ERR = "We couldn’t save this yet — the guest list isn’t connected. Please write to joshuagbafa108@gmail.com, or try again in a little while.";
 
@@ -196,7 +202,8 @@
   }
 
   function thankYou(name, contact, attending) {
-    var how = contact === "SMS" ? "text message" : contact === "WhatsApp" ? "WhatsApp" : "email";
+    var smsOk = $("fSmsConsent") && $("fSmsConsent").checked;
+    var how = (smsOk && contact === "SMS") ? "text message" : (smsOk && contact === "WhatsApp") ? "WhatsApp" : "email";
     var extra = $("fNotify").checked
       ? " We’ll also ping you the moment the wedding goes live."
       : "";
@@ -217,9 +224,9 @@
       if (title) title.textContent = "Thank you";
       var k = String(contact || "").toLowerCase();
       var text = "We have received this. You will get a message from Joshua and Lucia soon.";
-      if (k === "sms" || k === "whatsapp") {
+      if (smsOk && (k === "sms" || k === "whatsapp")) {
         text = "We have received this. You will get a text from Joshua and Lucia soon.";
-      } else if (k === "email") {
+      } else if (k === "email" || ($("fEmail") && $("fEmail").value.trim())) {
         text = "We have received this. You will get an email from Joshua and Lucia soon.";
       }
       if (body) body.textContent = text;

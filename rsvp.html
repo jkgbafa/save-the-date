@@ -93,9 +93,15 @@
 
       <div class="field">
         <label for="fPhone">Phone number</label>
-        <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 … or +1 … or any country" aria-describedby="phoneHint rsvpSmsConsent">
+        <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 … or +1 … or any country" aria-describedby="phoneHint fSmsConsent">
         <small class="field-hint" id="phoneHint">Include your country code — +44, +234, +91, or anywhere. Ghana numbers starting with 0 and US 10-digit numbers are fine too.</small>
-        <small class="field-hint sms-consent" id="rsvpSmsConsent">By sharing your number, you agree to receive wedding reminder and livestream-alert texts from Joshua and Lucia (up to 4 messages: welcome, 7 days before, 1 day before, and the day of). Message and data rates may apply. Reply STOP to unsubscribe. <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/privacy.html">Privacy</a> · <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/terms.html">Terms</a></small>
+      </div>
+
+      <div class="field" id="rsvpSmsConsentField">
+        <label class="choice choice-wide choice-consent" for="fSmsConsent">
+          <input type="checkbox" id="fSmsConsent" name="smsConsent" value="Yes">
+          <span>I agree to receive wedding reminder and livestream-alert texts from Joshua and Lucia (up to 4 messages: welcome, 7 days before, 1 day before, and the day of). Message and data rates may apply. Reply STOP to unsubscribe. <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/privacy.html">Privacy</a> · <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/terms.html">Terms</a></span>
+        </label>
       </div>
 
       <div class="field">
