@@ -548,15 +548,6 @@ img { display: block; max-width: 100%; }
 .form-status.err { color: #a53a2b; }
 .section-dark .form-status.ok { color: #b9cf9e; }
 
-/* ================= reminders ================= */
-.rem-form { max-width: 560px; margin: 30px auto 0; text-align: left; }
-.rem-fields[hidden], .rem-none[hidden] { display: none; }
-.rem-none {
-  text-align: center; font-style: italic; color: var(--muted);
-  font-size: 17px; padding-top: 6px;
-}
-.rem-form .btn { width: 100%; margin-top: 6px; }
-
 /* ================= gifts ================= */
 .gift-verse {
   font-family: var(--display); font-style: italic; font-weight: 500;

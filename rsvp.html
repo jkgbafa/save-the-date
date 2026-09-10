@@ -45,7 +45,6 @@
     <a href="index.html#day">The Day</a>
     <a href="index.html#live">Watch Live</a>
     <a href="rsvp.html" class="active">RSVP</a>
-    <a href="index.html#reminders">Reminders</a>
     <a href="index.html#messages">Messages</a>
     <a href="index.html#fund">Gifts</a>
     <a href="index.html#faq">Q &amp; A</a>
@@ -58,7 +57,7 @@
   <h1 class="sec-title">RSVP</h1>
   <div class="sec-rule"></div>
   <p class="sec-body">Saturday, November 7, 2026 · 11:00 am · Anagkazo Campus, Mampong, Ghana.<br>
-  Join us in person, or watch live from anywhere — and we can ping you the moment we go live.</p>
+  Join us in person, or watch live from anywhere. If you can’t be in Ghana, please RSVP as <b>Online (livestream)</b>.</p>
 
   <!-- STEP 1 — optional invitation code -->
   <section class="rsvp-panel" id="stepCode">
@@ -93,15 +92,8 @@
 
       <div class="field">
         <label for="fPhone">Phone number</label>
-        <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 … or +1 … or any country" aria-describedby="phoneHint fSmsConsent">
-        <small class="field-hint" id="phoneHint">Include your country code — +44, +234, +91, or anywhere. Ghana numbers starting with 0 and US 10-digit numbers are fine too.</small>
-      </div>
-
-      <div class="field" id="rsvpSmsConsentField">
-        <label class="choice choice-wide choice-consent" for="fSmsConsent">
-          <input type="checkbox" id="fSmsConsent" name="smsConsent" value="Yes">
-          <span>I agree to receive wedding reminder and livestream-alert texts from Joshua and Lucia (up to 4 messages: welcome, 7 days before, 1 day before, and the day of). Message and data rates may apply. Reply STOP to unsubscribe. <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/privacy.html">Privacy</a> · <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/terms.html">Terms</a></span>
-        </label>
+        <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 … or +1 … or any country" aria-describedby="phoneHint">
+        <small class="field-hint" id="phoneHint">Include your country code — +44, +234, +91, or anywhere. Ghana numbers starting with 0 and US 10-digit numbers are fine too. WhatsApp is welcome.</small>
       </div>
 
       <div class="field">
@@ -111,6 +103,7 @@
           <label class="choice"><input type="radio" name="attending" value="Online"><span>Online, via livestream</span></label>
           <label class="choice"><input type="radio" name="attending" value="Not attending"><span>Sadly can’t make it</span></label>
         </div>
+        <small class="field-hint">Can’t travel to Ghana? Choose <b>Online</b> — the livestream link will be on our site on the day.</small>
       </div>
 
       <div class="field" id="guestsField" hidden>
@@ -122,20 +115,20 @@
       </div>
 
       <div class="field">
-        <span class="label">How should we send you updates?</span>
+        <span class="label">How should we reach you?</span>
         <div class="choice-row">
           <label class="choice"><input type="radio" name="preferredContact" value="Email" checked><span>Email</span></label>
-          <label class="choice"><input type="radio" name="preferredContact" value="SMS"><span>Text message</span></label>
           <label class="choice"><input type="radio" name="preferredContact" value="WhatsApp"><span>WhatsApp</span></label>
         </div>
+        <small class="field-hint">We’ll use this only if we need to share something about the day — no automated reminder texts.</small>
       </div>
 
       <div class="field" id="notifyField">
         <label class="choice choice-wide choice-live">
           <input type="checkbox" id="fNotify" name="notifyLive" value="Yes">
-          <span>Yes — remind me when the wedding goes live</span>
+          <span>Optional — note that I’d like a heads-up when the livestream starts</span>
         </label>
-        <small class="field-hint" id="notifyHint">Especially if you’re watching online: we’ll send the livestream link the moment we start.</small>
+        <small class="field-hint" id="notifyHint">The live link will be on our site on the day. Tick this only if you’d like us to try email or WhatsApp as well — we do not send automated SMS blasts.</small>
       </div>
 
       <div class="field">
@@ -157,13 +150,13 @@
   </section>
 </main>
 
-<!-- confirm modal: not in person, and they skipped live notify -->
+<!-- confirm modal: not in person — offer Online as the clear path -->
 <div class="modal" id="confirmModal" hidden>
   <div class="modal-card">
-    <h3>Would you like to be reminded when we go live?</h3>
-    <p>You’ve said you won’t be there in person, and you haven’t signed up for a live reminder. Please sign up — we’d love for you to watch online, and we’ll send the link the moment we start.</p>
+    <h3 id="confirmTitle">Join us online instead?</h3>
+    <p id="confirmBody">You’ve said you won’t be there in person. The livestream will be on our site on the wedding day — RSVP as Online so we know you’ll still be with us.</p>
     <div class="modal-actions">
-      <button class="btn" id="modalNotify" type="button">Yes, notify me when live</button>
+      <button class="btn" id="modalNotify" type="button">Yes, I’ll join online</button>
       <button class="btn btn-ghost" id="modalProceed" type="button">No thanks, submit as is</button>
     </div>
   </div>

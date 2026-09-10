@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Joshua &amp; Lucia — Save the Date · November 7, 2026</title>
-<meta name="description" content="Joshua & Lucia are getting married! Saturday, November 7, 2026 at Anagkazo Campus, Mampong-Akuapem, Ghana. Leave a message, sign up for reminders, and watch live.">
+<meta name="description" content="Joshua & Lucia are getting married! Saturday, November 7, 2026 at Anagkazo Campus, Mampong-Akuapem, Ghana. RSVP in person or online, leave a message, and watch live.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jkgbafa.github.io/save-the-date/">
 <meta property="og:title" content="Joshua &amp; Lucia — Save the Date">
@@ -61,7 +61,6 @@
     <a href="#day">The Day</a>
     <a href="#live">Watch Live</a>
     <a href="rsvp.html">RSVP</a>
-    <a href="#reminders">Reminders</a>
     <a href="#messages">Messages</a>
     <a href="#fund">Gifts</a>
     <a href="#faq">Q &amp; A</a>
@@ -106,7 +105,7 @@
   <p class="sec-body fade-up" style="font-style:italic; color:var(--muted);">formal invitation to follow</p>
   <div class="cover-ctas fade-up">
     <a class="btn" href="rsvp.html">RSVP</a>
-    <a class="btn btn-ghost" href="#reminders">Keep me posted</a>
+    <a class="btn btn-ghost" href="rsvp.html">Join online</a>
   </div>
 </section>
 
@@ -197,74 +196,14 @@
     <div class="live-waiting" id="liveWaiting">
       <p class="live-badge-idle">● not live yet</p>
       <p>The live link will appear right here on the wedding day.<br>
-      Not coming in person? <a class="faq-link" href="rsvp.html" style="color:var(--gold-soft);">RSVP and ask us to ping you when we go live</a>
-      — or <a class="faq-link" href="#reminders" style="color:var(--gold-soft);">sign up for reminders below</a> if you only want the live alert.</p>
+      Not coming in person? <a class="faq-link" href="rsvp.html" style="color:var(--gold-soft);">RSVP and choose Online (livestream)</a>
+      so we know you’ll be with us.</p>
     </div>
     <div class="live-now" id="liveNow" hidden>
       <p class="live-badge-on">● LIVE NOW</p>
       <a class="btn btn-live" id="liveLink" href="#" target="_blank" rel="noopener">Watch the wedding live ▶</a>
     </div>
   </div>
-</section>
-
-<!-- ================= REMINDERS ================= -->
-<section class="section has-sil" id="reminders">
-  <div class="sil" aria-hidden="true" style="--sil-img:url(../assets/sil-couple-1.png); --sil-op:.13; width:clamp(380px,64vw,820px); aspect-ratio:1448/955; left:0; right:0; margin-inline:auto; top:16%;"></div>
-  <p class="sec-script fade-up">stay in the loop</p>
-  <h2 class="sec-title fade-up">Wedding reminders</h2>
-  <div class="sec-rule fade-up"></div>
-  <p class="sec-body fade-up">Already RSVP’d, or you only want a gentle note as the day approaches?
-  <b>Would you like reminders about the wedding?</b> We’ll send you a note before November&nbsp;7,
-  and the livestream link the moment we go live — no full RSVP needed.
-  If you haven’t replied yet, you can also <a class="faq-link" href="rsvp.html">RSVP here</a>.</p>
-
-  <form id="remForm" class="rem-form fade-up" novalidate>
-    <div class="field">
-      <div class="choice-row" role="radiogroup" aria-label="Would you like reminders?">
-        <label class="choice"><input type="radio" name="wantReminders" value="Yes"><span>Yes, please keep me posted</span></label>
-        <label class="choice"><input type="radio" name="wantReminders" value="No"><span>No, thank you</span></label>
-      </div>
-    </div>
-
-    <p class="rem-none" id="remNone" hidden>No problem at all — everything you need will always be right here on this page. 🤍</p>
-
-    <div class="rem-fields" id="remFields" hidden>
-      <div class="field">
-        <label for="remName">Your name *</label>
-        <input id="remName" name="name" type="text" autocomplete="name" placeholder="Ama Mensah">
-      </div>
-
-      <div class="field">
-        <span class="label">How should we reach you? *</span>
-        <div class="choice-row" role="radiogroup">
-          <label class="choice"><input type="radio" name="contactMethod" value="Email" checked><span>Email</span></label>
-          <label class="choice"><input type="radio" name="contactMethod" value="Phone"><span>Phone</span></label>
-          <label class="choice"><input type="radio" name="contactMethod" value="Both"><span>Both</span></label>
-        </div>
-      </div>
-
-      <div class="field" id="remEmailField">
-        <label for="remEmail">Email *</label>
-        <input id="remEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com">
-      </div>
-
-      <div class="field" id="remPhoneField" hidden>
-        <label for="remPhone">Phone number *</label>
-        <input id="remPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 … or +1 … or any country" aria-describedby="remPhoneHint remSmsConsent">
-        <small class="field-hint" id="remPhoneHint">Include your country code — +44, +234, +91, or anywhere. Ghana numbers starting with 0 and US 10-digit numbers are fine too.</small>
-      </div>
-
-      <div class="field" id="remSmsConsentField">
-        <label class="choice choice-wide choice-consent" for="remSmsConsent">
-          <input type="checkbox" id="remSmsConsent" name="smsConsent" value="Yes">
-          <span>I agree to receive wedding reminder and livestream-alert texts from Joshua and Lucia (up to 4 messages: welcome, 7 days before, 1 day before, and the day of). Message and data rates may apply. Reply STOP to unsubscribe. <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/privacy.html">Privacy</a> · <a class="faq-link" href="https://jkgbafa.github.io/save-the-date/terms.html">Terms</a></span>
-        </label>
-      </div>
-
-      <button type="submit" class="btn" id="remSubmit">Sign me up</button>
-    </div>
-    <p class="form-status" id="remStatus" role="status"></p>
-  </form>
 </section>
 
 <!-- ================= MESSAGES ================= -->
@@ -349,7 +288,7 @@
   <div class="faq-list fade-up">
     <details>
       <summary>How do I RSVP?</summary>
-      <p><a class="faq-link" href="rsvp.html">RSVP here</a> — tell us if you’ll be there in person, watching online, or can’t make it. If you won’t be with us in Ghana, you can still sign up to be reminded when we go live. Prefer a simple reminder without the full RSVP? <a class="faq-link" href="#reminders">Use the reminders form</a>.</p>
+      <p><a class="faq-link" href="rsvp.html">RSVP here</a> — tell us if you’ll be there in person or watching online. If you can’t be with us in Ghana, choose <b>Online (livestream)</b> so we know you’ll still be part of the day. The live link will appear on this site on November&nbsp;7.</p>
     </details>
     <details>
       <summary>What's the dress code?</summary>
