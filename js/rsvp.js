@@ -1,5 +1,5 @@
 /* Joshua & Lucia — RSVP page (save-the-date edition)
-   optional invitation code, live-opt-in, confirm prompt, thank-you */
+   in person / online / not attending, optional live heads-up, thank-you */
 
 (function () {
   "use strict";
@@ -22,52 +22,12 @@
     });
   }
 
-  // ---- dummy code → name (replace/extend on the backend later) ----
-  var CODES = {
-    "1234": "Uncle Kwame",
-    "ABC": "Auntie Joyce"
-  };
-
-  var stepCode = $("stepCode"), stepForm = $("stepForm"), stepThanks = $("stepThanks");
+  var stepForm = $("stepForm"), stepThanks = $("stepThanks");
   var form = $("rsvpForm");
-
-  function showForm(name) {
-    if (name) {
-      $("greeting").innerHTML = "Hi <b>" + esc(name) + "</b> — Joshua &amp; Lucia are so glad you’re here. " +
-        "Please fill in the details below. If you won’t be with us in person, you can still sign up to be reminded when we go live.";
-      $("fName").value = name;
-    } else {
-      $("greeting").innerHTML = "We’re so glad you’re here. Please fill in the details below — and if you won’t be with us in person, you can still be reminded when we go live.";
-    }
-    stepCode.hidden = true;
-    stepForm.hidden = false;
-    stepForm.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
-  // ---- step 1: code is optional ----
-  $("codeBtn").addEventListener("click", function () {
-    var raw = $("codeInput").value.trim();
-    if (!raw) { fail("Please type your code, or tap “I don’t have a code” below."); return; }
-    var name = CODES[raw] || CODES[raw.toUpperCase()];
-    $("fCode").value = raw;
-    if (!name) {
-      $("codeErr").className = "form-status";
-      $("codeErr").textContent = "";
-      showForm("");
-      return;
-    }
-    showForm(name);
-  });
-  $("codeInput").addEventListener("keydown", function (e) { if (e.key === "Enter") $("codeBtn").click(); });
-  $("noCodeBtn").addEventListener("click", function () { $("fCode").value = ""; showForm(""); });
-
-  function fail(msg) {
-    var el = $("codeErr"); el.className = "form-status err"; el.textContent = msg;
-  }
-
-  // ---- guest count + live-notify nudge ----
+  // ---- guest count + livestream hint ----
   function attendingValue() {
     var r = form.querySelector('input[name="attending"]:checked');
     return r ? r.value : "";
@@ -76,32 +36,33 @@
   function syncAttendingUi() {
     var attending = attendingValue();
     $("guestsField").hidden = attending !== "In person";
-    var remote = attending === "Online" || attending === "Not attending";
-    if (remote) {
-      $("fNotify").checked = true;
+    if (attending === "Online") {
       $("notifyField").classList.add("notify-nudge");
-      $("notifyHint").textContent = attending === "Online"
-        ? "We’ll send the livestream link the moment we go live — leave this ticked so you don’t miss it."
-        : "You can still watch from wherever you are. Leave this ticked and we’ll ping you when we go live.";
+      $("notifyHint").textContent = "You’re joining online — the livestream will be on our site. Optionally tick this if you’d like us to try email or WhatsApp when we go live. We do not send automated SMS.";
+    } else if (attending === "Not attending") {
+      $("notifyField").classList.remove("notify-nudge");
+      $("notifyHint").textContent = "If you might still watch, choose Online above instead. This box is only an optional note — no automated texts.";
     } else {
       $("notifyField").classList.remove("notify-nudge");
-      $("notifyHint").textContent = "Especially if you’re watching online: we’ll send the livestream link the moment we start.";
+      $("notifyHint").textContent = "The live link will be on our site on the day. Tick this only if you’d like us to try email or WhatsApp as well — we do not send automated SMS blasts.";
     }
   }
   document.querySelectorAll('input[name="attending"]').forEach(function (r) {
     r.addEventListener("change", syncAttendingUi);
   });
 
-  // ---- submit (with the "would you like to be reminded" confirm) ----
+  // ---- submit (nudge Online when they can't be in Ghana) ----
   var pendingSubmit = false;
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!validate()) return;
 
     var attending = attendingValue();
-    var notify = $("fNotify").checked;
 
-    if (!pendingSubmit && attending !== "In person" && !notify) {
+    if (!pendingSubmit && attending === "Not attending") {
+      $("confirmTitle").textContent = "Join us online instead?";
+      $("confirmBody").textContent = "You’ve said you won’t be there in person. The livestream will be on our site on the wedding day — RSVP as Online so we know you’ll still be with us.";
+      $("modalNotify").textContent = "Yes, I’ll join online";
       $("confirmModal").hidden = false;
       return;
     }
@@ -110,7 +71,9 @@
   });
 
   $("modalNotify").addEventListener("click", function () {
-    $("fNotify").checked = true;
+    var online = form.querySelector('input[name="attending"][value="Online"]');
+    if (online) online.checked = true;
+    syncAttendingUi();
     $("confirmModal").hidden = true;
     pendingSubmit = true;
     if (form.requestSubmit) form.requestSubmit();
@@ -144,10 +107,8 @@
     if (!email && !phone) return err("Please leave an email or a phone number so we can reach you.", $("fEmail"));
     if (email && email.indexOf("@") < 1) return err("That email address doesn’t look right.", $("fEmail"));
     if (!attending) return err("Please tell us whether you’ll attend in person, online, or not at all.");
-    if (preferred === "Email" && !email && phone) {
-      // they only gave a phone — that's fine; we'll send updates there
-    } else if ((preferred === "SMS" || preferred === "WhatsApp") && !phone) {
-      return err("Please add a phone number for " + (preferred === "WhatsApp" ? "WhatsApp" : "text") + " updates, or pick Email.", $("fPhone"));
+    if (preferred === "WhatsApp" && !phone) {
+      return err("Please add a phone number for WhatsApp, or pick Email.", $("fPhone"));
     }
     return true;
   }
@@ -158,25 +119,13 @@
     statusEl.className = "form-status"; statusEl.textContent = "";
 
     var data = new URLSearchParams(new FormData(form));
-    var smsOk = $("fSmsConsent") && $("fSmsConsent").checked;
     data.set("notifyLive", $("fNotify").checked ? "Yes" : "No");
-    data.set("smsConsent", smsOk ? "Yes" : "No");
     data.set("formType", "rsvp");
     var name = $("fName").value.trim();
-    var email = $("fEmail").value.trim();
-    var phone = $("fPhone").value.trim();
-    if (smsOk && !email && phone) {
-      var prefEl = form.querySelector('input[name="preferredContact"]:checked');
-      if (prefEl && prefEl.value === "Email") {
-        var smsEl = form.querySelector('input[name="preferredContact"][value="SMS"]');
-        if (smsEl) smsEl.checked = true;
-        data.set("preferredContact", "SMS");
-      }
-    }
     var contact = (form.querySelector('input[name="preferredContact"]:checked') || {}).value || "Email";
-    if (!smsOk && (contact === "SMS" || contact === "WhatsApp")) {
-      contact = "Email";
-      data.set("preferredContact", "Email");
+    if (contact === "SMS") {
+      contact = "WhatsApp";
+      data.set("preferredContact", "WhatsApp");
     }
     var attending = attendingValue();
     var SAVE_ERR = "We couldn’t save this yet — the guest list isn’t connected. Please write to joshuagbafa108@gmail.com, or try again in a little while.";
@@ -202,32 +151,28 @@
   }
 
   function thankYou(name, contact, attending) {
-    var smsOk = $("fSmsConsent") && $("fSmsConsent").checked;
-    var how = (smsOk && contact === "SMS") ? "text message" : (smsOk && contact === "WhatsApp") ? "WhatsApp" : "email";
-    var extra = $("fNotify").checked
-      ? " We’ll also ping you the moment the wedding goes live."
-      : "";
+    var how = contact === "WhatsApp" ? "WhatsApp" : "email";
     $("thanksTitle").textContent = "Thank you, " + (name || "friend") + "!";
     if (attending === "Not attending") {
-      $("thanksBody").innerHTML = "We’ve received your RSVP — thank you for letting us know. We’ll miss you, and we’re grateful for your love." + extra;
+      $("thanksBody").innerHTML = "We’ve received your RSVP — thank you for letting us know. We’ll miss you, and we’re grateful for your love.";
     } else if (attending === "Online") {
-      $("thanksBody").innerHTML = "You’re down to join us online. We’ll be in touch by <b>" + esc(how) + "</b> with the livestream link when the day comes." + extra;
+      $("thanksBody").innerHTML = "You’re down to join us online. The livestream link will appear on our site on the wedding day." +
+        ($("fNotify").checked ? " We’ve noted that you’d like a heads-up by <b>" + esc(how) + "</b> if we can — no automated SMS." : "");
     } else {
-      $("thanksBody").innerHTML = "Your RSVP is in — Joshua &amp; Lucia can’t wait to see you. We’ll be in touch by <b>" + esc(how) + "</b> with reminders." + extra;
+      $("thanksBody").innerHTML = "Your RSVP is in — Joshua &amp; Lucia can’t wait to see you. If we need to share anything, we’ll be in touch by <b>" + esc(how) + "</b>.";
     }
-    stepForm.hidden = true; stepCode.hidden = true;
+    stepForm.hidden = true;
     stepThanks.hidden = false;
     var popup = $("thanksModal");
     if (popup) {
       var title = $("thanksModalTitle");
       var body = $("thanksModalBody");
       if (title) title.textContent = "Thank you";
-      var k = String(contact || "").toLowerCase();
-      var text = "We have received this. You will get a message from Joshua and Lucia soon.";
-      if (smsOk && (k === "sms" || k === "whatsapp")) {
-        text = "We have received this. You will get a text from Joshua and Lucia soon.";
-      } else if (k === "email" || ($("fEmail") && $("fEmail").value.trim())) {
-        text = "We have received this. You will get an email from Joshua and Lucia soon.";
+      var text = "We’ve received your RSVP. Thank you.";
+      if ($("fEmail") && $("fEmail").value.trim()) {
+        text = "We’ve received your RSVP. If we need to reach you, it will be by email.";
+      } else if (String(contact || "").toLowerCase() === "whatsapp") {
+        text = "We’ve received your RSVP. If we need to reach you, it will be by WhatsApp — not automated SMS.";
       }
       if (body) body.textContent = text;
       popup.hidden = false;

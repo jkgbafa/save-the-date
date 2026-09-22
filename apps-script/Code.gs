@@ -4,15 +4,12 @@
  * Runs as a Google Apps Script Web App. 100% free (Google account only).
  *
  * What it does:
- *  - Stores two guest lists: Reminders (email/SMS / "ping me when we go live")
- *    and RSVPs (people who filled the RSVP). Guestbook messages sit on a small
- *    Messages tab so they never pollute those counts.
- *  - Builds a live Dashboard tab with counts from BOTH lists
- *  - Sends email blasts (free via Gmail) and SMS blasts (via Twilio, optional)
- *  - Generates WhatsApp click-to-chat links (free way to text Ghana numbers)
- *  - Sends automatic countdown reminders (7 days before, 1 day before, and day of)
- *  - "Go Live" button: saves the livestream link, flips the website to LIVE,
- *    and notifies everyone on the Reminders tab who asked to be pinged
+ *  - Stores RSVPs (in person / online / not attending) and guestbook Messages
+ *  - Optionally records a live-notify preference on the Reminders tab (from RSVP only)
+ *  - Public reminder-only signup is disabled — guests RSVP instead
+ *  - Builds a live Dashboard tab with RSVP counts
+ *  - Sends email (Gmail) and optional WhatsApp click-to-chat links from Admin
+ *  - "Go Live" button: saves the livestream link and flips the website to LIVE
  *
  * SETUP (one time, ~10 minutes) — full guide in the repo README:
  *  1. Go to script.new, paste this file as Code.gs and Admin.html as a new HTML file
@@ -329,8 +326,8 @@ function doGet(e) {
 /**
  * POST from the website (application/x-www-form-urlencoded → no CORS preflight).
  * Branches on formType:
- *   reminder — write the Reminders tab (Notify When Live = Yes)
- *   message  — write the Messages tab (does not affect reminder/RSVP counts)
+ *   reminder — disabled (public reminder signup removed; tell guests to RSVP)
+ *   message  — write the Messages tab (does not affect RSVP counts)
  *   rsvp     — write the RSVPs tab; if notifyLive=Yes, also upsert Reminders
  */
 function doPost(e) {
@@ -354,7 +351,6 @@ function handleRsvpPost_(p) {
   var guests = Math.max(1, Math.min(10, parseInt(p.guests, 10) || 1));
   var contact = String(p.preferredContact || '').trim();
   var notify = String(p.notifyLive || 'No') === 'Yes' ? 'Yes' : 'No';
-  var smsOk = smsConsented_(p);
   var message = String(p.message || '').trim().slice(0, 1000);
   var rsvpCode = String(p.rsvpCode || '').trim().slice(0, 24);
 
@@ -372,11 +368,12 @@ function handleRsvpPost_(p) {
   }
 
   var norm = normalizePhone_(phoneRaw, countryCode);
-  if (!smsOk && (contact === 'SMS' || contact === 'WhatsApp' || contact === 'Phone' || contact === 'Both')) {
-    contact = 'Email';
+  // Public SMS reminder signup is gone. Prefer Email / WhatsApp.
+  if (contact === 'SMS' || contact === 'Phone' || contact === 'Both') {
+    contact = email ? 'Email' : (norm.phone ? 'WhatsApp' : 'Email');
   }
   if (!contact) {
-    contact = (smsOk && norm.phone && !email) ? 'SMS' : 'Email';
+    contact = email ? 'Email' : (norm.phone ? 'WhatsApp' : 'Email');
   }
 
   var result = withLock_(function () {
@@ -402,7 +399,7 @@ function handleRsvpPost_(p) {
         email: email,
         phone: norm.phone,
         country: norm.country || countryFromCode_(countryCode),
-        contact: reminderContact_(contact, email, norm.phone, smsOk),
+        contact: reminderContact_(contact, email, norm.phone),
         notify: 'Yes',
         source: 'RSVP',
         matchEmail: email,
@@ -416,56 +413,13 @@ function handleRsvpPost_(p) {
   return json_({ ok: true, updated: result.updated });
 }
 
-/** Save-the-date reminder signup. Writes the Reminders tab only. Notify When Live = Yes. */
+/** Public reminder-only signup is disabled. Guests should RSVP (In person or Online). */
 function handleReminderPost_(p) {
-  var name = String(p.name || '').trim();
-  var email = String(p.email || '').trim().toLowerCase();
-  var phoneRaw = String(p.phone || '').trim();
-  var countryCode = String(p.countryCode || '').trim();
-  var contactMethod = String(p.contactMethod || 'Email').trim();
-  var smsOk = smsConsented_(p);
-  var source = String(p.source || 'reminder form').trim() || 'reminder form';
-  if (source !== 'reminder form' && source !== 'RSVP' && source !== 'live opt-in') {
-    source = 'reminder form';
-  }
-
-  if (!name) {
-    return json_({ ok: false, error: 'Please fill in your name.' });
-  }
-
-  var wantsEmail = contactMethod !== 'Phone' && contactMethod !== 'SMS' && contactMethod !== 'WhatsApp';
-  var wantsPhone = contactMethod !== 'Email';
-  if (contactMethod === 'Both') { wantsEmail = true; wantsPhone = true; }
-  if (wantsEmail && !email) {
-    return json_({ ok: false, error: 'Please fill in your email.' });
-  }
-  if (email && !isValidEmail_(email)) {
-    return json_({ ok: false, error: 'That email address doesn\'t look right.' });
-  }
-  if (wantsPhone && !phoneRaw) {
-    return json_({ ok: false, error: 'Please fill in your phone number.' });
-  }
-  if (!email && !phoneRaw) {
-    return json_({ ok: false, error: 'Please leave an email or a phone number so we can reach you.' });
-  }
-
-  var norm = normalizePhone_(phoneRaw, countryCode);
-  var result = withLock_(function () {
-    return writeReminderRow_({
-      name: name,
-      email: email,
-      phone: norm.phone,
-      country: norm.country || countryFromCode_(countryCode),
-      contact: reminderContact_(contactMethod, email, norm.phone, smsOk),
-      notify: 'Yes',
-      source: source,
-      matchEmail: email,
-      matchPhone: norm.phone
-    });
+  return json_({
+    ok: false,
+    disabled: true,
+    error: 'Standalone reminder signups are no longer available. Please RSVP instead — you can choose Online (livestream).'
   });
-
-  if (smsOk) maybeSendReminderSms_(norm.phone, name);
-  return json_({ ok: true, updated: result.updated });
 }
 
 /** Guestbook / message wall. Lives on Messages — never counted as an RSVP or reminder. */
@@ -542,18 +496,16 @@ function writeReminderRow_(opts) {
  * Map form contactMethod (Email|Phone|SMS|WhatsApp|Both) onto Reminders "Contact method".
  */
 function reminderContact_(method, email, phone, smsOk) {
-  if (smsOk === false) return 'Email';
   var m = String(method || '').trim();
-  if (m === 'Both') return 'Both';
   if (m === 'WhatsApp') return 'WhatsApp';
-  if (m === 'Phone' || m === 'SMS') return 'SMS';
-  if (m === 'Email') {
-    if (phone && email) return 'Email';
-    if (phone && !email) return 'SMS';
-    return 'Email';
+  if (m === 'Both') return (email && phone) ? 'Both' : (phone ? 'WhatsApp' : 'Email');
+  if (m === 'Phone' || m === 'SMS') {
+    if (smsOk) return 'SMS';
+    return phone ? 'WhatsApp' : 'Email';
   }
+  if (m === 'Email') return 'Email';
   if (phone && email) return 'Both';
-  if (phone) return 'SMS';
+  if (phone) return 'WhatsApp';
   return 'Email';
 }
 

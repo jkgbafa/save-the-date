@@ -1,6 +1,6 @@
 /* Joshua & Lucia — save-the-date edition
    nav, scroll reveals, scrollspy, countdown, live status,
-   message wall (guestbook), reminders signup, gifts card link */
+   message wall (guestbook), gifts card link */
 
 (function () {
   "use strict";
@@ -134,18 +134,11 @@
       .then(function (r) { return r.json(); });
   }
 
-  function showThanksModal(kind) {
+  function showThanksModal() {
     var title = $("thanksModalTitle");
     var body = $("thanksModalBody");
     if (title) title.textContent = "Thank you";
-    var k = String(kind || "").toLowerCase();
-    var text = "We have received this. You will get a message from Joshua and Lucia soon.";
-    if (k === "phone" || k === "sms" || k === "whatsapp" || k === "both" || k === "text") {
-      text = "We have received this. You will get a text from Joshua and Lucia soon.";
-    } else if (k === "email") {
-      text = "We have received this. You will get an email from Joshua and Lucia soon.";
-    }
-    if (body) body.textContent = text;
+    if (body) body.textContent = "We have received this. You will get a message from Joshua and Lucia soon.";
     var m = $("thanksModal");
     if (m) m.hidden = false;
   }
@@ -237,77 +230,6 @@
           statusEl.textContent = SAVE_ERR;
         })
         .finally(function () { btn.disabled = false; btn.textContent = "Send your message"; });
-    });
-  }
-
-  // ================= reminders signup =================
-  var remForm = $("remForm");
-  if (remForm) {
-    var remFields = $("remFields"), remNone = $("remNone"), remStatus = $("remStatus");
-
-    remForm.querySelectorAll('input[name="wantReminders"]').forEach(function (r) {
-      r.addEventListener("change", function () {
-        var yes = this.value === "Yes";
-        remFields.hidden = !yes;
-        remNone.hidden = yes;
-        remStatus.textContent = "";
-        remStatus.className = "form-status";
-      });
-    });
-
-    function method() {
-      var m = remForm.querySelector('input[name="contactMethod"]:checked');
-      return m ? m.value : "Email";
-    }
-    function syncContactFields() {
-      var m = method();
-      $("remEmailField").hidden = m === "Phone";
-      $("remPhoneField").hidden = m === "Email";
-    }
-    remForm.querySelectorAll('input[name="contactMethod"]').forEach(function (r) {
-      r.addEventListener("change", syncContactFields);
-    });
-
-    remForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var m = method();
-      var name = $("remName").value.trim();
-      var email = $("remEmail").value.trim();
-      var phone = $("remPhone").value.trim();
-
-      function fail(msg) { remStatus.className = "form-status err"; remStatus.textContent = msg; }
-      if (!name) { fail("Please tell us your name."); $("remName").focus(); return; }
-      if (m !== "Phone" && (!email || email.indexOf("@") < 1)) { fail("Please enter a valid email address."); $("remEmail").focus(); return; }
-      if (m !== "Email" && !phone) { fail("Please enter your phone number."); $("remPhone").focus(); return; }
-
-      var smsOk = $("remSmsConsent") && $("remSmsConsent").checked;
-      var btn = $("remSubmit");
-      btn.disabled = true; btn.textContent = "Signing you up…";
-      remStatus.className = "form-status"; remStatus.textContent = "";
-
-      postToBackend({
-        formType: "reminder",
-        name: name,
-        contactMethod: m,
-        email: m === "Phone" ? "" : email,
-        phone: m === "Email" ? "" : phone,
-        smsConsent: smsOk ? "Yes" : "No"
-      })
-        .then(function (res) {
-          if (!res || !res.ok) {
-            fail((res && res.error) || SAVE_ERR);
-            return;
-          }
-          remStatus.className = "form-status ok";
-          remStatus.textContent = "";
-          remFields.hidden = true;
-          var thanksKind = smsOk && (m === "Phone" || m === "Both" || m === "SMS")
-            ? m
-            : (m === "Phone" ? "" : "email");
-          showThanksModal(thanksKind);
-        })
-        .catch(function () { fail(SAVE_ERR); })
-        .finally(function () { btn.disabled = false; btn.textContent = "Sign me up"; });
     });
   }
 
