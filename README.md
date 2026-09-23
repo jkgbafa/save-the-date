@@ -1,5 +1,15 @@
 # Joshua & Lucia — Wedding Website 💍
 
+## September 23 connection update
+
+- Live domain: https://joshualucia.com/ (GitHub Pages, HTTPS enabled).
+- The cover pattern and paper grain are softer; the share preview uses the couple photo.
+- Guest collection deployment is prepared in `apps-script/GuestResponses.gs`. This is a **standalone** alternative: deploy its contents alone as `Code.gs`, not alongside the legacy `Code.gs` below. It creates a private response spreadsheet and dashboard, and does not send email or install reminder triggers.
+- The new Apps Script project is named **Joshua & Lucia — Guest Responses**. Browser access stopped during preparation; the editor contents need to be replaced with the exact standalone file before running setup and deploying. No new Sheet or live endpoint has been verified yet. `APPS_SCRIPT_URL` remains empty until a real deployment is ready.
+- Hostinger registration email verification remains pending. Main and www DNS records point to GitHub; three additional recommended GitHub A records remain to be added (185.199.109.153, 185.199.110.153, 185.199.111.153).
+
+The older backend documentation below describes the optional full admin/messaging system; it is not the new collection-only deployment.
+
 Saturday, November 7, 2026 · 11:00 AM · Anagkazo Campus, Mampong-Akuapem, Ghana
 
 A free, self-hosted version of what The Knot / Zola charge for:
