@@ -66,7 +66,7 @@ must(fs.readFileSync("css/style.css", "utf8"), "floral-cream-gold.png", "hero ti
   var css = fs.readFileSync("css/style.css", "utf8");
   var coverRule = css.match(/\.cover-damask\s*\{[^}]+\}/);
   var giftsRule = css.match(/\.section-floral\s+\.cover-damask\s*\{[^}]+\}/);
-  must(coverRule ? coverRule[0] : "", "opacity: .04", "hero damask is ~4% so type stays readable");
+  must(coverRule ? coverRule[0] : "", "opacity: .025", "hero damask is softened to 2.5%");
   must(giftsRule ? giftsRule[0] : "", "opacity: .04", "Gifts floral overlay is ~4%");
   mustNot(coverRule ? coverRule[0] : "", /opacity:\s*\.(?:[1-9]\d|[2-9]\d*)/, "hero damask must stay a whisper, not 20%+");
 })();
@@ -185,14 +185,14 @@ if (!fs.existsSync("privacy.html") || !fs.existsSync("terms.html")) {
   must(privacy, "email", "privacy mentions email");
   must(privacy, "phone", "privacy mentions phone");
   must(privacy, "index,follow", "privacy is crawlable");
-  must(privacy, "https://jkgbafa.github.io/save-the-date/privacy.html", "privacy canonical URL");
+  must(privacy, "https://joshualucia.com/privacy.html", "privacy canonical URL");
   mustNot(privacy, /Twilio/, "privacy must not describe Twilio SMS reminders");
   mustNot(privacy, /\bSTOP\b/, "privacy must not describe SMS STOP opt-out");
   mustNot(privacy, /up to 4 messages/, "privacy must not list reminder SMS cadence");
   must(terms, "11:00 AM", "terms have 11:00 AM");
   must(terms, "7 November 2026", "terms have ceremony date");
   must(terms, "index,follow", "terms are crawlable");
-  must(terms, "https://jkgbafa.github.io/save-the-date/terms.html", "terms canonical URL");
+  must(terms, "https://joshualucia.com/terms.html", "terms canonical URL");
   mustNot(terms, /SMS reminders/, "terms must not have an SMS reminders section");
   mustNot(terms, /\bSTOP\b/, "terms must not describe SMS STOP opt-out");
   mustNot(privacy, /noindex/i, "privacy must not be noindex");
