@@ -1,7 +1,7 @@
 /* Invitation-inspired watercolor: a framed cover, generous unadorned content. */
 :root {
   --paper: #faf7ef; --paper-soft: #fffdf8;
-  --gold: #963c53; --gold-soft: #d8a2ac; --gold-line: #dfc4c5;
+  --gold: #526c5b; --gold-soft: #b5c7b8; --gold-line: #cad5cb;
   --dark: #344a40; --dark-2: #293e34; --line: #e6ddd1;
 }
 .cover-damask { display: none; }
@@ -10,18 +10,19 @@
 .cover { padding: 150px 24px; }
 .cover-inner { max-width: 850px; }
 .garden-section { position: relative; isolation: isolate; overflow: hidden; }
-.garden-section > :not(.garden-art):not(.cover-hint):not(.sil):not(.sil-svg):not(.emboss) { position: relative; z-index: 1; }
+.garden-section > :not(.garden-art):not(.garden-butterfly):not(.cover-hint):not(.sil):not(.sil-svg):not(.emboss) { position: relative; z-index: 1; }
 .garden-section > .cover-hint { position: absolute; }
 @property --paint-edge { syntax: '<percentage>'; initial-value: 145%; inherits: false; }
 .garden-art {
   position: absolute; z-index: 0; height: auto; pointer-events: none; user-select: none;
   width: clamp(180px, 23vw, 340px); opacity: .85;
   --paint-edge: 145%;
-  mask-image: linear-gradient(135deg, #000 calc(var(--paint-edge) - 45%), transparent var(--paint-edge));
+  mask-image: linear-gradient(135deg, #000 calc(var(--paint-edge) - 45%), transparent var(--paint-edge)), linear-gradient(to bottom, transparent, #000 28%);
+  mask-composite: intersect;
   transition: --paint-edge 3.6s cubic-bezier(.25,.1,.35,1), opacity 2.5s ease;
 }
 .garden-top { top: 58px; left: -45px; }
-.garden-bottom { bottom: -45px; right: -45px; rotate: 180deg; transition-delay: .5s; }
+.garden-bottom { bottom: 0; right: -45px; rotate: 180deg; transition-delay: .5s; }
 .garden-section.garden-wait .garden-art { --paint-edge: 0%; opacity: 0; }
 .footer .garden-art, .rsvp-foot .garden-art { width: 165px; opacity: .6; }
 .nav { background: rgba(250,247,239,.97); border-bottom: 1px solid var(--line); }
@@ -29,13 +30,25 @@
   .cover { padding: 170px 18px 155px; }
   .cover .garden-art { width: 168px; opacity: .75; }
   .cover .garden-top { top: 64px; left: -55px; }
-  .cover .garden-bottom { bottom: -35px; right: -55px; }
+  .cover .garden-bottom { bottom: 0; right: -55px; }
   .cover .hero-mark { width: 64px; }
   .footer .garden-art, .rsvp-foot .garden-art { width: 115px; opacity: .4; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .garden-art { transition: none; mask-image: none; }
+  .garden-art { transition: none; --paint-edge: 145%; }
   .garden-section.garden-wait .garden-art { opacity: .75; }
 }
 
 .rsvp-invitation { background: var(--paper-soft); border-block: 1px solid var(--line); }
+
+/* Small, quiet movement beside the cover flowers. */
+.garden-butterfly { position:absolute; z-index:0; width:22px; height:18px; pointer-events:none; color:#769484; opacity:.7; animation:garden-flight 15s ease-in-out infinite; animation-play-state:paused; }
+.garden-butterfly svg { display:block; width:100%; height:100%; overflow:visible; }
+.garden-butterfly .wing { transform-box:fill-box; transform-origin:center; animation:garden-wing 1.1s ease-in-out infinite alternate; animation-play-state:paused; }
+.garden-visible .garden-butterfly, .garden-visible .garden-butterfly .wing { animation-play-state:running; }
+.butterfly-first { top:23%; left:12%; }
+.butterfly-second { bottom:16%; right:12%; width:17px; height:15px; animation-delay:-7s; }
+@keyframes garden-flight { 0%,100% { transform:translate(0,0) rotate(-12deg); } 35% { transform:translate(30px,-22px) rotate(14deg); } 70% { transform:translate(-12px,-38px) rotate(-8deg); } }
+@keyframes garden-wing { from { transform:scaleX(1); } to { transform:scaleX(.4); } }
+@media(max-width:600px) { .garden-butterfly { width:16px; height:14px; } .butterfly-first { top:20%; left:9%; } .butterfly-second { right:9%; bottom:11%; width:14px; } }
+@media(prefers-reduced-motion:reduce) { .garden-butterfly { display:none; } }

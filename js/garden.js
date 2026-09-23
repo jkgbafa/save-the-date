@@ -21,6 +21,15 @@
       flower.decoding = 'async';
       section.prepend(flower);
     });
+    if (section.classList.contains('cover') && !reduced) {
+      ['first', 'second'].forEach(function (position) {
+        var butterfly = document.createElement('span');
+        butterfly.className = 'garden-butterfly butterfly-' + position;
+        butterfly.setAttribute('aria-hidden', 'true');
+        butterfly.innerHTML = '<svg viewBox="0 0 32 26" fill="currentColor"><g class="wing"><path d="M16 14C2-8-6 8 13 18C0 16 7 30 16 18Z" opacity=".8"/><path d="M16 14C30-8 38 8 19 18C32 16 25 30 16 18Z" opacity=".65"/></g><path d="M16 9v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+        section.appendChild(butterfly);
+      });
+    }
     if (observer) observer.observe(section);
     else section.classList.add('garden-visible');
   });
