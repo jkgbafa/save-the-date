@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var sections = document.querySelectorAll('.cover, .section, .footer, .rsvp-main, .rsvp-foot, .legal-main');
+  var sections = document.querySelectorAll('.cover, .footer, .rsvp-foot');
   var observer = 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       entry.target.classList.toggle('garden-visible', entry.isIntersecting);
@@ -11,7 +11,7 @@
   sections.forEach(function (section, index) {
     section.classList.add('garden-section');
     if (observer && !reduced) section.classList.add('garden-wait');
-    ['top', 'bottom'].forEach(function (side) {
+    (section.classList.contains('cover') ? ['top', 'bottom'] : ['bottom']).forEach(function (side) {
       var flower = document.createElement('img');
       flower.className = 'garden-art garden-' + side;
       flower.src = 'assets/invitation-flowers.png';
