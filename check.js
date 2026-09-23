@@ -85,14 +85,14 @@ mustNot(index, /Stripe|PayPal/i, "no Stripe/PayPal stubs on the homepage");
   var start = index.indexOf('id="fund"');
   var end = index.indexOf('id="faq"');
   var fund = start >= 0 && end > start ? index.slice(start, end) : "";
-  must(fund, "images/wedding-icon.png", "gifts section uses the gold emblem");
+  must(fund, "assets/monogram.svg", "gifts section uses the gold emblem");
   must(fund, "cover-damask", "gifts section tiles the floral damask");
   must(fund, "MTN", "gifts keep MTN");
   must(fund, "Zelle", "gifts keep Zelle");
   must(fund, "Venmo", "gifts keep Venmo");
 })();
 mustNot(fs.readFileSync("css/style.css", "utf8"), /damask\.svg/, "do not use the simple sprig SVG on the hero");
-must(index, "images/wedding-icon.png", "committed wedding emblem asset");
+must(index, "assets/monogram.svg", "committed wedding emblem asset");
 must(index, "thanksModal", "thank-you popup on homepage");
 must(index, "thanksModalBody", "popup body is set in HTML");
 must(index, ">Thank you</h3>", "popup title is Thank you");
@@ -112,7 +112,7 @@ mustNot(fs.readFileSync("js/rsvp.js", "utf8"), /if \(!APPS_SCRIPT_URL\) \{ thank
   var cover = start >= 0 && end > start ? index.slice(start, end) : "";
   must(cover, "cover-damask", "cover has damask layer");
   mustNot(cover, /emboss/, "cover must not keep the two embossed branches");
-  must(cover, "images/wedding-icon.png", "gold emblem stays on the hero");
+  must(cover, "assets/monogram.svg", "J and L monogram stays on the hero");
 })();
 mustNot(index, /pathLength/, "hero must not use SVG path draw-in");
 mustNot(index, /id="remCountry"/, "no Ghana/USA country-code dropdown");
@@ -206,8 +206,8 @@ mustNot(index, /og:(?:title|description|image)[^>]*honeymoon/i, "do not label OG
 mustNot(index, /twitter:(?:title|description|image)[^>]*honeymoon/i, "twitter cards must not be a fund link");
 mustNot(code, /honeymoon fund/i, "gift stays off reminder texts");
 
-if (!fs.existsSync("images/wedding-icon.png") || !fs.existsSync("assets/og-share.png") || !fs.existsSync("assets/floral-cream-gold.png")) {
-  console.error("images/wedding-icon.png, assets/og-share.png, and assets/floral-cream-gold.png must exist");
+if (!fs.existsSync("assets/monogram.svg") || !fs.existsSync("assets/og-share.png") || !fs.existsSync("assets/floral-cream-gold.png")) {
+  console.error("assets/monogram.svg, assets/og-share.png, and assets/floral-cream-gold.png must exist");
   process.exitCode = 1;
 }
 
