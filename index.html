@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/garden.css?v=76bb743a83">
+<link rel="stylesheet" href="css/garden.css?v=bf66419cdf">
 </head>
 <body>
 
@@ -227,7 +227,7 @@
   Joshua &amp; Lucia will treasure every single one.</p>
 
   <div class="quiet-ctas fade-up">
-    <a class="btn btn-ghost" href="#msgForm">Send a message</a>
+    <a class="btn btn-ghost" href="#messageResponse">Send a message</a>
     <a class="btn btn-ghost" href="#fund">Gifts</a>
   </div>
 
@@ -237,7 +237,11 @@
     <div class="wall-slot"><div class="wall-card"><p class="wall-text"></p><p class="wall-name"></p></div></div>
   </div>
 
-  <form id="msgForm" class="msg-form fade-up" novalidate>
+  <div class="response-embed" id="messageResponse">
+    <iframe title="Leave a message for Joshua and Lucia" src="https://airtable.com/embed/appmv8Nin53fCPmg8/pag3F48BrRPhurvoX/form" width="100%" height="650" style="border:0;background:transparent" loading="lazy"></iframe>
+    <p class="sec-body">If the form does not load, <a href="https://airtable.com/appmv8Nin53fCPmg8/pag3F48BrRPhurvoX/form" target="_blank" rel="noopener">open the message form here</a>.</p>
+  </div>
+  <form id="msgForm" class="msg-form fade-up" novalidate hidden>
     <div class="field">
       <label for="msgName">Your name *</label>
       <input id="msgName" name="name" type="text" autocomplete="name" placeholder="Ama Mensah" required>

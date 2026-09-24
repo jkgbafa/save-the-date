@@ -60,3 +60,7 @@
 .footer .garden-top { top:0; left:-35px; }
 .footer .emboss { display:none; }
 @media(max-width:600px) { #messages .garden-art { position:absolute; z-index:0; width:125px; left:-65px; opacity:.45; } .footer .garden-top { left:-45px; } }
+
+.response-embed { width:100%; max-width:760px; margin:32px auto; }
+.response-embed iframe { display:block; border-radius:8px; }
+#stepForm[hidden], #msgForm[hidden] { display:none !important; }

@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/garden.css?v=76bb743a83">
+<link rel="stylesheet" href="css/garden.css?v=bf66419cdf">
 </head>
 <body class="rsvp-page">
 
@@ -60,7 +60,12 @@
   <p class="sec-body">Saturday, November 7, 2026 · 11:00 am · Anagkazo Campus, Mampong, Ghana.<br>
   Join us in person, or watch live from anywhere. If you can’t be in Ghana, please RSVP as <b>Online (livestream)</b>.</p>
 
-  <section id="stepForm">
+  <section class="response-embed" aria-label="Wedding RSVP form">
+    <iframe title="RSVP for Joshua and Lucia" src="https://airtable.com/embed/appmv8Nin53fCPmg8/pagM3vovRvHJtFdZt/form" width="100%" height="1450" style="border:0;background:transparent" loading="eager"></iframe>
+    <p class="sec-body">If the form does not load, <a href="https://airtable.com/appmv8Nin53fCPmg8/pagM3vovRvHJtFdZt/form" target="_blank" rel="noopener">open the RSVP form here</a>.</p>
+  </section>
+  <!-- Retained for a future direct backend migration; currently inactive. -->
+  <section id="stepForm" hidden>
     <p class="rsvp-greeting" id="greeting">We’re so glad you’re here. Please fill in the details below — and if you can’t be with us in Ghana, choose <b>Online (livestream)</b>.</p>
 
     <form id="rsvpForm" class="rsvp-form" novalidate>
