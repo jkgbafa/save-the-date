@@ -158,7 +158,17 @@
     { t: "May your love last forever. I can’t wait to be in Ghana to celebrate your beautiful wedding with you!", n: "Itieoboro" },
     { t: "You found your Chick-fil-A! Beautiful! God bless you both with a beautiful marriage.", n: "Closed on Sunday" },
     { t: "I'm so happy for you guys. I pray for a beautiful house full of love. You deserve the best. Much love.", n: "Andres" },
-    { t: "Great grace!! And more blessings after 🥳🥳", n: "Lincoln" }
+    { t: "Great grace!! And more blessings after 🥳🥳", n: "Lincoln" },
+    { t: "Be blessed.", n: "Peter & Lillian Nsowah" },
+    { t: "Congratulations! 🎊", n: "Cynthia Muradzi" },
+    { t: "Can’t waitttt!!!", n: "Tosin Osei Bonsu" },
+    { t: "Thank you so much for the wonderful wedding invitation! I am absolutely thrilled to attend and celebrate your special day in Ghana. I cannot wait to share joyous moments together!", n: "Raiji Ismael" },
+    { t: "AAAAAHHHHH!", n: "Alisha Ofori" },
+    { t: "God bless your union.", n: "Jason Opata" },
+    { t: "Congratulations! 🥹", n: "Marsha Frempong" },
+    { t: "Congratulations to both of you.", n: "Mercy Tsikata" },
+    { t: "Congratulations, beautifuls!", n: "Bishop & Mrs Welds" },
+    { t: "I’m really happy for you, P. Josh. You’re blessed.", n: "James Nkuruniziza" }
   ];
 
   var wall = $("wall");
