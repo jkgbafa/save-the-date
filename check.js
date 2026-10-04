@@ -59,7 +59,7 @@ mustNot(index, /Honeymoon Fund/i, "do not use Honeymoon Fund as a heading or nav
 mustNot(index, /Give a gift or something/i, "do not use Give a gift or something");
 must(index, 'href="#fund"', "gifts button still scrolls to #fund");
 must(index, 'property="og:title" content="Joshua &amp; Lucia — Save the Date"', "OG title is save-the-date, not a fund link");
-must(index, "assets/joshua-lucia-share.jpg", "OG image is the couple photo");
+mustNot(index, /property="og:image"|name="twitter:image"/, "social sharing must not attach a preview image");
 must(index, 'class="cover-damask"', "hero uses repeating damask, not leaf branches");
 must(fs.readFileSync("css/style.css", "utf8"), "floral-cream-gold.png", "hero tiles the cream-gold floral");
 (function () {

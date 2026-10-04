@@ -62,5 +62,19 @@
 @media(max-width:600px) { #messages .garden-art { position:absolute; z-index:0; width:125px; left:-65px; opacity:.45; } .footer .garden-top { left:-45px; } }
 
 .response-embed { width:100%; max-width:760px; margin:32px auto; }
-.response-embed iframe { display:block; border-radius:8px; }
+.response-embed .response-frame-crop { overflow:hidden; border:1px solid rgba(82,108,91,.28); border-radius:18px; background:rgba(255,253,247,.82); box-shadow:0 18px 46px rgba(35,48,40,.08); }
+.response-embed iframe { display:block; width:calc(100% + 18px); border:0; background:transparent; }
+.response-embed-rsvp .response-frame-crop { height:870px; }
+.response-embed-rsvp iframe { transform:translateY(-220px); }
+.response-embed-message { max-width:620px; }
+.response-embed-message .form-intro { margin:0 0 16px; color:var(--ink-soft); font-style:italic; text-align:center; }
+.response-embed-message .response-frame-crop { height:285px; }
+.response-embed-message iframe { transform:translateY(-170px); }
 #stepForm[hidden], #msgForm[hidden] { display:none !important; }
+
+@media(max-width:600px) {
+  .response-embed-rsvp .response-frame-crop { height:800px; }
+  .response-embed-rsvp iframe { height:1160px; transform:translateY(-325px); }
+  .response-embed-message .response-frame-crop { height:280px; }
+  .response-embed-message iframe { height:650px; transform:translateY(-200px); }
+}

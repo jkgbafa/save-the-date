@@ -461,11 +461,12 @@ img { display: block; max-width: 100%; }
 
 /* ================= message wall ================= */
 .wall {
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: repeat(12, 1fr);
   gap: clamp(14px, 2.5vw, 24px);
-  max-width: 900px; margin: 40px auto 10px; align-items: start;
+  max-width: 1080px; margin: 40px auto 10px; align-items: start;
 }
-.wall-slot { min-height: 190px; display: flex; }
+.wall-slot { min-height: 190px; display: flex; grid-column: span 3; }
+.wall-slot:nth-child(n + 5) { grid-column: span 4; }
 .wall-card {
   flex: 1;
   background: var(--paper-soft);
@@ -478,6 +479,9 @@ img { display: block; max-width: 100%; }
 }
 .wall-slot:nth-child(1) .wall-card { --card-tilt: -1.2deg; }
 .wall-slot:nth-child(3) .wall-card { --card-tilt: 1.2deg; }
+.wall-slot:nth-child(4) .wall-card { --card-tilt: .7deg; }
+.wall-slot:nth-child(6) .wall-card { --card-tilt: -.8deg; }
+.wall-slot:nth-child(7) .wall-card { --card-tilt: .9deg; }
 .wall-card.show { opacity: 1; transform: rotate(var(--card-tilt, 0deg)); }
 .wall-card::before {
   content: "”";
@@ -489,9 +493,14 @@ img { display: block; max-width: 100%; }
   margin-top: 14px; font-family: var(--script); font-size: 24px; color: var(--gold); line-height: 1.2;
 }
 @media (max-width: 760px) {
-  .wall { grid-template-columns: 1fr; max-width: 460px; }
+  .wall { grid-template-columns: repeat(2, 1fr); max-width: 620px; }
   .wall-slot { min-height: 0; }
-  .wall-slot:nth-child(3) { display: none; }  /* two rotating cards on phones */
+  .wall-slot, .wall-slot:nth-child(n + 5) { grid-column: auto; }
+  .wall-slot:last-child { grid-column: 1 / -1; width: calc(50% - 8px); justify-self: center; }
+}
+@media (max-width: 520px) {
+  .wall { grid-template-columns: 1fr; max-width: 460px; }
+  .wall-slot:last-child { grid-column: auto; width: 100%; }
 }
 
 /* message form */

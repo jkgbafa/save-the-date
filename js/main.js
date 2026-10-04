@@ -149,23 +149,23 @@
 
   // ================= message wall (guestbook) =================
   var WALL_MSGS = [
-    { t: "May God bless your marriage and make your home a place of overflowing joy.", n: "Sister Abigail" },
-    { t: "It's about time you're getting married lol. Congratulations!!", n: "Kwesi A." },
-    { t: "Two of the kindest people we know. We can't wait for November!", n: "The Mensah Family" },
-    { t: "Whoso findeth a wife findeth a good thing — and you found a great one!", n: "Pastor Daniel" },
-    { t: "Sending so much love from Las Vegas. Save us a dance!", n: "Tina & Marcus" },
-    { t: "Lucia, you deserve every bit of this happiness. Love you always!", n: "Efua" },
-    { t: "To God be the glory — what a beautiful thing He has done.", n: "Auntie Comfort" },
-    { t: "Joshua finally remembered a name — and now he gets to keep it forever. 😂", n: "Nana Yaw" },
-    { t: "May your love grow sweeter with every passing year.", n: "Mr. & Mrs. Adusei" },
-    { t: "Praying God's richest blessings over your new home.", n: "The Ansah Family" }
+    { t: "I’m so happy for you both! God is gracious! May your love last in Jesus name. Congratulations friends! ❤️", n: "Jennifer" },
+    { t: "May your love last forever.", n: "Albert Mensah" },
+    { t: "You two are so sweet, you already look like siblings — a match made in Heaven. Counting down with y’all!", n: "Natalie Welds" },
+    { t: "GOOD MAN!", n: "Stuart" },
+    { t: "Wishing you a lifetime of happiness and the sweetest of memories. PJ POWERRSSSSSS 😂", n: "Thando" },
+    { t: "Eh PJ, I don't know who's more excited for your wedding, me or you? 😂 What a blessing! 🔥🥳", n: "Anderson Chateka" },
+    { t: "May your love last forever. I can’t wait to be in Ghana to celebrate your beautiful wedding with you!", n: "Itieoboro" },
+    { t: "You found your Chick-fil-A! Beautiful! God bless you both with a beautiful marriage.", n: "Closed on Sunday" },
+    { t: "I'm so happy for you guys. I pray for a beautiful house full of love. You deserve the best. Much love.", n: "Andres" },
+    { t: "Great grace!! And more blessings after 🥳🥳", n: "Lincoln" }
   ];
 
   var wall = $("wall");
   if (wall) {
     var cards = wall.querySelectorAll(".wall-card");
     var next = 0;
-    var HOLD = 6000, SWAP = 900, STAGGER = 2100;
+    var HOLD = 7000, SWAP = 900, STAGGER = 160;
 
     function fill(card) {
       var msg = WALL_MSGS[next % WALL_MSGS.length];
