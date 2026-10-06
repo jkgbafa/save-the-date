@@ -106,7 +106,7 @@ img { display: block; max-width: 100%; }
 .nav.open .nav-burger span:nth-child(2) { opacity: 0; }
 .nav.open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .nav { flex-wrap: wrap; }
   .nav-burger { display: block; }
   .nav-links {
