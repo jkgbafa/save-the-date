@@ -743,3 +743,14 @@ img { display: block; max-width: 100%; }
   .fade-up { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
   .fade-up.in { opacity: 1; transform: none; }
 }
+
+/* Closed RSVP controls remain visible without accepting new responses. */
+.btn.rsvp-closed-button:disabled {
+  background: #e1e2df;
+  border-color: #b7bab5;
+  color: #555b55;
+  opacity: 1;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

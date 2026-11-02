@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RSVP — Joshua &amp; Lucia · November 7, 2026</title>
-<meta name="description" content="RSVP for Joshua & Lucia's wedding — Saturday, November 7, 2026 at Anagkazo Campus, Mampong-Akuapem, Ghana. Join in person or online.">
+<meta name="description" content="RSVP for Joshua & Lucia's wedding — Saturday, November 7, 2026 at Anagkazo Campus, Mampong-Akuapem, Ghana. RSVP is now closed.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="assets/favicon-sage.png">
 <link rel="apple-touch-icon" href="assets/favicon-sage.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=284dba0766">
+<link rel="stylesheet" href="css/style.css?v=rsvp-closed-20261102">
 <link rel="stylesheet" href="css/garden.css?v=00c68eca4c">
 </head>
-<body class="rsvp-page">
+<body class="rsvp-page" data-rsvp-closed="true">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -54,22 +54,20 @@
 
 <main class="rsvp-main">
   <img class="hero-mark" src="assets/monogram-sage.png" width="140" height="140" alt="">
-  <p class="sec-script">kindly reply</p>
-  <h1 class="sec-title">RSVP</h1>
+  <p class="sec-script">thank you</p>
+  <h1 class="sec-title">RSVP is now closed</h1>
   <div class="sec-rule"></div>
   <p class="sec-body">Saturday, November 7, 2026 · 11:00 am · Anagkazo Campus, Mampong, Ghana.<br>
-  Join us in person, or watch live from anywhere. If you can’t be in Ghana, please RSVP as <b>Online (livestream)</b>.</p>
+  Thank you to everyone who responded. We look forward to celebrating with you!</p>
 
-  <section class="response-embed response-embed-rsvp" aria-label="Wedding RSVP form">
-    <div class="response-frame-crop">
-      <iframe title="RSVP for Joshua and Lucia" src="https://airtable.com/embed/appmv8Nin53fCPmg8/pagM3vovRvHJtFdZt/form" width="100%" height="1080" style="border:0;background:transparent" loading="eager"></iframe>
-    </div>
-  </section>
+  <div class="cover-ctas"><button type="button" class="btn rsvp-closed-button" disabled>RSVP is now closed</button></div>
+  <p class="sec-body"><a class="faq-link" href="index.html">Back to our wedding website</a></p>
   <!-- Retained for a future direct backend migration; currently inactive. -->
   <section id="stepForm" hidden>
     <p class="rsvp-greeting" id="greeting">We’re so glad you’re here. Please fill in the details below — and if you can’t be with us in Ghana, choose <b>Online (livestream)</b>.</p>
 
     <form id="rsvpForm" class="rsvp-form" novalidate>
+      <fieldset disabled>
       <input type="hidden" name="formType" value="rsvp">
 
       <div class="field">
@@ -129,8 +127,9 @@
         <textarea id="fMessage" name="message" rows="3" placeholder="We’re so happy for you both…"></textarea>
       </div>
 
-      <button type="submit" class="btn" id="submitBtn">Send my RSVP</button>
+      <button type="submit" class="btn" id="submitBtn" disabled>Send my RSVP</button>
       <p class="form-status" id="formStatus" role="status"></p>
+      </fieldset>
     </form>
   </section>
 
@@ -181,7 +180,7 @@
 </footer>
 
 <script src="js/config.js"></script>
-<script src="js/rsvp.js"></script>
+<script src="js/rsvp.js?v=rsvp-closed-20261102"></script>
 <script src="js/garden.js?v=88cde2197b"></script>
 </body>
 </html>

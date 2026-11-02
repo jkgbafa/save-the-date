@@ -22,6 +22,9 @@
     });
   }
 
+  // Closing the page also disables the legacy form's submission handlers.
+  if (document.body.dataset.rsvpClosed === "true") return;
+
   var stepForm = $("stepForm"), stepThanks = $("stepThanks");
   var form = $("rsvpForm");
 
