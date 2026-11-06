@@ -1,0 +1,17 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
+const values={FOLDER_ID:'test-folder'};let uuid=0,requests=[];
+const props={getProperty:k=>values[k]??null,setProperty:(k,v)=>(values[k]=v,props),deleteProperty:k=>delete values[k],getProperties:()=>({...values})};
+const response=(code,data,headers={})=>({getResponseCode:()=>code,getContentText:()=>JSON.stringify(data),getAllHeaders:()=>headers});
+let handler=(url,opts)=>url.includes('uploadType=resumable')?response(200,{}, {Location:'https://www.googleapis.com/upload/session'}):response(200,{});
+const ctx={console,Number,Date,JSON,Math,Error,String,Object,RegExp,PropertiesService:{getScriptProperties:()=>props},LockService:{getScriptLock:()=>({waitLock(){},releaseLock(){}})},ScriptApp:{getOAuthToken:()=> 'server-only-token'},Utilities:{getUuid:()=>`00000000-0000-0000-0000-${String(++uuid).padStart(12,'0')}`,formatDate:()=> '2026-11-06',base64Decode:s=>[...Buffer.from(s,'base64')]},UrlFetchApp:{fetch:(u,o)=>{requests.push({u,o});return handler(u,o);}},CacheService:{getScriptCache:()=>({get:()=>null,put(){},remove(){}})}};
+vm.createContext(ctx);vm.runInContext(fs.readFileSync(__dirname+'/Code.gs','utf8'),ctx);
+const meta={type:'image/jpeg',size:5,consent:true,filename:'test.jpg',name:'',caption:'<script>x</script>'};
+assert.throws(()=>ctx.beginUpload({...meta,consent:false}));assert.throws(()=>ctx.beginUpload({...meta,type:'text/html'}));assert.throws(()=>ctx.beginUpload({...meta,size:210*1024*1024}));assert.throws(()=>ctx.beginUpload({...meta,website:'bot'}));
+const session=ctx.beginUpload(meta);assert.equal(session.chunkSize,2097152);assert(!JSON.stringify(session).includes('token'));assert.equal(JSON.parse(JSON.parse(requests[0].o.payload).description).name,'Anonymous');
+assert.throws(()=>ctx.uploadChunk(session.id,'wrong',0,'aGVsbG8='));
+handler=(u,o)=>u.endsWith('/permissions')?response(200,{}):response(200,{id:'finished-photo'});
+const done=ctx.uploadChunk(session.id,session.secret,0,'aGVsbG8=');assert.equal(done.done,true);assert.equal(done.id,'finished-photo');
+const reqs=requests.length;assert.equal(ctx.uploadChunk(session.id,session.secret,0,'aGVsbG8=').id,'finished-photo');assert.equal(requests.length,reqs);
+handler=()=>response(200,{files:[{id:'public-photo',mimeType:'image/jpeg',shared:true,description:'{"name":"Akua","caption":"Joy"}'},{id:'private-photo',mimeType:'image/jpeg',shared:false}]});
+const list=ctx.listGallery();assert.equal(list.items.length,1);assert.equal(list.items[0].name,'Akua');assert(requests.at(-1).u.includes('test-folder'));
+console.log('PASS: consent, MIME/size/honeypot, anonymous naming, upload tokens, server completion, duplicate retry, private-file exclusion and dedicated-folder query.');
