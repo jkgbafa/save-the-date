@@ -104,22 +104,27 @@
   tick();
   setInterval(tick, 1000);
 
-  // ---------- live status (from backend) ----------
+  // ---------- live status (Apps Script, or config.js when that URL is empty) ----------
+  function showLive(url) {
+    $("liveWaiting").hidden = true;
+    $("liveNow").hidden = false;
+    $("liveLink").href = url;
+    var banner = $("liveBanner");
+    banner.href = url;
+    banner.hidden = false;
+  }
+
   function checkLive() {
-    if (!APPS_SCRIPT_URL) return;
-    fetch(APPS_SCRIPT_URL + "?action=config")
-      .then(function (r) { return r.json(); })
-      .then(function (cfg) {
-        if (cfg.isLive && cfg.livestreamUrl) {
-          $("liveWaiting").hidden = true;
-          $("liveNow").hidden = false;
-          $("liveLink").href = cfg.livestreamUrl;
-          var banner = $("liveBanner");
-          banner.href = cfg.livestreamUrl;
-          banner.hidden = false;
-        }
-      })
-      .catch(function () { /* backend unreachable — page still works */ });
+    if (APPS_SCRIPT_URL) {
+      fetch(APPS_SCRIPT_URL + "?action=config")
+        .then(function (r) { return r.json(); })
+        .then(function (cfg) {
+          if (cfg.isLive && cfg.livestreamUrl) showLive(cfg.livestreamUrl);
+        })
+        .catch(function () { /* backend unreachable — page still works */ });
+      return;
+    }
+    if (IS_LIVE && LIVESTREAM_URL) showLive(LIVESTREAM_URL);
   }
   checkLive();
   setInterval(checkLive, 90000);

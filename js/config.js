@@ -9,5 +9,10 @@
 
 var APPS_SCRIPT_URL = "";
 
+// Simple go-live without Apps Script: set IS_LIVE to true and paste the
+// stream URL. Leave both as-is until the livestream URL is ready.
+var IS_LIVE = false;
+var LIVESTREAM_URL = "";
+
 // Wedding moment: Nov 7, 2026, 11:00 AM Ghana time (GMT+0)
 var WEDDING_ISO = "2026-11-07T11:00:00Z";

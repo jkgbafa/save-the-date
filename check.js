@@ -164,6 +164,9 @@ must(fs.readFileSync("js/rsvp.js", "utf8"), "Yes, I’ll join online", "confirm 
 must(code, "function smsConsented_", "legacy SMS helper may remain unused");
 mustNot(code, /if \(smsOk\) maybeSendReminderSms_/, "disabled reminder POST must not send welcome SMS");
 must(config, 'var APPS_SCRIPT_URL = "";', "do not fill a fake APPS_SCRIPT_URL");
+must(config, "var IS_LIVE = false;", "do not flip the site live in this commit");
+must(config, 'var LIVESTREAM_URL = "";', "do not commit a livestream URL until Josh provides one");
+must(fs.readFileSync("js/main.js", "utf8"), "IS_LIVE && LIVESTREAM_URL", "checkLive can go live from config when Apps Script is empty");
 must(config, "2026-11-07T11:00:00Z", "countdown target is 11:00 AM Ghana time");
 must(index, "11:00 am", "homepage shows 11:00 am");
 must(rsvpHtml, "11:00 am", "RSVP page shows 11:00 am");
