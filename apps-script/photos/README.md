@@ -32,3 +32,8 @@ Deploy new backend versions through Manage deployments > Edit > New version, kee
 - Downloaded original SHA-1 matched the uploaded source exactly.
 - Anonymous 2.7 MB MP4 uploaded in two chunks and appeared with a Drive video player and thumbnail.
 - Temporary video test was moved to Trash after verification.
+
+### iPhone DNG / ProRAW
+The browser accepts DNG extensions even when iOS supplies an empty, TIFF, or generic MIME type. Originals are uploaded without conversion. When a DNG contains an embedded JPEG, `photos/dng-preview.js` reads it in bounded slices and produces a gallery preview. A separate JPEG preview is saved in the same Drive folder, shared only when the original finishes, and excluded from the gallery as a duplicate. DNGs without a browser-readable embedded JPEG still upload, but depend on Drive for a thumbnail.
+
+Run `node photos/test-dng-preview.cjs` and `node apps-script/photos/test-backend.cjs` from the repository root to check parsing and upload/gallery contracts.

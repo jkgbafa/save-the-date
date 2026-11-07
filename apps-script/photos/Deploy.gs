@@ -59,14 +59,22 @@ function beginUpload(meta) {
     var caption=clean_(meta.caption,240);
     var original=clean_(meta.filename,100).replace(/[<>:"/\\|?*]/g,'_');
     var id=Utilities.getUuid(),secret=Utilities.getUuid();
-    var description=JSON.stringify({gallery:'jl-v1',name:name,caption:caption,uploaded:new Date().toISOString()});
+    var previewId=null;
+    if(type==='image/x-adobe-dng'&&typeof meta.preview==='string'&&meta.preview.length<=1400000&&/^\/9j\/[A-Za-z0-9+/]*={0,2}$/.test(meta.preview)){
+      try {
+        var previewFile=DriveApp.getFolderById(folder_()).createFile(Utilities.newBlob(Utilities.base64Decode(meta.preview),'image/jpeg','preview_'+id+'.jpg'));
+        previewFile.setDescription(JSON.stringify({gallery:'jl-preview'}));previewId=previewFile.getId();
+      }catch(error){console.warn('DNG preview unavailable; preserving original upload.');}
+    }
+    var description=JSON.stringify({gallery:'jl-v1',name:name,caption:caption,uploaded:new Date().toISOString(),previewId:previewId});
+    var metadata={name:new Date().toISOString().slice(0,10)+'_'+original,mimeType:type,parents:[folder_()],description:description};
     var res=drive_('https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable&fields=id',{
       method:'post',contentType:'application/json',headers:{'X-Upload-Content-Type':type,'X-Upload-Content-Length':String(size)},
-      payload:JSON.stringify({name:new Date().toISOString().slice(0,10)+'_'+original,mimeType:type,parents:[folder_()],description:description})
+      payload:JSON.stringify(metadata)
     });
     var headers=res.getAllHeaders(),location=headers.Location||headers.location;
     if(!location || !/^https:\/\/www.googleapis.com\//.test(location))throw new Error('Could not start the upload. Please try again.');
-    p.setProperty('upload_'+id,JSON.stringify({secret:secret,url:location,size:size,type:type,offset:0,expires:now+86400000}));
+    p.setProperty('upload_'+id,JSON.stringify({secret:secret,url:location,size:size,type:type,previewId:previewId,offset:0,expires:now+86400000}));
     meter.count++;meter.bytes+=size;p.setProperty('meter',JSON.stringify(meter));
     return {id:id,secret:secret,chunkSize:CHUNK_BYTES};
   } finally{lock.releaseLock();}
@@ -102,6 +110,7 @@ function uploadChunk(id,secret,offset,base64) {
 function finish_(s,key,fileId){
   // Only newly uploaded media are shared. The parent folder stays private.
   drive_('https://www.googleapis.com/drive/v3/files/'+encodeURIComponent(fileId)+'/permissions',{method:'post',contentType:'application/json',payload:JSON.stringify({type:'anyone',role:'reader',allowFileDiscovery:false})});
+  if(s.previewId)drive_('https://www.googleapis.com/drive/v3/files/'+encodeURIComponent(s.previewId)+'/permissions',{method:'post',contentType:'application/json',payload:JSON.stringify({type:'anyone',role:'reader',allowFileDiscovery:false})});
   s.fileId=fileId;s.offset=s.size;s.uncertain=false;PropertiesService.getScriptProperties().setProperty(key,JSON.stringify(s));
   CacheService.getScriptCache().remove('gallery-first');
   return {done:true,id:fileId,offset:s.size};
@@ -113,8 +122,9 @@ function listGallery(pageToken){
   var data=JSON.parse(drive_(url).getContentText());
   var items=(data.files||[]).filter(function(f){return f.shared;}).map(function(f){
     var d={};try{d=JSON.parse(f.description||'{}');}catch(e){}
-    return {id:f.id,type:f.mimeType.indexOf('video/')===0?'video':'photo',name:clean_(d.name,80)||'Anonymous',caption:clean_(d.caption,240),date:f.createdTime};
-  });
+    if(d.gallery==='jl-preview')return null;
+    return {id:f.id,previewId:typeof d.previewId==='string'&&/^[A-Za-z0-9_-]+$/.test(d.previewId)?d.previewId:null,type:f.mimeType.indexOf('video/')===0?'video':'photo',name:clean_(d.name,80)||'Anonymous',caption:clean_(d.caption,240),date:f.createdTime};
+  }).filter(function(item){return !!item;});
   var result={items:items,nextPageToken:data.nextPageToken||null};
   if(!pageToken)cache.put('gallery-first',JSON.stringify(result),15);
   return result;
