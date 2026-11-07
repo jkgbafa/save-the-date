@@ -43,7 +43,8 @@ function beginUpload(meta) {
   folder_();
   if(!meta || meta.consent!==true || meta.website)throw new Error('Please confirm that you want to share in the gallery.');
   var type=clean_(meta.type,80).toLowerCase();
-  if(!/^(image\/(jpeg|png|webp|gif|heic|heif)|video\/(mp4|quicktime|webm|3gpp))$/.test(type))throw new Error('Please choose a photo or video (JPG, PNG, HEIC, WEBP, GIF, MP4, MOV or WEBM).');
+  if(/\.dng$/i.test(clean_(meta.filename,100))||type==='image/dng')type='image/x-adobe-dng';
+  if(!/^(image\/(jpeg|png|webp|gif|heic|heif|x-adobe-dng)|video\/(mp4|quicktime|webm|3gpp))$/.test(type))throw new Error('Please choose a photo or video (JPG, PNG, HEIC, DNG/ProRAW, WEBP, GIF, MP4, MOV or WEBM).');
   var size=Number(meta.size);
   if(!Number.isSafeInteger(size)||size<1||size>MAX_BYTES)throw new Error('Please choose a file smaller than 200 MB.');
   var lock=LockService.getScriptLock();lock.waitLock(20000);

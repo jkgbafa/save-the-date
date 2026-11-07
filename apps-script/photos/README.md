@@ -14,14 +14,14 @@ Deploy new backend versions through Manage deployments > Edit > New version, kee
 
 ## Behaviour
 
-- Guests upload photos and videos (200 MB per file; 20 selected at a time).
+- Guests upload photos and videos, including iPhone DNG/ProRAW (200 MB per file; 20 selected at a time). DNG filenames and MIME aliases are normalized to image/x-adobe-dng on both client and server.
 - Browser sends 2 MB chunks, retries transient failures, and reports success only after Drive confirms the file and sharing permission.
 - Optional name defaults to Anonymous; name and caption are stored in each file's description.
 - Guests explicitly agree that uploaded media may be viewed/downloaded by anyone with the gallery link.
 - Only uploaded media receive unlisted public read permission. The folder is private; the API cannot list other Drive folders or invoke arbitrary functions.
 - 1,500 upload starts / 60 GB per UTC day are capped to protect the account from accidental or abusive usage. Google service quotas and available Drive storage also apply.
 - 60 items per gallery page; newest first. Refreshes every 30 seconds while visible, without resetting an expanded gallery. Video playback uses Drive's player; Google may need processing time before a new video can play.
-- Originals are kept uncompressed. Photo previews use Drive thumbnails; open View original for full-resolution files. HEIC previews depend on Google's thumbnail support.
+- Originals are kept uncompressed. Photo previews use Drive thumbnails. HEIC and DNG previews depend on Google's thumbnail support; the original files remain intact in Drive.
 - To remove media from the gallery, move the file to Trash in this dedicated folder. First-page gallery cache expires in 15 seconds; the next refresh/reload removes it.
 - To close uploads, disable the deployment or edit beginUpload to reject new files. Do not delete the originals folder.
 

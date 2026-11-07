@@ -15,3 +15,14 @@ const reqs=requests.length;assert.equal(ctx.uploadChunk(session.id,session.secre
 handler=()=>response(200,{files:[{id:'public-photo',mimeType:'image/jpeg',shared:true,description:'{"name":"Akua","caption":"Joy"}'},{id:'private-photo',mimeType:'image/jpeg',shared:false}]});
 const list=ctx.listGallery();assert.equal(list.items.length,1);assert.equal(list.items[0].name,'Akua');assert(requests.at(-1).u.includes('test-folder'));
 console.log('PASS: consent, MIME/size/honeypot, anonymous naming, upload tokens, server completion, duplicate retry, private-file exclusion and dedicated-folder query.');
+
+handler=(url,opts)=>response(200,{}, {Location:'https://www.googleapis.com/upload/session'});
+for(const type of ['image/dng','image/x-adobe-dng','image/tiff','application/octet-stream','']){
+ ctx.beginUpload({...meta,type,filename:'IMG_7817.DNG'});
+ const request=requests.at(-1);assert.equal(request.o.headers['X-Upload-Content-Type'],'image/x-adobe-dng');assert.equal(JSON.parse(request.o.payload).mimeType,'image/x-adobe-dng');
+}
+assert.throws(()=>ctx.beginUpload({...meta,type:'application/octet-stream',filename:'file.exe'}));
+const page=fs.readFileSync(__dirname+'/../../photos/index.html','utf8');
+const frontend={};vm.createContext(frontend);vm.runInContext(page.match(/function mime\(file\)\{.*?\n/)[0],frontend);
+for(const type of ['image/dng','image/x-adobe-dng','image/tiff','application/octet-stream',''])assert.equal(frontend.mime({name:'IMG_7818.DNG',type}),'image/x-adobe-dng');
+assert(page.includes('.dng'));console.log('PASS: iPhone DNG MIME aliases, missing/generic MIME types, uppercase extensions, frontend/backend agreement.');
