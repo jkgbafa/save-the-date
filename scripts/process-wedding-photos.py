@@ -6,7 +6,7 @@ from pathlib import Path
 import subprocess, io, exifread
 import requests, rawpy, numpy as np
 from PIL import Image, ImageOps, ImageEnhance, ImageCms
-p=argparse.ArgumentParser();p.add_argument('manifest');p.add_argument('--originals',required=True);p.add_argument('--output',required=True);p.add_argument('--workers',type=int,default=3);p.add_argument('--upright');a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('manifest');p.add_argument('--originals',required=True);p.add_argument('--output',required=True);p.add_argument('--workers',type=int,default=3);p.add_argument('--upright');p.add_argument('--temporary-downloads',action='store_true',help='Remove temporary downloaded RAW copies after conversion (CI only)');a=p.parse_args()
 originals=Path(a.originals);output=Path(a.output);originals.mkdir(parents=True,exist_ok=True);output.mkdir(parents=True,exist_ok=True)
 files=json.load(open(a.manifest));previous={x['id']:x for x in json.loads((output/'manifest.json').read_text()).get('photos',[])} if (output/'manifest.json').exists() else {};profile=ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB')).tobytes()
 def process(f):
@@ -53,7 +53,9 @@ def process(f):
         im.thumbnail((2400,2400));im.save(dest,'JPEG',quality=88,optimize=True,icc_profile=profile)
         small=im.copy();small.thumbnail((600,600));small.save(thumb,'JPEG',quality=78,optimize=True,icc_profile=profile)
         gray=np.asarray(im.resize((128,128)).convert('L'));sharp=float(np.abs(np.diff(gray.astype(float),axis=0)).mean());brightness=float(gray.mean())
-        return {'id':key,'file':dest.name,'thumbnail':thumb.name,'original':name,'version':2,'capture':capture,'rotation':rotation,'width':im.width,'height':im.height,'sharpness':round(sharp,2),'brightness':round(brightness,2),'ok':True}
+        result={'id':key,'file':dest.name,'thumbnail':thumb.name,'original':name,'version':2,'capture':capture,'rotation':rotation,'width':im.width,'height':im.height,'sharpness':round(sharp,2),'brightness':round(brightness,2),'ok':True}
+        if a.temporary_downloads:src.unlink()
+        return result
     except Exception as e:return {'id':key,'original':name,'ok':False,'error':str(e)}
 results=[]
 with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers) as pool:

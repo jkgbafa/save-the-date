@@ -22,10 +22,10 @@ manual overrides are available for shots without a detectable face.
 `photos/curation.json` controls featured photos, exclusions, manual rotation and
 category overrides. Names are the original RAW filenames. `exclude` accepts a
 filename or Drive ID and hides it from both gallery and preview; it does not
-delete the original. Categories are initially grouped by camera capture time,
-with overrides for exceptions: ceremony before 15:30, reception 15:45–16:40,
-and portraits at other times. Camera clocks, rather than wall-clock wedding
-times, determine these boundaries. Review borderline photos visually.
+delete the original. Collection rules use camera prefixes and frame ranges checked against contact
+sheets, because camera clocks differ. The `groups` array records those ranges;
+explicit `category` overrides take priority. Review borderline photos visually
+and add rules if a new camera sequence arrives.
 
 Example: add `"IMGC0123.CR3"` to `exclude`; or set
 `"category": {"IMGC0123.CR3": "portraits"}`. The other category values are

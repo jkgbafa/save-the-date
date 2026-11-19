@@ -15,12 +15,64 @@
     "IMGC1113.CR3": 90,
     "IMGC1182.CR3": 90,
     "IMGC1195.CR3": 90,
-    "IMGC1203.CR3": 90
+    "IMGC1203.CR3": 90,
+    "EA2A9919.CR3": 90,
+    "IMGL0724.CR3": 90
   },
   "focus": {
     "IMGC1299.CR3": "20% 50%",
     "IMGC1271.CR3": "30% 45%",
     "IMGC1159.CR3": "50% 50%",
     "EA2A0558.CR3": "75% 50%"
-  }
+  },
+  "groups": [
+    {
+      "prefix": "IMGL",
+      "start": 0,
+      "end": 9999,
+      "category": "ceremony"
+    },
+    {
+      "prefix": "IMGC",
+      "start": 0,
+      "end": 833,
+      "category": "ceremony"
+    },
+    {
+      "prefix": "IMGC",
+      "start": 834,
+      "end": 910,
+      "category": "portraits"
+    },
+    {
+      "prefix": "IMGC",
+      "start": 911,
+      "end": 1090,
+      "category": "reception"
+    },
+    {
+      "prefix": "IMGC",
+      "start": 1091,
+      "end": 9999,
+      "category": "portraits"
+    },
+    {
+      "prefix": "EA2A",
+      "start": 9900,
+      "end": 9999,
+      "category": "ceremony"
+    },
+    {
+      "prefix": "EA2A",
+      "start": 0,
+      "end": 199,
+      "category": "ceremony"
+    },
+    {
+      "prefix": "EA2A",
+      "start": 200,
+      "end": 9899,
+      "category": "portraits"
+    }
+  ]
 }

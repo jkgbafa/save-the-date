@@ -1,14 +1,18 @@
 """Apply reproducible collection labels, featured picks and optional exclusions."""
-import json
+import json, re
 from pathlib import Path
 from PIL import Image
 root=Path(__file__).resolve().parent.parent;base=root/'photos/wedding';path=base/'manifest.json';data=json.loads(path.read_text())
 settings=json.loads((root/'photos/curation.json').read_text());excluded=set(settings.get('exclude',[]));overrides=settings.get('category',{})
 for p in data['photos']:
- clock=p.get('capture','')[11:16]
- # Camera clocks put the ceremony before 15:30, reception from 15:45 to
- # 16:40, with outdoor portraits around those events. Explicit overrides win.
- p['category']=overrides.get(p['original'], 'ceremony' if clock and clock<'15:30' else 'reception' if '15:45'<=clock<'16:40' else 'portraits')
+ match=re.match(r'^(.*?)(\d{4})\.',p['original'])
+ inferred='portraits'
+ if match:
+  prefix,number=match.group(1),int(match.group(2))
+  for group in settings.get('groups',[]):
+   if prefix==group['prefix'] and group['start']<=number<=group['end']:
+    inferred=group['category'];break
+ p['category']=overrides.get(p['original'],inferred)
  p['focus']=settings.get('focus',{}).get(p['original'],'50% 50%')
  p['hidden']=p['id'] in excluded or p['original'] in excluded
  # Optional manual rotation is applied once, preserving the RAW original.

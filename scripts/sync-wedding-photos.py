@@ -12,6 +12,7 @@ entries=[{'id':f.id,'title':f.path} for f in files if Path(f.path).suffix.lower(
 with tempfile.TemporaryDirectory() as temp:
  manifest=Path(temp)/'drive.json';manifest.write_text(json.dumps(entries))
  cmd=[sys.executable,str(root/'scripts/process-wedding-photos.py'),str(manifest),'--originals',a.originals or str(Path(temp)/'originals'),'--output',str(root/'photos/wedding'),'--workers',a.workers]
+ if not a.originals:cmd+=['--temporary-downloads']
  if a.upright:cmd+=['--upright',a.upright]
  subprocess.run(cmd,check=True)
  subprocess.run([sys.executable,str(root/'scripts/curate-wedding-photos.py')],check=True)
