@@ -44,3 +44,13 @@ python scripts/sync-wedding-photos.py --originals /path/to/Originals --upright /
 Without `--originals`, RAW downloads are temporary (as in CI). On the initial
 local run, all original files were retained separately from Git. Raw originals
 and personal Google credentials are never committed to this repository.
+
+## Full-resolution local JPEG archive
+
+`export-original-jpegs.py` makes full sensor resolution sRGB JPEGs at quality 94,
+using the same adjustments and orientation corrections. These are local archive
+copies; the website serves smaller 2400 px copies for fast viewing.
+
+```
+python scripts/export-original-jpegs.py --originals /path/to/Originals --output /path/to/Full-resolution-JPEGs
+```
