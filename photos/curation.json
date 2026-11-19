@@ -1,6 +1,26 @@
 {
-  "featured": ["IMGC1299.CR3", "IMGC1271.CR3", "IMGC1159.CR3", "IMGC1078.CR3", "IMGC0844.CR3", "EA2A0558.CR3", "IMGC1278.CR3", "IMGC1236.CR3"],
+  "featured": [
+    "IMGC1299.CR3",
+    "IMGC1271.CR3",
+    "IMGC1159.CR3",
+    "IMGC1078.CR3",
+    "IMGC0844.CR3",
+    "EA2A0558.CR3",
+    "IMGC1278.CR3",
+    "IMGC1236.CR3"
+  ],
   "exclude": [],
   "category": {},
-  "rotate": {"IMGC1113.CR3": 90, "IMGC1182.CR3": 90, "IMGC1195.CR3": 90, "IMGC1203.CR3": 90}
+  "rotate": {
+    "IMGC1113.CR3": 90,
+    "IMGC1182.CR3": 90,
+    "IMGC1195.CR3": 90,
+    "IMGC1203.CR3": 90
+  },
+  "focus": {
+    "IMGC1299.CR3": "20% 50%",
+    "IMGC1271.CR3": "30% 45%",
+    "IMGC1159.CR3": "50% 50%",
+    "EA2A0558.CR3": "75% 50%"
+  }
 }

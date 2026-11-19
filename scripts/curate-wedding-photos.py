@@ -9,6 +9,7 @@ for p in data['photos']:
  # Camera clocks put the ceremony before 15:30, reception from 15:45 to
  # 16:40, with outdoor portraits around those events. Explicit overrides win.
  p['category']=overrides.get(p['original'], 'ceremony' if clock and clock<'15:30' else 'reception' if '15:45'<=clock<'16:40' else 'portraits')
+ p['focus']=settings.get('focus',{}).get(p['original'],'50% 50%')
  p['hidden']=p['id'] in excluded or p['original'] in excluded
  # Optional manual rotation is applied once, preserving the RAW original.
  wanted=settings.get('rotate',{}).get(p['original'],0);applied=p.get('manualRotation',0)
@@ -19,6 +20,9 @@ for p in data['photos']:
   p['manualRotation']=wanted
 byname={p['original']:p for p in data['photos'] if not p['hidden']}
 featured=[byname[n] for n in settings.get('featured',[]) if n in byname]
+if len(featured)<3:
+ featured.extend(p for p in byname.values() if p not in featured and not p['hidden'])
+ featured=featured[:max(3,len(settings.get('featured',[])))]
 data['featured']=[p['id'] for p in featured];data['photos'].sort(key=lambda p:(p.get('capture',''),p['original']))
 # The timestamp reflects new photos, rather than changing on every scheduled run.
 data.pop('updated',None)

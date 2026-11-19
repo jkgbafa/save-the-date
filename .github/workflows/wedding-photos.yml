@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    runs-on: macos-14
+    runs-on: macos-latest
     timeout-minutes: 60
     environment:
       name: github-pages
@@ -56,7 +56,7 @@ jobs:
       - name: Prepare website
         run: |
           mkdir "$RUNNER_TEMP/site"
-          rsync -a --exclude='.git' --exclude='.github' --exclude='scripts' --exclude='apps-script' ./ "$RUNNER_TEMP/site/"
+          rsync -a --exclude='.git' --exclude='.github' --exclude='scripts' --exclude='apps-script' --exclude='__pycache__' --exclude='processing-report.json' ./ "$RUNNER_TEMP/site/"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ runner.temp }}/site
