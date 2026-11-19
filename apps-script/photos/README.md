@@ -1,6 +1,7 @@
 # Wedding guest album
 
-Live page: https://joshualucia.com/photos/
+Wedding memories: https://joshualucia.com/photos/
+Guest uploads and shared album: https://joshualucia.com/photos/shared/
 Programme: https://joshualucia.com/programme/Joshua-and-Lucia.pdf
 Storage owner: quicknlabs@gmail.com
 Originals folder: https://drive.google.com/drive/folders/1X6CnLz2pk8yMtgIgdv0zQjhTvN-N2hDH
@@ -8,7 +9,7 @@ Apps Script editor: https://script.google.com/home/projects/10lv8pjUn8UNXJQmJJ7l
 
 ## Updating
 
-`photos/index.html` is the live GitHub Pages frontend. `Gallery.html` is its source copy.
+`photos/shared/index.html` is the guest-upload frontend. `photos/index.html` is the memories landing page; the photographer gallery lives at `photos/gallery/`. See `scripts/PHOTO-WORKFLOW.md` for Drive imports and photo curation. `Gallery.html` is its source copy.
 `Code.gs` is the backend; `Deploy.gs` is a copy for pasting into Apps Script.
 Deploy new backend versions through Manage deployments > Edit > New version, keeping the existing deployment URL. Execute as QuicknLabs, access Anyone. No OAuth token is sent to visitors. `setupGallery` is run once in the script editor, never exposed through the public API.
 

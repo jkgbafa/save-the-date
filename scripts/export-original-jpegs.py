@@ -16,7 +16,7 @@ def export(p):
  if rotation:im=im.rotate(rotation,expand=True)
  im=ImageEnhance.Color(im).enhance(1.025)
  exif=Image.Exif();exif[274]=1
- if p.get('capture'):exif[306]=p['capture'];exif[36867]=p['capture']
+ if p.get('capture'):exif[306]=p['capture'];exif[34665]={36867:p['capture'],36868:p['capture']}
  temp=dest.with_suffix('.part');im.save(temp,'JPEG',quality=94,optimize=True,icc_profile=profile,exif=exif);temp.replace(dest)
  print(dest.name,im.size,flush=True)
 while True:
