@@ -1,3 +1,5 @@
 .DS_Store
 .context/
 .playwright-mcp/
+/photos/wedding/processing-report.json
+__pycache__/

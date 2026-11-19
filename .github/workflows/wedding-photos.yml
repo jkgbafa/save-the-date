@@ -1,0 +1,65 @@
+name: Wedding photos and website
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: wedding-website
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: macos-14
+    timeout-minutes: 60
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/photo-requirements.txt
+      - name: Install photo tools
+        run: |
+          python -m pip install -r scripts/photo-requirements.txt
+          swiftc scripts/upright.swift -o "$RUNNER_TEMP/upright"
+      - name: Sync new wedding photos
+        if: github.event_name != 'push'
+        run: python scripts/sync-wedding-photos.py --workers 6 --upright "$RUNNER_TEMP/upright"
+      - name: Check site and guest uploads
+        run: |
+          node check.js
+          node photos/test-dng-preview.cjs
+          node apps-script/photos/test-backend.cjs
+      - name: Save new JPEGs
+        if: github.event_name != 'push'
+        run: |
+          git config user.name 'Wedding photo sync'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add photos/wedding photos/featured*.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m 'Sync wedding photos from Drive'
+            git pull --rebase origin main
+            git push origin main
+          fi
+      - uses: actions/configure-pages@v5
+      - name: Prepare website
+        run: |
+          mkdir "$RUNNER_TEMP/site"
+          rsync -a --exclude='.git' --exclude='.github' --exclude='scripts' --exclude='apps-script' ./ "$RUNNER_TEMP/site/"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,6 @@
+gdown==6.5.2
+rawpy==0.28.0
+Pillow==13.0.0
+numpy==2.5.5
+requests==2.34.2
+ExifRead==3.5.1

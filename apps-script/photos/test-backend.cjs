@@ -22,7 +22,7 @@ for(const type of ['image/dng','image/x-adobe-dng','image/tiff','application/oct
  const request=requests.at(-1);assert.equal(request.o.headers['X-Upload-Content-Type'],'image/x-adobe-dng');assert.equal(JSON.parse(request.o.payload).mimeType,'image/x-adobe-dng');
 }
 assert.throws(()=>ctx.beginUpload({...meta,type:'application/octet-stream',filename:'file.exe'}));
-const page=fs.readFileSync(__dirname+'/../../photos/index.html','utf8');
+const page=fs.readFileSync(__dirname+'/../../photos/shared/index.html','utf8');
 const frontend={};vm.createContext(frontend);vm.runInContext(page.match(/function mime\(file\)\{.*?\n/)[0],frontend);
 for(const type of ['image/dng','image/x-adobe-dng','image/tiff','application/octet-stream',''])assert.equal(frontend.mime({name:'IMG_7818.DNG',type}),'image/x-adobe-dng');
 assert(page.includes('.dng'));console.log('PASS: iPhone DNG MIME aliases, missing/generic MIME types, uppercase extensions, frontend/backend agreement.');
