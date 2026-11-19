@@ -34,7 +34,7 @@ jobs:
           python -m pip install -r scripts/photo-requirements.txt
           swiftc scripts/upright.swift -o "$RUNNER_TEMP/upright"
       - name: Sync new wedding photos
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && vars.PHOTO_INITIAL_IMPORT != 'true'
         run: python scripts/sync-wedding-photos.py --workers 6 --upright "$RUNNER_TEMP/upright"
       - name: Check site and guest uploads
         run: |
@@ -42,7 +42,7 @@ jobs:
           node photos/test-dng-preview.cjs
           node apps-script/photos/test-backend.cjs
       - name: Save new JPEGs
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && vars.PHOTO_INITIAL_IMPORT != 'true'
         run: |
           git config user.name 'Wedding photo sync'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

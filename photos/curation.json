@@ -65,12 +65,12 @@
     {
       "prefix": "EA2A",
       "start": 0,
-      "end": 199,
+      "end": 149,
       "category": "ceremony"
     },
     {
       "prefix": "EA2A",
-      "start": 200,
+      "start": 150,
       "end": 9899,
       "category": "portraits"
     }
