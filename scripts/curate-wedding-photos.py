@@ -13,7 +13,7 @@ for p in data['photos']:
    if prefix==group['prefix'] and group['start']<=number<=group['end']:
     inferred=group['category'];break
  p['category']=overrides.get(p['original'],inferred)
- p['focus']=settings.get('focus',{}).get(p['original'],'50% 50%')
+ p['focus']=settings.get('focus',{}).get(p['original'],'50% 20%')
  p['hidden']=p['id'] in excluded or p['original'] in excluded
  # Optional manual rotation is applied once, preserving the RAW original.
  wanted=settings.get('rotate',{}).get(p['original'],0);applied=p.get('manualRotation',0)
