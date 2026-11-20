@@ -60,14 +60,16 @@ jobs:
           rsync -a --exclude='.git' --exclude='.github' --exclude='scripts' --exclude='apps-script' --exclude='__pycache__' --exclude='processing-report.json' ./ "$RUNNER_TEMP/site/"
       - uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/site
       - name: Wait for the Pages artifact
         env:
           GH_TOKEN: ${{ github.token }}
+          ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
         run: |
           for attempt in {1..15}; do
-            count=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" --jq '[.artifacts[] | select(.name == "github-pages")] | length' 2>/dev/null) || count=0
-            if [[ "$count" =~ ^[1-9][0-9]*$ ]]; then exit 0; fi
+            count=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" --jq "[.artifacts[] | select(.name == \"$ARTIFACT_NAME\")] | length" 2>/dev/null) || count=0
+            if [[ "$count" == 1 ]]; then sleep 10; exit 0; fi
             sleep 3
           done
           echo 'Pages artifact is not visible yet. Retry this deployment.'
@@ -75,3 +77,5 @@ jobs:
       - name: Publish website
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
