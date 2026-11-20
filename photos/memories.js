@@ -1,9 +1,7 @@
 'use strict';
 (async()=>{
- const viewport=document.getElementById('preview'),track=document.getElementById('carousel-track'),pause=document.getElementById('pause'),motion=matchMedia('(prefers-reduced-motion: reduce)');
- let paused=motion.matches,hovered=false,focused=false,offset=0,width=0,last=0,drag=null,dragged=false;
- const button=()=>{pause.textContent=paused?'Play photos':'Pause photos';pause.setAttribute('aria-pressed',String(paused));pause.setAttribute('aria-label',paused?'Play moving photos':'Pause moving photos');};button();
- pause.onclick=()=>{paused=!paused;button();};motion.addEventListener('change',()=>{paused=motion.matches;button();});
+ const viewport=document.getElementById('preview'),track=document.getElementById('carousel-track');
+ let hovered=false,focused=false,offset=0,width=0,last=0,drag=null,dragged=false;
  let group=track.firstElementChild;
  try{
   const r=await fetch('/photos/wedding/manifest.json',{cache:'no-cache'});if(!r.ok)throw Error('Album unavailable');
@@ -32,5 +30,5 @@
  const release=()=>{drag=null;};viewport.addEventListener('pointerup',release);viewport.addEventListener('pointercancel',release);
  viewport.addEventListener('click',e=>{if(dragged){e.preventDefault();dragged=false;}},true);
  viewport.addEventListener('keydown',e=>{if(e.target!==viewport||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();offset+=e.key==='ArrowRight'?260:-260;draw();});
- function animate(now){const elapsed=last?Math.min(now-last,50):0;last=now;if(!paused&&!focused&&!drag&&!document.hidden){offset+=elapsed*(hovered?20:52)/1000;draw();}requestAnimationFrame(animate);}requestAnimationFrame(animate);
+ function animate(now){const elapsed=last?Math.min(now-last,50):0;last=now;if(!focused&&!drag&&!document.hidden){offset+=elapsed*(hovered?20:52)/1000;draw();}requestAnimationFrame(animate);}requestAnimationFrame(animate);
 })();
