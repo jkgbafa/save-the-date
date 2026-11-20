@@ -13,11 +13,18 @@ workflows can be delayed by GitHub and may be disabled after 60 days without
 repository activity. Use Actions → Wedding photos and website → Run workflow for
 an immediate refresh.
 
-These are sRGB JPEG exports (up to 2400 px) with camera white balance, LibRaw
-automatic exposure/highlight blending and restrained saturation. Lightroom was
-not available, so these are not Lightroom edits. Thumbnails are 600 px. RAW files
-stay unchanged. Apple's Vision face angles help correct camera orientation;
-manual overrides are available for shots without a detectable face.
+The initial 1,039 photos were imported into Adobe Lightroom Classic on 20 November
+2026, individually processed with Auto Settings, Adobe Color, lens corrections and
+chromatic aberration removal, and exported as full-resolution quality-90 sRGB JPEGs
+with standard screen sharpening. The 63 indoor signing photos received individual
+Auto White Balance corrections after review. The site uses 2400 px copies and 600 px thumbnails.
+Each manifest entry records its editor and export checksum; image URLs include that
+checksum so visitors receive the updated edit. RAW files stay unchanged. Existing
+reviewed orientation corrections were carried into Lightroom using XMP sidecars.
+
+New Drive arrivals use LibRaw camera white balance and automatic exposure until
+they are imported, reviewed and exported through Lightroom locally. The hourly
+sync preserves existing Lightroom edits. It cannot run desktop Lightroom in CI.
 
 `photos/curation.json` controls featured photos, exclusions, manual rotation and
 category overrides. Names are the original RAW filenames. `exclude` accepts a
