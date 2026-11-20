@@ -4,6 +4,8 @@ The shareable page is https://joshualucia.com/photos/ and the full gallery is
 https://joshualucia.com/photos/gallery/. Guest uploads remain at /photos/shared/.
 Existing /photos/?photo= guest-photo links redirect to the shared album.
 The compact photo landing page puts the carousel first and the livestream below.
+Carousel selections are shuffled on each visit; the duplicate strip keeps the loop
+continuous. The full gallery initially shows 120 photos and adds 120 per click.
 Top navigation links the original programme PDF and `/gifts/`. The gifts page
 transcribes the programme's page 10, including Zelle's phone number and Stanbic Bank
 account; each number has a clipboard copy button.
