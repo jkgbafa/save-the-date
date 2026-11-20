@@ -15,6 +15,13 @@ for(const b of document.querySelectorAll('[data-size]'))b.onclick=()=>{$('grid')
 $('more').onclick=showMore;$('retry').onclick=load;$('close').onclick=()=>$('viewer').close();$('prev').onclick=()=>{if(current>0)openPhoto(current-1);};$('next').onclick=()=>{if(current<visible.length-1)openPhoto(current+1);};$('viewer').addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();$('prev').click();}if(e.key==='ArrowRight'){e.preventDefault();$('next').click();}});
 $('viewer').addEventListener('close',()=>{const url=new URL(location.href);url.searchParams.delete('photo');history.replaceState(null,'',url);trigger?.focus();});
 $('share').onclick=async()=>{const p=visible[current],url=new URL('/photos/gallery/',location.origin);url.searchParams.set('photo',p.id);try{if(navigator.share)await navigator.share({title:'Joshua & Lucia — a wedding memory',url:url.href});else{await navigator.clipboard.writeText(url.href);message('Photo link copied.');}}catch(e){if(e.name!=='AbortError')message('Copy the link from your browser to share this photo.');}};
-let touchX=null;$('full').addEventListener('touchstart',e=>{touchX=e.touches.length===1?e.changedTouches[0].clientX:null;},{passive:true});$('full').addEventListener('touchend',e=>{if(touchX===null)return;const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>60)$(dx>0?'prev':'next').click();touchX=null;},{passive:true});load();
+// Count successful swipes, rather than clicks; retain the cue until five photos.
+let swipeCount=0;try{swipeCount=Number(localStorage.getItem('wedding-photo-swipes'))||0;}catch(e){}
+const hint=()=>{$('swipe-hint').hidden=swipeCount>=5;};hint();
+let gesture=null;
+$('viewer-stage').addEventListener('touchstart',e=>{gesture=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null;},{passive:true});
+$('viewer-stage').addEventListener('touchmove',e=>{if(e.touches.length!==1)gesture=null;},{passive:true});
+$('viewer-stage').addEventListener('touchend',e=>{if(!gesture||e.touches.length)return;const dx=e.changedTouches[0].clientX-gesture.x,dy=e.changedTouches[0].clientY-gesture.y;gesture=null;if(Math.abs(dx)<50||Math.abs(dx)<Math.abs(dy)*1.3)return;const target=$(dx>0?'prev':'next');if(target.disabled)return;target.click();swipeCount=Math.min(5,swipeCount+1);try{localStorage.setItem('wedding-photo-swipes',String(swipeCount));}catch(e){}hint();},{passive:true});
+$('viewer-stage').addEventListener('touchcancel',()=>gesture=null,{passive:true});load();
 
 $('viewer').addEventListener('click',e=>{if(e.target===$('viewer'))$('viewer').close();});
