@@ -17,7 +17,8 @@ Green-tagged folders in `~/Downloads/Thank Yous` supply the nine People & groups
 filters and photo tags through `photos/folder-collections.json`. Nested files inherit
 their green parent folder's label. Mummy Dede is publicly labelled Mother of the bride.
 The local two-minute label watcher refreshes this mapping without importing new pixels.
-The gallery defaults to Most loved using shared backend heart counts; Wedding order
+The grid shows only photos and nonzero heart counts. Tags, comments and the heart
+control stay in the opened photo viewer. The gallery defaults to Most loved using shared backend heart counts; Wedding order
 retains chronological browsing. Heart counts update immediately and refresh each minute.
 Ranking changes wait until a photo viewer is closed, so typing and swiping stay stable.
 Top navigation links the original programme PDF and `/gifts/`. The gifts page

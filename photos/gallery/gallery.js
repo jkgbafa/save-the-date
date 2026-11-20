@@ -7,7 +7,17 @@ const collectionLabels={all:'wedding photos',portraits:'portraits',ceremony:'cer
 function setGroup(name){if($('viewer').open)$('viewer').close();group=name;category='all';$('group-filter').value=name;syncTabs();filter();}
 function syncTabs(){for(const b of document.querySelectorAll('[data-category]'))b.setAttribute('aria-pressed',String(b.dataset.category===category));}
 function tagsFor(p){const tags=document.createElement('div');tags.className='photo-tags';for(const name of p.tags||[]){const button=document.createElement('button');button.type='button';button.textContent=name;button.onclick=()=>setGroup(name);tags.append(button);}return tags;}
-function showMore(){const end=Math.min(shown+120,visible.length);for(let i=shown;i<end;i++){const p=visible[i],card=document.createElement('article'),b=document.createElement('button'),img=document.createElement('img'),actions=document.createElement('div'),comment=document.createElement('button');card.className='photo-tile';card.dataset.photoId=p.id;b.className='tile';b.setAttribute('aria-label','View wedding photo '+(i+1));img.loading='lazy';img.src=imageURL(p,p.thumbnail);img.alt='Joshua and Lucia’s wedding · photo '+(i+1);img.width=p.width||600;img.height=p.height||400;b.append(img);b.onclick=()=>{trigger=b;openPhoto(i);};actions.className='photo-actions';comment.type='button';comment.className='comment-link';comment.textContent='Comment';comment.setAttribute('aria-label','Leave a comment on wedding photo '+(i+1));comment.onclick=()=>{trigger=comment;openPhoto(i);PhotoInteractions.openComments();};actions.append(PhotoInteractions.createHeartButton(p.id),comment);card.append(b,tagsFor(p),actions);$('grid').append(card);}shown=end;$('more').hidden=shown>=visible.length;}
+function showMore(){
+ const end=Math.min(shown+120,visible.length);
+ for(let i=shown;i<end;i++){
+  const p=visible[i],card=document.createElement('article'),b=document.createElement('button'),img=document.createElement('img');
+  card.className='photo-tile';card.dataset.photoId=p.id;b.className='tile';b.setAttribute('aria-label','View wedding photo '+(i+1));
+  img.loading='lazy';img.src=imageURL(p,p.thumbnail);img.alt='Joshua and Lucia’s wedding · photo '+(i+1);img.width=p.width||600;img.height=p.height||400;b.append(img);
+  b.onclick=()=>{trigger=b;openPhoto(i);};
+  card.append(b,PhotoInteractions.createHeartButton(p.id,true));$('grid').append(card);
+ }
+ shown=end;$('more').hidden=shown>=visible.length;
+}
 function filter(limit=120){visible=photos.filter(p=>(category==='all'||p.category===category)&&(!group||(p.tags||[]).includes(group))).sort((a,b)=>($('sort-order').value==='hearts'?PhotoInteractions.count(b.id)-PhotoInteractions.count(a.id):0)||(a.capture||a.original).localeCompare(b.capture||b.original));$('count').textContent=visible.length.toLocaleString()+' '+(group?'photos · '+group:collectionLabels[category]);$('grid').replaceChildren();shown=0;showMore();while(shown<Math.min(limit,visible.length))showMore();$('status').textContent=visible.length?'':'No photos in this collection yet. Choose another collection above.';}
 function openPhoto(i){current=i;const p=visible[i];PhotoInteractions.selectPhoto(p);$('viewer-tags').replaceChildren(...tagsFor(p).childNodes);$('full').src=photoURL(p);$('full').alt='Joshua and Lucia’s wedding · photo '+(i+1);$('position').textContent=(i+1)+' / '+visible.length+' · '+p.original.replace(/\.[^.]+$/, '');$('download').href=photoURL(p);$('download').download=p.original.replace(/\.[^.]+$/,'.jpg');$('prev').disabled=i===0;$('next').disabled=i===visible.length-1;
  const url=new URL(location.href);url.searchParams.set('photo',p.id);history.replaceState(null,'',url);if(!$('viewer').open)$('viewer').showModal();
