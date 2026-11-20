@@ -54,3 +54,26 @@ copies; the website serves smaller 2400 px copies for fast viewing.
 ```
 python scripts/export-original-jpegs.py --originals /path/to/Originals --output /path/to/Full-resolution-JPEGs
 ```
+
+## Lightroom Classic and red labels
+
+The local Lightroom RAWs folder contains links to the same unchanged camera files,
+using their original camera filenames. Existing reviewed orientation corrections
+are carried into XMP sidecars. Import with **Add**, apply Auto settings to the
+selected photos in Library Grid view, then export original-filename sRGB JPEGs.
+`import-lightroom-exports.py /path/to/exports --orientation-in-lightroom` replaces
+the web JPEGs and thumbnails while preserving IDs, links, categories and exclusions.
+It refuses an incomplete export batch. Never apply one photo's exposure values to
+all photos: Lightroom Auto should analyze each image separately.
+
+`sync-red-labels.py /path/to/Lightroom-RAWs` reads Lightroom's red XMP color labels
+and macOS red Finder tags. It writes `photos/red-labels.json`, which curation combines
+with the manual `exclude` list. It hides photos from the album and carousel while
+retaining RAWs and JPEGs. Removing a red label restores the photo unless manually
+excluded too. Lightroom must write XMP (Catalog Settings → Metadata → Automatically
+write changes into XMP, or select photos and save metadata).
+
+`--publish` updates a clean checkout and commits only generated gallery exclusions.
+It skips publication while other work is pending. The local label watcher, when
+installed, runs every two minutes while this Mac is awake; GitHub Pages deployment
+then usually takes a few minutes. It does not permanently delete photos.

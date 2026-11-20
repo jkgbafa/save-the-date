@@ -3,7 +3,7 @@ import json, re
 from pathlib import Path
 from PIL import Image
 root=Path(__file__).resolve().parent.parent;base=root/'photos/wedding';path=base/'manifest.json';data=json.loads(path.read_text())
-settings=json.loads((root/'photos/curation.json').read_text());excluded=set(settings.get('exclude',[]));overrides=settings.get('category',{})
+settings=json.loads((root/'photos/curation.json').read_text());excluded=set(settings.get('exclude',[]));red_labels=root/'photos/red-labels.json';excluded.update(json.loads(red_labels.read_text()) if red_labels.exists() else []);overrides=settings.get('category',{})
 for p in data['photos']:
  match=re.match(r'^(.*?)(\d{4})\.',p['original'])
  inferred='portraits'
