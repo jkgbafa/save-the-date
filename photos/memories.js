@@ -24,7 +24,7 @@
  const measure=()=>{width=group.getBoundingClientRect().width;};new ResizeObserver(measure).observe(group);measure();
  const draw=()=>{if(width)offset=((offset%width)+width)%width;track.style.transform='translate3d('+(-offset)+'px,0,0)';};
  viewport.addEventListener('pointerenter',()=>hovered=true);viewport.addEventListener('pointerleave',()=>hovered=false);
- viewport.addEventListener('focusin',()=>focused=true);viewport.addEventListener('focusout',()=>focused=false);
+ viewport.addEventListener('focusin',e=>focused=e.target.matches(':focus-visible'));viewport.addEventListener('focusout',()=>focused=false);
  viewport.addEventListener('pointerdown',e=>{if(drag)return;drag={id:e.pointerId,x:e.clientX,start:offset};dragged=false;});
  viewport.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.x;if(Math.abs(dx)>8){dragged=true;viewport.setPointerCapture(e.pointerId);offset=drag.start-dx;draw();}});
  const release=()=>{drag=null;};viewport.addEventListener('pointerup',release);viewport.addEventListener('pointercancel',release);
