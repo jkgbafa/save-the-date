@@ -3098,7 +3098,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b970b7166942939c4b9b645c2f4f4046efd8cc8902a5c50f3ec29bbe5f68fbf0"
     },
@@ -3117,7 +3117,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": true,
+      "hidden": false,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4bd77cc115e09cbc3e2e022ba355a3f15d08c0595ca8c644eddba734fa45646a"
     },
@@ -9097,8 +9097,10 @@
       "category": "portraits",
       "focus": "50% 20%",
       "hidden": false,
-      "editor": "Adobe Lightroom Classic",
-      "lightroomExportSHA256": "4feed2baf1c82f643be0b1a29fbba46276af04fff39b7b5449b3512061757ebf"
+      "editor": "User-supplied edit",
+      "lightroomExportSHA256": "4feed2baf1c82f643be0b1a29fbba46276af04fff39b7b5449b3512061757ebf",
+      "sourceEditSHA256": "4d52786748d3f119d128ad6f0ac687daa488e1a3cf237bedb4e0e09ccc20c160",
+      "sourceEditFile": "2nd.png"
     },
     {
       "id": "1Qxj-tXfjyJ5lJHcQeEyQjezkCAqGwjBz",
@@ -9173,8 +9175,10 @@
       "category": "portraits",
       "focus": "50% 20%",
       "hidden": false,
-      "editor": "Adobe Lightroom Classic",
-      "lightroomExportSHA256": "4d37db50e0121a3dcd14be841cf5a592dce43dfc8425d0b44076f205e592b99e"
+      "editor": "User-supplied edit",
+      "lightroomExportSHA256": "4d37db50e0121a3dcd14be841cf5a592dce43dfc8425d0b44076f205e592b99e",
+      "sourceEditSHA256": "ebfb21ffd48a5b2936ccb95f46c5a642219901c62860a1427c9e4fa0699817bd",
+      "sourceEditFile": "1st.png"
     },
     {
       "id": "1gbOiTMvPoelbNFoiHpMHVjvcYMTu_wxe",
@@ -9230,8 +9234,10 @@
       "category": "portraits",
       "focus": "50% 20%",
       "hidden": false,
-      "editor": "Adobe Lightroom Classic",
-      "lightroomExportSHA256": "c5a98d8038012e8db1385c758f77e81682ff536e6aa30a74c2ed77f2612b8e05"
+      "editor": "User-supplied edit",
+      "lightroomExportSHA256": "c5a98d8038012e8db1385c758f77e81682ff536e6aa30a74c2ed77f2612b8e05",
+      "sourceEditSHA256": "56971f357b4f69b66958bc1f6690c4a21f1d75ac70ee38a24d5c30b428f5f99c",
+      "sourceEditFile": "3rd.png"
     },
     {
       "id": "1td8cyGNoEChr7mlZpCNljTdCDHaRks7a",
@@ -9401,8 +9407,10 @@
       "category": "portraits",
       "focus": "50% 20%",
       "hidden": false,
-      "editor": "Adobe Lightroom Classic",
-      "lightroomExportSHA256": "d7fac1c9860e8989a7caf80fb80aa5aa1af22785e7bc4549bc0a6401027715e7"
+      "editor": "User-supplied edit",
+      "lightroomExportSHA256": "d7fac1c9860e8989a7caf80fb80aa5aa1af22785e7bc4549bc0a6401027715e7",
+      "sourceEditSHA256": "565f2a1dda366e41ca42e88de678427be9253f4c2cf5bb0291cf662dccb70e35",
+      "sourceEditFile": "4th.png"
     },
     {
       "id": "1-Ltj3KmEJjSrz7sWDbFHHfLZeLyYWT7Q",
@@ -9515,8 +9523,10 @@
       "category": "portraits",
       "focus": "50% 20%",
       "hidden": false,
-      "editor": "Adobe Lightroom Classic",
-      "lightroomExportSHA256": "8042bed1662228bfd4e9c81f551daea0794f069987dd2ac2c885124d7f69bfb4"
+      "editor": "User-supplied edit",
+      "lightroomExportSHA256": "8042bed1662228bfd4e9c81f551daea0794f069987dd2ac2c885124d7f69bfb4",
+      "sourceEditSHA256": "452736a423dce0988e96db4c3a082bb3f798a0c00fc202fafd4c43dcb0d45152",
+      "sourceEditFile": "6th.png"
     },
     {
       "id": "1RhiLqmGfGFShocYgyOOhrUZMo1NIPh4f",
@@ -9743,8 +9753,10 @@
       "category": "portraits",
       "focus": "50% 20%",
       "hidden": false,
-      "editor": "Adobe Lightroom Classic",
-      "lightroomExportSHA256": "5ccff5554f9e2e602ecce802abad0bce0777fba4e27a4a97bb0fd65be7650b65"
+      "editor": "User-supplied edit",
+      "lightroomExportSHA256": "5ccff5554f9e2e602ecce802abad0bce0777fba4e27a4a97bb0fd65be7650b65",
+      "sourceEditSHA256": "cb1031dbec998655b9d1f9a08db4eec9dea60de7282f85709601dbd513308c3b",
+      "sourceEditFile": "7th.png"
     },
     {
       "id": "1Umx86vYuQDxWpQYEvb5IQlMkY7ao5ZYD",
@@ -9819,8 +9831,10 @@
       "category": "portraits",
       "focus": "50% 20%",
       "hidden": false,
-      "editor": "Adobe Lightroom Classic",
-      "lightroomExportSHA256": "54f155bc87b86b0c165527c43ad8a702223d61eb74152bb61c54db7a32a3f0ae"
+      "editor": "User-supplied edit",
+      "lightroomExportSHA256": "54f155bc87b86b0c165527c43ad8a702223d61eb74152bb61c54db7a32a3f0ae",
+      "sourceEditSHA256": "9df17a41736e57d86765d3a3ea19d2527d0b7c8b619914a09c40524fe23dbfdd",
+      "sourceEditFile": "8th_.png"
     },
     {
       "id": "1Eail56x98kVBq2qK9ZJ0ZqTi3Wii8J9_",
@@ -19905,5 +19919,14 @@
     "1B1KGUbUR8H4WrMJIY6H9BjKGjeZQ94rD",
     "1NbQkGt3VBTuX36p1QbTH7knz4Fd3xbJQ",
     "1YbQ81ABRUQvB8nFFEoUtmJ4xQV9xxOwD"
+  ],
+  "earlyFeatured": [
+    "1XuTeFsbnAgvZAxPHGepY0nve0xyIJeDs",
+    "1KEDySpxz0EReBZqG1TXx-sl7a88FUTHC",
+    "1iVCeyeXFEtsyRJLBvr0P_yFJkny5IN1v",
+    "1weX4jxl_budNiUWehSR5sif4Frcwv-uO",
+    "1QyuxjrPyLNnsm8FaV5kEQN6dz6o_fSt8",
+    "1KvUYkKy7Dx_Sn8AE4ivKOZTwnRJWE7Nm",
+    "1OzVCqsDZVJKyqfe2unr-AIv5N7d7YEvK"
   ]
 }

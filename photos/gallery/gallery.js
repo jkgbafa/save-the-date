@@ -1,6 +1,6 @@
 'use strict';
 const $=id=>document.getElementById(id);let photos=[],visible=[],shown=0,current=0,category='all',trigger=null;
-const imageURL=(p,file)=>'/photos/wedding/'+file+(p.lightroomExportSHA256?'?edit='+p.lightroomExportSHA256.slice(0,12):'');
+const imageURL=(p,file)=>{const revision=p.sourceEditSHA256||p.lightroomExportSHA256;return '/photos/wedding/'+file+(revision?'?edit='+revision.slice(0,12):'');};
 const photoURL=p=>imageURL(p,p.file);
 function message(text){$('share-status').textContent=text;setTimeout(()=>$('share-status').textContent='',4000);}
 function showMore(){const end=Math.min(shown+120,visible.length);for(let i=shown;i<end;i++){const p=visible[i],b=document.createElement('button'),img=document.createElement('img');b.className='tile';b.setAttribute('aria-label','View wedding photo '+(i+1));img.loading='lazy';img.src=imageURL(p,p.thumbnail);img.alt='Joshua and Lucia’s wedding · photo '+(i+1);img.width=p.width||600;img.height=p.height||400;b.append(img);b.onclick=()=>{trigger=b;openPhoto(i);};$('grid').append(b);}shown=end;$('more').hidden=shown>=visible.length;}

@@ -21,6 +21,7 @@ for photo in data['photos']:
  if not a.orientation_in_lightroom:im=im.rotate(photo.get('rotation',0)+photo.get('manualRotation',0),expand=True)
  im.thumbnail((2400,2400));im.save(base/photo['file'],'JPEG',quality=90,optimize=True,icc_profile=profile)
  photo['width'],photo['height']=im.size
+ photo.pop('sourceEditSHA256',None);photo.pop('sourceEditFile',None)
  im.thumbnail((600,600));im.save(base/photo['thumbnail'],'JPEG',quality=80,optimize=True,icc_profile=profile)
  photo['editor']='Adobe Lightroom Classic';photo['lightroomExportSHA256']=hashlib.sha256(source.read_bytes()).hexdigest();count+=1
 path.write_text(json.dumps(data,indent=2)+'\n');subprocess.run([sys.executable,str(root/'scripts/curate-wedding-photos.py')],check=True);print(f'Published {count} Lightroom Classic edits.')

@@ -6,6 +6,8 @@ Existing /photos/?photo= guest-photo links redirect to the shared album.
 The compact photo landing page puts the carousel first and the livestream below.
 Carousel selections are shuffled on each visit; the duplicate strip keeps the loop
 continuous. The full gallery initially shows 120 photos and adds 120 per click.
+`curation.json`'s `earlyFeatured` filenames are shuffled among other highlights near
+the beginning of the carousel. Only photos still selected for the carousel qualify.
 Top navigation links the original programme PDF and `/gifts/`. The gifts page
 transcribes the programme's page 10, including Zelle's phone number and Stanbic Bank
 account; each number has a clipboard copy button.
@@ -27,6 +29,19 @@ Auto White Balance corrections after review. The site uses 2400 px copies and 60
 Each manifest entry records its editor and export checksum; image URLs include that
 checksum so visitors receive the updated edit. RAW files stay unchanged. Existing
 reviewed orientation corrections were carried into Lightroom using XMP sidecars.
+
+Seven user-supplied PNG replacements were matched to EA2A0138, EA2A0134, EA2A0141,
+EA2A0150, EA2A0158, EA2A0164 and EA2A0169. Their web JPEGs and thumbnails retain the
+existing photo IDs and links. `sourceEditSHA256` and `sourceEditFile` record the
+provided version and take precedence in image cache keys. The editor is recorded
+as `User-supplied edit`. Existing version-2 files are preserved by Drive sync.
+A later explicit Lightroom reimport clears these replacement fields.
+Full-resolution replacement JPEGs are in the local `Replacement JPEGs` folder;
+the corresponding seven files in both Downloads selections were refreshed.
+`~/Downloads/Joshua & Lucia - Edited Green Photos` contains all 536 green selections,
+with replacements taking precedence over the original Lightroom exports.
+EA2A0045's existing Lightroom edit replaces EA2A0044 in the green selection and
+Downloads folder. Finder tags were updated accordingly; the green count stays 536.
 
 New Drive arrivals use LibRaw camera white balance and automatic exposure until
 they are imported, reviewed and exported through Lightroom locally. The hourly

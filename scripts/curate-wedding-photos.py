@@ -31,6 +31,7 @@ if len(featured)<3 and selection is None:
  featured.extend(p for p in byname.values() if p not in featured and not p['hidden'])
  featured=featured[:max(3,len(featured_names))]
 data['featured']=[p['id'] for p in featured];data['photos'].sort(key=lambda p:(p.get('capture',''),p['original']))
+early=set(settings.get('earlyFeatured',[]));data['earlyFeatured']=[p['id'] for p in featured if p['original'] in early]
 # The timestamp reflects new photos, rather than changing on every scheduled run.
 data.pop('updated',None)
 for i,p in enumerate(featured[:3]):

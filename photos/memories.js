@@ -5,7 +5,22 @@
  const button=()=>{pause.textContent=paused?'Play photos':'Pause photos';pause.setAttribute('aria-pressed',String(paused));pause.setAttribute('aria-label',paused?'Play moving photos':'Pause moving photos');};button();
  pause.onclick=()=>{paused=!paused;button();};motion.addEventListener('change',()=>{paused=motion.matches;button();});
  let group=track.firstElementChild;
- try{const r=await fetch('/photos/wedding/manifest.json',{cache:'no-cache'});if(!r.ok)throw Error('Album unavailable');const data=await r.json(),byID=new Map(data.photos.filter(p=>p.ok&&!p.hidden).map(p=>[p.id,p]));const featured=(data.featured||[]).map(id=>byID.get(id)).filter(Boolean);if(featured.length){for(let i=featured.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[featured[i],featured[j]]=[featured[j],featured[i]];}group.replaceChildren(...featured.map((p,i)=>{const link=document.createElement('a'),img=document.createElement('img');link.href='/photos/gallery/?photo='+encodeURIComponent(p.id);img.src='/photos/wedding/'+p.thumbnail+(p.lightroomExportSHA256?'?edit='+p.lightroomExportSHA256.slice(0,12):'');img.alt='Joshua and Lucia’s wedding · highlight '+(i+1);img.style.objectPosition=p.focus||'50% 20%';img.loading=i<4?'eager':'lazy';link.append(img);return link;}));}}
+ try{
+  const r=await fetch('/photos/wedding/manifest.json',{cache:'no-cache'});if(!r.ok)throw Error('Album unavailable');
+  const data=await r.json(),byID=new Map(data.photos.filter(p=>p.ok&&!p.hidden).map(p=>[p.id,p]));
+  const selected=(data.featured||[]).map(id=>byID.get(id)).filter(Boolean);
+  const shuffle=items=>{for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}return items;};
+  const earlyIDs=new Set(data.earlyFeatured||[]),early=shuffle(selected.filter(p=>earlyIDs.has(p.id))),remaining=shuffle(selected.filter(p=>!earlyIDs.has(p.id))),featured=[];
+  // Spread the preferred edits through the opening, with other highlights between.
+  for(const photo of early){if(remaining.length)featured.push(remaining.shift());featured.push(photo);if(remaining.length)featured.push(remaining.shift());}
+  featured.push(...remaining);
+  if(featured.length)group.replaceChildren(...featured.map((p,i)=>{
+   const link=document.createElement('a'),img=document.createElement('img'),revision=p.sourceEditSHA256||p.lightroomExportSHA256;
+   link.href='/photos/gallery/?photo='+encodeURIComponent(p.id);img.src='/photos/wedding/'+p.thumbnail+(revision?'?edit='+revision.slice(0,12):'');
+   if(p.sourceEditSHA256&&p.width>p.height){link.className='supplied-landscape';link.style.aspectRatio=p.width+' / '+p.height;}
+   img.alt='Joshua and Lucia’s wedding · highlight '+(i+1);img.style.objectPosition=p.focus||'50% 20%';img.loading=i<4?'eager':'lazy';link.append(img);return link;
+  }));
+ }
  catch(e){/* Keep the initial highlights if the album cannot be reached. */}
  const clone=group.cloneNode(true);clone.setAttribute('aria-hidden','true');clone.querySelectorAll('a').forEach(a=>a.tabIndex=-1);track.append(clone);
  const measure=()=>{width=group.getBoundingClientRect().width;};new ResizeObserver(measure).observe(group);measure();
