@@ -3,6 +3,10 @@
 The shareable page is https://joshualucia.com/photos/ and the full gallery is
 https://joshualucia.com/photos/gallery/. Guest uploads remain at /photos/shared/.
 Existing /photos/?photo= guest-photo links redirect to the shared album.
+The compact photo landing page puts the carousel first and the livestream below.
+Top navigation links the original programme PDF and `/gifts/`. The gifts page
+transcribes the programme's page 10, including Zelle's phone number and Stanbic Bank
+account; each number has a clipboard copy button.
 
 The public source folder is https://drive.google.com/drive/folders/1VobC_5cBIyI0ximL4USmCWjIlrF3VaAp.
 The hourly GitHub Actions workflow discovers new files using the public folder
