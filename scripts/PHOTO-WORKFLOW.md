@@ -10,6 +10,16 @@ focus and dragging temporarily hold it. The full gallery initially shows 120 pho
 and adds 120 per click.
 `curation.json`'s `earlyFeatured` filenames are shuffled among other highlights near
 the beginning of the carousel. Only photos still selected for the carousel qualify.
+The album has separate Portraits (52 reviewed photos of Joshua and Lucia), Ceremony,
+Groups, and Reception tabs. `couplePortraits` in curation explicitly identifies the
+couple-only photos; other former portraits belong to Groups.
+Green-tagged folders in `~/Downloads/Thank Yous` supply the nine People & groups
+filters and photo tags through `photos/folder-collections.json`. Nested files inherit
+their green parent folder's label. Mummy Dede is publicly labelled Mother of the bride.
+The local two-minute label watcher refreshes this mapping without importing new pixels.
+The gallery defaults to Most loved using shared backend heart counts; Wedding order
+retains chronological browsing. Heart counts update immediately and refresh each minute.
+Ranking changes wait until a photo viewer is closed, so typing and swiping stay stable.
 Top navigation links the original programme PDF and `/gifts/`. The gifts page
 transcribes the programme's page 10, including Zelle's phone number and Stanbic Bank
 account; each number has a clipboard copy button.

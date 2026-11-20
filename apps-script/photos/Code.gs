@@ -12,7 +12,7 @@ function doPost(e){
   try {
     if(!e||!e.postData||e.postData.contents.length>2900000)throw new Error('Invalid request.');
     var data=JSON.parse(e.postData.contents),args=data.args||[];
-    var actions={beginUpload:beginUpload,uploadChunk:uploadChunk,listGallery:listGallery};
+    var actions={beginUpload:beginUpload,uploadChunk:uploadChunk,listGallery:listGallery,listPhotoComments:listPhotoComments,addPhotoComment:addPhotoComment,listPhotoHearts:listPhotoHearts,setPhotoHeart:setPhotoHeart};
     if(!Object.prototype.hasOwnProperty.call(actions,data.action))throw new Error('Unknown action.');
     return json_({ok:true,result:actions[data.action].apply(null,args)});
   }catch(error){return json_({ok:false,error:error.message});}

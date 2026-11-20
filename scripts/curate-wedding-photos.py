@@ -6,15 +6,22 @@ root=Path(__file__).resolve().parent.parent;base=root/'photos/wedding';path=base
 settings=json.loads((root/'photos/curation.json').read_text());excluded=set(settings.get('exclude',[]));red_labels=root/'photos/red-labels.json';excluded.update(json.loads(red_labels.read_text()) if red_labels.exists() else []);overrides=settings.get('category',{})
 selection_path=root/'photos/finder-selection.json';selection=json.loads(selection_path.read_text()) if selection_path.exists() else None
 included=set(selection['include']) if selection is not None else None
+collections_path=root/'photos/folder-collections.json';collections=json.loads(collections_path.read_text()).get('groups',[]) if collections_path.exists() else []
+tags={}
+for collection in collections:
+ for name in collection['photos']:tags.setdefault(name,[]).append(collection['name'])
+couple=set(settings.get('couplePortraits',[]))
 for p in data['photos']:
  match=re.match(r'^(.*?)(\d{4})\.',p['original'])
- inferred='portraits'
+ inferred='groups'
  if match:
   prefix,number=match.group(1),int(match.group(2))
   for group in settings.get('groups',[]):
    if prefix==group['prefix'] and group['start']<=number<=group['end']:
     inferred=group['category'];break
- p['category']=overrides.get(p['original'],inferred)
+ p['category']='portraits' if p['original'] in couple else overrides.get(p['original'],inferred)
+ if p['original'] in tags:p['tags']=tags[p['original']]
+ else:p.pop('tags',None)
  p['focus']=settings.get('focus',{}).get(p['original'],'50% 20%')
  p['hidden']=p['id'] in excluded or p['original'] in excluded or included is not None and p['original'] not in included
  # Optional manual rotation is applied once, preserving the RAW original.
@@ -38,4 +45,4 @@ for i,p in enumerate(featured[:3]):
  target=root/'photos'/('featured'+('-'+str(i+1) if i else '')+'.jpg');source=base/p['file']
  if not target.exists() or target.read_bytes()!=source.read_bytes():target.write_bytes(source.read_bytes())
 path.write_text(json.dumps(data,indent=2)+'\n')
-print('Collections:',{c:sum(p['category']==c and not p['hidden'] for p in data['photos']) for c in ['ceremony','portraits','reception']})
+print('Collections:',{c:sum(p['category']==c and not p['hidden'] for p in data['photos']) for c in ['ceremony','portraits','groups','reception']})

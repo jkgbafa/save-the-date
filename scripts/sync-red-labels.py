@@ -3,7 +3,7 @@ Automatically writing XMP in Lightroom makes color-label changes visible here.
 With --publish, a clean checkout is required and only the generated selections,
 manifest and featured images are committed/pushed. Unrelated edits are skipped.
 """
-import argparse,json,os,plistlib,subprocess,sys,xml.etree.ElementTree as ET
+import argparse,json,os,plistlib,re,subprocess,sys,xml.etree.ElementTree as ET
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('originals',type=Path);p.add_argument('--publish',action='store_true');a=p.parse_args()
 root=Path(__file__).resolve().parent.parent
@@ -52,12 +52,25 @@ if selection_enabled:
  selection_text=json.dumps(selected,indent=2)+'\n'
  if not selection_path.exists() or selection_path.read_text()!=selection_text:
   selection_path.write_text(selection_text);changes=True
+collections_folder=Path.home()/'Downloads/Thank Yous'
+if collections_folder.is_dir():
+ bystem={Path(photo['original']).stem.upper():photo['original'] for photo in manifest['photos']};groups=[]
+ for folder in sorted(collections_folder.iterdir()):
+  if not folder.is_dir() or 'green' not in finder_tags(folder):continue
+  label='Mother of the bride' if 'dede' in folder.name.lower() else folder.name.strip();names=set()
+  for file in folder.rglob('*'):
+   if file.suffix.lower() not in ('.jpg','.jpeg','.png','.cr3'):continue
+   stem=re.sub(r' copy(?: \d+)?$','',file.stem,flags=re.I).upper()
+   if stem in bystem:names.add(bystem[stem])
+  groups.append({'name':label,'photos':sorted(names)})
+ collection_path=root/'photos/folder-collections.json';collection_text=json.dumps({'groups':groups},indent=2)+'\n'
+ if not collection_path.exists() or collection_path.read_text()!=collection_text:collection_path.write_text(collection_text);changes=True
 if not changes:print(f'No label changes ({len(red)} red, {len(green)} green, {len(blue)} blue photos).');sys.exit(0)
 path.write_text(text)
 subprocess.run([sys.executable,str(root/'scripts/curate-wedding-photos.py')],check=True)
 print(f'Selection: {len(green)} green, {len(blue)} blue, {len(red)} red; originals retained.')
 if a.publish:
- subprocess.run(['git','-C',str(root),'add','photos/red-labels.json','photos/finder-selection.json','photos/wedding/manifest.json','photos/featured.jpg','photos/featured-2.jpg','photos/featured-3.jpg'],check=True)
+ subprocess.run(['git','-C',str(root),'add','photos/red-labels.json','photos/finder-selection.json','photos/folder-collections.json','photos/wedding/manifest.json','photos/featured.jpg','photos/featured-2.jpg','photos/featured-3.jpg'],check=True)
  if git('diff','--cached','--name-only'):
   subprocess.run(['git','-C',str(root),'commit','-m','Update wedding gallery from Finder photo selections'],check=True)
   subprocess.run(['git','-C',str(root),'push','origin','main'],check=True)

@@ -10,7 +10,9 @@ Apps Script editor: https://script.google.com/home/projects/10lv8pjUn8UNXJQmJJ7l
 ## Updating
 
 `photos/shared/index.html` is the guest-upload frontend. `photos/index.html` is the memories landing page; the photographer gallery lives at `photos/gallery/`. See `scripts/PHOTO-WORKFLOW.md` for Drive imports and photo curation. `Gallery.html` is its source copy.
-`Code.gs` is the backend; `Deploy.gs` is a copy for pasting into Apps Script.
+`Code.gs` handles routing and uploads; `Interactions.gs` handles photo comments and
+hearts. Both files are deployed in the existing project. `Deploy.gs` concatenates
+both for a one-file installation; do not add that copy alongside the separate files.
 Deploy new backend versions through Manage deployments > Edit > New version, keeping the existing deployment URL. Execute as QuicknLabs, access Anyone. No OAuth token is sent to visitors. `setupGallery` is run once in the script editor, never exposed through the public API.
 
 ## Behaviour
@@ -38,3 +40,27 @@ Deploy new backend versions through Manage deployments > Edit > New version, kee
 The browser accepts DNG extensions even when iOS supplies an empty, TIFF, or generic MIME type. Originals are uploaded without conversion. When a DNG contains an embedded JPEG, `photos/dng-preview.js` reads it in bounded slices and produces a gallery preview. A separate JPEG preview is saved in the same Drive folder, shared only when the original finishes, and excluded from the gallery as a duplicate. DNGs without a browser-readable embedded JPEG still upload, but depend on Drive for a thumbnail.
 
 Run `node photos/test-dng-preview.cjs` and `node apps-script/photos/test-backend.cjs` from the repository root to check parsing and upload/gallery contracts.
+
+## Comments and hearts
+
+Version 6 was published on 20 November 2026 at the existing public web-app URL.
+The official photographer gallery uses `listPhotoComments`, `addPhotoComment`,
+`listPhotoHearts`, and `setPhotoHeart`. Comments have an optional name (Anonymous
+when blank), a 1,000-character limit, timestamps and retry IDs. The sidebar follows
+the selected photo. Text is rendered with `textContent`, never HTML. Heart state is
+one toggle per browser UUID, stored as a SHA-256 hash server-side; public responses
+contain counts and that visitor's own liked IDs, never other visitor identifiers.
+
+Data live in private JSON files within `Photo comments and hearts`, under the
+existing private guest-upload folder. `INTERACTIONS_FOLDER_ID` records that folder.
+Nothing in this feature shares the JSON files or changes Drive permissions.
+Comments are isolated per photo; hearts share a locked JSON record so the counts
+agree across visitors. Mutations use a script lock, idempotent comment IDs / explicit
+heart state, per-visitor and daily rate limits, and a visible-photo allowlist from
+the published manifest. Comments are limited to 200 per photo. Private records can
+be managed by the storage owner through Drive.
+
+Run `node apps-script/photos/test-interactions.cjs` for persistence, anonymity,
+validation, duplicate retries, limits, shared hearts, undo and voter privacy checks.
+Browser comment-submit tests use isolated intercepted responses and do not publish
+test messages. A real backend heart was added, persisted across reload and removed.

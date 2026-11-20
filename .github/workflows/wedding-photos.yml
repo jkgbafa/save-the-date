@@ -42,6 +42,7 @@ jobs:
           node check.js
           node photos/test-dng-preview.cjs
           node apps-script/photos/test-backend.cjs
+          node apps-script/photos/test-interactions.cjs
       - name: Save new JPEGs
         if: github.event_name != 'push' && vars.PHOTO_INITIAL_IMPORT != 'true'
         run: |

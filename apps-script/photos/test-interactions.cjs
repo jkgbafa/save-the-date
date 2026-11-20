@@ -1,0 +1,23 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),crypto=require('crypto');
+const values={FOLDER_ID:'uploads'},cache=new Map(),folders=new Map();let writes=0,locked=false;
+function folder(id){if(folders.has(id))return folders.get(id);const files=new Map(),object={getId:()=>id,createFolder:name=>folder(id+'/'+name),getFilesByName:name=>({hasNext:()=>files.has(name),next:()=>files.get(name)}),createFile(name,text,type){assert(locked);assert.equal(type,'application/json');writes++;const file={getBlob:()=>({getDataAsString:()=>text}),setContent(value){assert(locked);writes++;text=value;}};files.set(name,file);return file;}};folders.set(id,object);return object;}
+const props={getProperty:k=>values[k]??null,setProperty:(k,v)=>(values[k]=v,props)};
+const PHOTO='published-photo-123',OTHER='published-photo-456',HIDDEN='hidden-photo-123',A='00000000-0000-0000-0000-000000000001',B='00000000-0000-0000-0000-000000000002';
+const ctx={console,Date,JSON,Math,String,Object,Array,Number,Error,RegExp,PropertiesService:{getScriptProperties:()=>props},CacheService:{getScriptCache:()=>({get:k=>cache.get(k)||null,put:(k,v)=>cache.set(k,v),remove:k=>cache.delete(k)})},LockService:{getScriptLock:()=>({waitLock(){assert(!locked);locked=true;},releaseLock(){locked=false;}})},DriveApp:{getFolderById:folder},Utilities:{DigestAlgorithm:{SHA_256:'sha256'},computeDigest:(_,s)=>[...crypto.createHash('sha256').update(s).digest()],formatDate:()=> '2026-11-20'},UrlFetchApp:{fetch:url=>{assert.equal(url,'https://joshualucia.com/photos/wedding/manifest.json');return {getResponseCode:()=>200,getContentText:()=>JSON.stringify({photos:[{id:PHOTO,ok:true},{id:OTHER,ok:true},{id:HIDDEN,ok:true,hidden:true}]})};}}};
+vm.createContext(ctx);vm.runInContext(fs.readFileSync(__dirname+'/Code.gs','utf8')+'\n'+fs.readFileSync(__dirname+'/Interactions.gs','utf8'),ctx);
+const plain=value=>JSON.parse(JSON.stringify(value));
+assert.deepEqual(plain(ctx.listPhotoComments(PHOTO)),{items:[]});assert.equal(writes,0);
+assert.throws(()=>ctx.addPhotoComment(HIDDEN,{clientId:A,text:'Hidden',requestId:A}));
+assert.throws(()=>ctx.addPhotoComment(PHOTO,{clientId:A,text:'x',requestId:A,website:'bot'}));
+assert.throws(()=>ctx.addPhotoComment(PHOTO,{clientId:A,text:'x'.repeat(1001),requestId:A}));
+assert.throws(()=>ctx.addPhotoComment(PHOTO,{clientId:'bad',text:'Hello',requestId:A}));
+const anon=ctx.addPhotoComment(PHOTO,{clientId:A,text:'  Lovely photo!  ',name:'',requestId:A});assert.equal(anon.name,'Anonymous');assert.equal(anon.text,'Lovely photo!');
+assert.equal(ctx.addPhotoComment(PHOTO,{clientId:A,text:'Lovely photo!',requestId:A}).id,anon.id);assert.equal(ctx.listPhotoComments(PHOTO).items.length,1);
+ctx.addPhotoComment(PHOTO,{clientId:B,text:'A wonderful day.\nThank you!',name:'Akua',requestId:B});assert.equal(ctx.listPhotoComments(PHOTO).items[1].name,'Akua');assert.equal(ctx.listPhotoComments(OTHER).items.length,0);
+for(let i=3;i<=6;i++)ctx.addPhotoComment(PHOTO,{clientId:A,text:'Comment '+i,requestId:'00000000-0000-0000-0000-'+String(i).padStart(12,'0')});
+assert.throws(()=>ctx.addPhotoComment(PHOTO,{clientId:A,text:'Too fast',requestId:'00000000-0000-0000-0000-000000000007'}),/wait/);assert.equal(locked,false);
+assert.deepEqual(plain(ctx.setPhotoHeart(PHOTO,A,true)),{count:1,liked:true});assert.equal(ctx.setPhotoHeart(PHOTO,A,true).count,1);assert.equal(ctx.setPhotoHeart(PHOTO,B,true).count,2);assert.equal(ctx.setPhotoHeart(PHOTO,A,false).count,1);
+const summary=plain(ctx.listPhotoHearts(B));assert.equal(summary.counts[PHOTO],1);assert.deepEqual(summary.liked,[PHOTO]);assert(!JSON.stringify(summary).includes(crypto.createHash('sha256').update(B).digest('hex')));
+assert.throws(()=>ctx.setPhotoHeart(HIDDEN,A,true));assert.throws(()=>ctx.setPhotoHeart(PHOTO,A,'true'));
+assert.equal(ctx.setPhotoHeart(PHOTO,B,false).count,0);assert.equal(Object.keys(ctx.listPhotoHearts(B).counts).length,0);assert.equal(locked,false);
+console.log('PASS: private storage, optional/anonymous names, comment persistence/isolation, retry deduplication, input validation, rate limits, one heart per browser, undo, shared counts and voter privacy.');
