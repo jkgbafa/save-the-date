@@ -4,6 +4,8 @@ from pathlib import Path
 from PIL import Image
 root=Path(__file__).resolve().parent.parent;base=root/'photos/wedding';path=base/'manifest.json';data=json.loads(path.read_text())
 settings=json.loads((root/'photos/curation.json').read_text());excluded=set(settings.get('exclude',[]));red_labels=root/'photos/red-labels.json';excluded.update(json.loads(red_labels.read_text()) if red_labels.exists() else []);overrides=settings.get('category',{})
+selection_path=root/'photos/finder-selection.json';selection=json.loads(selection_path.read_text()) if selection_path.exists() else None
+included=set(selection['include']) if selection is not None else None
 for p in data['photos']:
  match=re.match(r'^(.*?)(\d{4})\.',p['original'])
  inferred='portraits'
@@ -14,7 +16,7 @@ for p in data['photos']:
     inferred=group['category'];break
  p['category']=overrides.get(p['original'],inferred)
  p['focus']=settings.get('focus',{}).get(p['original'],'50% 20%')
- p['hidden']=p['id'] in excluded or p['original'] in excluded
+ p['hidden']=p['id'] in excluded or p['original'] in excluded or included is not None and p['original'] not in included
  # Optional manual rotation is applied once, preserving the RAW original.
  wanted=settings.get('rotate',{}).get(p['original'],0);applied=p.get('manualRotation',0)
  if wanted!=applied:
@@ -23,10 +25,11 @@ for p in data['photos']:
   if abs(wanted-applied)%180:p['width'],p['height']=p.get('height'),p.get('width')
   p['manualRotation']=wanted
 byname={p['original']:p for p in data['photos'] if not p['hidden']}
-featured=[byname[n] for n in settings.get('featured',[]) if n in byname]
-if len(featured)<3:
+featured_names=selection['featured'] if selection is not None else settings.get('featured',[])
+featured=[byname[n] for n in featured_names if n in byname]
+if len(featured)<3 and selection is None:
  featured.extend(p for p in byname.values() if p not in featured and not p['hidden'])
- featured=featured[:max(3,len(settings.get('featured',[])))]
+ featured=featured[:max(3,len(featured_names))]
 data['featured']=[p['id'] for p in featured];data['photos'].sort(key=lambda p:(p.get('capture',''),p['original']))
 # The timestamp reflects new photos, rather than changing on every scheduled run.
 data.pop('updated',None)

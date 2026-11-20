@@ -15,7 +15,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ebebd93e1e0686bbc17c384f6ea54b0620042828bffff37a9bd62f2ffcfea17a"
     },
@@ -53,7 +53,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2d233685a9b61754f239887cc1baf430ccbbcb350931eb82eab2f2eb00288952"
     },
@@ -72,7 +72,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "523c54135c7d7afbdd8ff846ec47fa8d6aa5bfebd77e3e56fa63f4c98a7bc9d3"
     },
@@ -91,7 +91,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "90ce44f0dbfef3d81cb0b02a478568d5b09c57fbcc03e52f4102802a570ddada"
     },
@@ -110,7 +110,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7574f999072c7994df991eebf8d8856b467654ab2644cf1c6e68a3b933da40d3"
     },
@@ -129,7 +129,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7a323041fc936a92766e6072253c41d000aed014b75ab92a5b6ed02afd5dc9fb"
     },
@@ -148,7 +148,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "00cbe85fb9866f68adb8b35ee37690b29ef98c84d5d0c425c12ce7c066860a65"
     },
@@ -167,7 +167,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d3f2288a724a106ff7861fdbd93e9c08d4c9a9000bbbf217e1f0218063b79caf"
     },
@@ -186,7 +186,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c9b6ad10cda35070a8975450f1271be31d447c8b0a3d6ae38cc8831659da631b"
     },
@@ -205,7 +205,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6e9f65c573171d3b38a23d32447c89b8a8d69309ca071638712bd3a72804d689"
     },
@@ -262,7 +262,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 270,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "20452a5cf5c4614fba9615cb6211286d59adb7df7c105f06345282de0ff63e76"
@@ -282,7 +282,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d2348abb1df1ce880c304dd946959befb4e70a7b456386f382f590612ac9c51f"
     },
@@ -301,7 +301,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "da94e3911c90a65796ee7131050366d359988d4b0cb8cc696cbe0f1cb30dd8b3"
     },
@@ -320,7 +320,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "bb67bb06b20a4d82904a95a6df8d0cdec3e2266fe2e7dd4da28237abfa62f291"
     },
@@ -377,7 +377,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2b75a2cf9531ef38d46726f0104973aa7e254861c78697cf2c4b972cb293f46b"
     },
@@ -396,7 +396,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "65bb8a244703f94b9d0dd586e8be12939868aae2eada8422fcfb0b9da31e71f8"
     },
@@ -434,7 +434,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "93a2a80ac1cdd77d69d63d8221838572b7ce8abee590b7cfdf619644a57d7cd5"
     },
@@ -453,7 +453,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "cf33ab4773470b9396fa44d2f44343816dddc703b49eb98306f92ef862933ee7"
     },
@@ -472,7 +472,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f968e2704c2e7e44d93482e6d10271138f9022a5758a1ff4fb49f21cfe812e44"
     },
@@ -491,7 +491,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7e7c855ec6f58b0a5d4b4e6c82a07c7760e25ca46141298f4f488de4f32dbd49"
     },
@@ -510,7 +510,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6c2ad08149a9c595551e0cda8684a11fe21f3c1dc3e8e296de284ae40b7d79b3"
     },
@@ -529,7 +529,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f40cc9a831b819704bbdb013c42287e4ce832c5acb2d49bda81612176cdf2be4"
     },
@@ -871,7 +871,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "10a360292b7708f669af4c49a84e745bc41abc574ff4f93736c3a6b362e264d0"
     },
@@ -928,7 +928,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2bff2d6b0061c98217480ccc2f7482bcbeeebf2b8e73658de7ee8f80d7e30c80"
     },
@@ -966,7 +966,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9870dbf90dddf6fc6660c7a886111f687223eaaba1c02c568561176e341c852b"
     },
@@ -985,7 +985,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a552ce1e080b49c1decc2f76004c964deabd3226b3695d1481ce284b6524a392"
     },
@@ -1004,7 +1004,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3e138959c7b1ecab87060a35fb12acb397a503f91ff589653f4f3bf3ab054368"
     },
@@ -1080,7 +1080,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "96f2e6e3b5e4c080a4223acf0e3d2e100de278a4ff7a7748ee572c0afc7f6483"
     },
@@ -1099,7 +1099,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f69cdbdce6514e6b6fb0004fa42ab05a1b4d3f76a6a94d3bd050308f652476ac"
     },
@@ -1137,7 +1137,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2442d8c115b89ff5fb0009e9f0f3bdd5271308174522ec67ae89996e947b232c"
     },
@@ -1156,7 +1156,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2e62e2b9fae2a3c795e40e7d3713af28cbcb6982c76976c7f041eed684bd2fcb"
     },
@@ -1175,7 +1175,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7a64ef74b5feb2301515a7737ce0f82f7196f189c665ed0f209e123d77e43e8c"
     },
@@ -1194,7 +1194,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f662274d99f1af1826a1d74f53af78d162de4f69416a49554b413fae52626b48"
     },
@@ -1213,7 +1213,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "85dbfe4cd9248bf07eb0940e811990c4fb155e52ab1eadc2671ca3e07a85787a"
     },
@@ -1232,7 +1232,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "51e0c5dad8e9ca240c4241631b9ec80dad68b3dc6457ab6624276265f02724f8"
@@ -1252,7 +1252,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c17a88b7d1941af5a674a7c17c1323c39f93368e8e9a1643aa28e70e1053c2ad"
@@ -1272,7 +1272,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "61ea0f1dbf6748d4f3fe5ef02ce8ab6ed9ba4f6f12f28da438412d2ff47e8e8f"
@@ -1292,7 +1292,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "77b175151826ff660fdd3da82bfcc9db6bfd4f60aad455d88d1315cc9c27ecb4"
     },
@@ -1387,7 +1387,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5213e19dac163bd59c3cf56d0d519253db39ade383b67c51e03e10a5a4839588"
     },
@@ -1406,7 +1406,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "57fed518d04fc8a3270d51003ba44add31aeff6f918d7e33a4fa385f75d356cf"
     },
@@ -1463,7 +1463,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f0a9a8dfb700472d45610a17557078dd34331db54dacdc5523e736e26e605f6d"
     },
@@ -1520,7 +1520,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "156d4be210f863525a15f39917e7401f4752d7d12029f6b5a7634fc7b8fc085f"
     },
@@ -1558,7 +1558,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ee37c47cede89cc0c297c0bacb1312f9a3788d8ac29e9b2ab123a4a801d7cc19"
     },
@@ -1577,7 +1577,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9f250834efc06d9b1e970c3b636fbe8aabc6cc33c638ddfd6289dcdd36e32bff"
     },
@@ -1615,7 +1615,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2393f82e7ddcc487df445adbc9db608863e0f741352d782c5256ff447acac9c6"
     },
@@ -1748,7 +1748,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "62552722920fd2f372e214c7e971c37c19eebffd0a87cd0161d96768a03f81aa"
     },
@@ -1767,7 +1767,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "45b24053c06a9067960d6e1c6228bab8a63eaa16d247bb452335a0bfbe87750a"
     },
@@ -1805,7 +1805,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1256aa9d8ffbb70b03ce15ea2104a3a07a913f0b6e98f01e219f086ee049912f"
     },
@@ -1843,7 +1843,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a6aabebafb5d4991beb53712449c5b123f962b781731937c00751273664e71bb"
     },
@@ -1862,7 +1862,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7bb1c7a998c4da9fb34f12d0f204f0e94262e58a19785c26047cf8a9d0d59c75"
     },
@@ -1976,7 +1976,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "91825203069516e33617b633bc0c40de7cffb7165b0d1399f66b805ae0b3953d"
     },
@@ -1995,7 +1995,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a473d03d3cfcd31340c61ecc4af3ec29dba2ca7d3eab4c86d1d7da1ac286bc0a"
@@ -2034,7 +2034,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "527210f63702baaf9e5fcbdc23f473c7c59391279de06d1a6a91fb6b5cf82e76"
     },
@@ -2186,7 +2186,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fc50ca6e89ba8e9128f945e226c48c46827091ea8461f622583fdfd1cc2aeb3c"
     },
@@ -2262,7 +2262,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fd386e0717962dfc3155e510c99c69d16683b558983d794b9fed5f10de3c9ec9"
     },
@@ -2300,7 +2300,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "87c33a64a7964d90f52743da13a6d34ae1fd5fd8f6121d185d2c874ac2ceab7f"
     },
@@ -2319,7 +2319,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b8a902ebea7e78c737e5d90e2ab542c8cc60f8031632339698e4628794d82a7c"
     },
@@ -2357,7 +2357,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "81cff07af4ea026505f4c621d6be634ced2fbc9725638cd8de7ce0f60ed209a6"
     },
@@ -2414,7 +2414,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a2ff7c8faf0bf50801caa3c69b8a3355df93d7573fed70dafb9112bb0563aa94"
     },
@@ -2433,7 +2433,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "132ceacddbf56f1821e63b704144dd2aeff2615959cd9ec5026817c4b391b6e6"
     },
@@ -2452,7 +2452,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "dd18868522177ff149b69a07f42336c8119319a82b009b1eb65492bafbc08aa1"
     },
@@ -2490,7 +2490,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b1726487f664eb4efe97b48ae1e8fb38c24f1b76ea4caa686a6cdef93bdf3a0f"
     },
@@ -2509,7 +2509,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a2ddfa1b0504a33875a3e5f4bff746214f0f43f5ceeebcc65e6c77a3f6e41504"
     },
@@ -2547,7 +2547,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "09f1155c2878b20a71536b5d89e356add5ce55e9bda6addb9bb4775f4e792b69"
     },
@@ -2566,7 +2566,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c836721492e6d242738705fd4690d3521bc4e2fcc7cf260bbbe692448e119239"
     },
@@ -2623,7 +2623,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "95554404f3c63a6bca32e40628b4ff9d17b34e072c1c2c4c431ea4cb4fbc4a51"
     },
@@ -2661,7 +2661,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "299eb3de9f637001fe6a40312cddb2960f72539724c6043b01114d0516d06bfa"
     },
@@ -2680,7 +2680,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6a2d9e6d563348a3d2f9a6c2e24e720a87259a23b768e3dda681954d754b88c0"
     },
@@ -2699,7 +2699,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "20bf182356560d9866d5057e6069c0abee66fbb3fcb8d93787d2df961275ddcd"
     },
@@ -2718,7 +2718,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5476a354571e3dd9d1761fdffb65b980063ad583f7a7469f08df76995fac7f08"
     },
@@ -2737,7 +2737,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d3a869a70901d473488197a7c2200e6b573a601d9765714ab913c3c45d34e4fc"
     },
@@ -2756,7 +2756,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1edfb0fd301e98d403cd5acd90b4e109fd71b9419a4048125549e8b1e4f7086a"
     },
@@ -2813,7 +2813,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "176efba45c0e45be44afbf65b61c41cbfca7391d896b810c6656b77b08a772c0"
     },
@@ -2832,7 +2832,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "52a5a55ede784aa547eca941df9800b8206b5a9e933b761f462ceab2c0a2a742"
     },
@@ -2851,7 +2851,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2bec9c3e22323d0cb2b44d69459b1bdc15eadcf7869b5d646d4b49f020558494"
     },
@@ -2870,7 +2870,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1e45ded5287e5b3d178f54b1f763ff650c4cd6f6458bf8a856bab2b4f3b4e56b"
     },
@@ -2889,7 +2889,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7f916551ea55fc866e5a5909c6ab2410a81e9313689c45893042e36a574b0e05"
     },
@@ -2927,7 +2927,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d3bf5160e3b002a1f3940fcad6eb131961ea9e9bfa02d7fd74e21daf32825420"
     },
@@ -2946,7 +2946,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7f395218b603eb5de6b25d3cd986a60a5a4c3e92fd86e4d76ef2d98871a19d42"
     },
@@ -2965,7 +2965,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a323d00800a719b91847b2ee6ec6a1904a2dc26fd7cfc2c44d5ba4355a79e125"
     },
@@ -2984,7 +2984,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "928b05450d8722a0f20a6c3bcd0b7beed3fbda378b63314ecac33baadc8d70fb"
     },
@@ -3022,7 +3022,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "97e47a11d818581000084ca8a53780dfa2ab773845a4c18a5e203169de2b7294"
     },
@@ -3041,7 +3041,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ca176b6af064492864673ef165e30586913fc7843cbe802059665c76fc04394f"
     },
@@ -3079,7 +3079,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5222adedb1c22463cc4850863957144a863e32f823b59ae29444be0a1393a08c"
     },
@@ -3117,7 +3117,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4bd77cc115e09cbc3e2e022ba355a3f15d08c0595ca8c644eddba734fa45646a"
     },
@@ -3136,7 +3136,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "05d89bd25c76d4ef61d12301fddb226732c0a25a010635a7ddc8a7a8f657a0ed"
     },
@@ -3212,7 +3212,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8fb29c2d042e141c15eb2a98bef953fc8ad16d49e09d8c68088db15b2b651afc"
     },
@@ -3250,7 +3250,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7b1bf104ca5d3ef5ff52e0940f99afe92d9c527cee2831a99ffc5fd9baf9e5e1"
     },
@@ -3269,7 +3269,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7fbe9e18f8f14b4e46816b33b515cd0cf2e315c1525babf3cf4e696823b6adaf"
     },
@@ -3365,7 +3365,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e2c98817eb57987335e5fc3d067d23a356dbe22eacf4671ed6824f3326e96f85"
     },
@@ -3422,7 +3422,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5c62822c00077ff593c8b2bc65a6a50d5ccd446f465748cb0201077b0ffa4147"
     },
@@ -3536,7 +3536,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a7cb2b5cdb26ac8c1fd7c6d68d78fbcccc98b5aa756c28031f6339b203603624"
     },
@@ -3574,7 +3574,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a9ae57f98ace09186984cbf98a6382432faffec7072ef1c8cfe2551b4f3ead01"
     },
@@ -3651,7 +3651,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e7f25a30a15176eb4b27224a8f622d378568e681ef68d5da6f4fdd198945dad7"
     },
@@ -3690,7 +3690,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c88e452028a49520c140eac6733c72eb8cdbf41b2597c1e385ae60cded49902e"
@@ -3710,7 +3710,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "385229e533e65bdc8177c5334fd418536575c460a765c90519f636c1938b3e44"
     },
@@ -3729,7 +3729,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2569ee011968c05363fd06f38b04d90b7da402809359b5e03ad0afcf95ed38cd"
     },
@@ -3862,7 +3862,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "de74d2552c2bafc52020857e1f8d501f0fd5f3fcb88fcd20d7cba2e1a52d8c0d"
     },
@@ -3881,7 +3881,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "52c00d76729986737f212310ea4acf2b6839ae4aa25acb045edd174693e3a86c"
     },
@@ -3957,7 +3957,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "15d2a1d49aa1205de26b8fc36e5352fc62f76d466e999c8787e0321ba6180ae4"
     },
@@ -3976,7 +3976,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4fb5511267556a78d1d92dccbd9d2d69f49ba257610ebee65810213dc7023751"
     },
@@ -3995,7 +3995,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e68e1e5956bfecbe7d28778e83cd9410a31809c0980858ca321b3d2e34c9ddc4"
     },
@@ -4033,7 +4033,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "79e4edde310cae17674d066fbbdf0117526055effee6221e2688d930e14709dd"
     },
@@ -4052,7 +4052,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e92280dff9b8d0650a0558a8a12e6ff240f803b9986a9547328a91b829f6f325"
     },
@@ -4071,7 +4071,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3d9c14309d8751f5494c7fc31511758962102e47049444c97b999bd434a7e93b"
     },
@@ -4109,7 +4109,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "612721f5e059fab0a89d34face1b489b9575bfd89545546c6ef31cbcce8ca13f"
     },
@@ -4318,7 +4318,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "51046abb7a1ed5528bc658e783622d6011c7ac3eb1776aeea9fe59d70e702c93"
     },
@@ -4413,7 +4413,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "76139d1a8768f2104b2a34c627bdaceb5f4c6068cd2c989cf4fd78f2fcb2f0be"
     },
@@ -4451,7 +4451,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "595d4247d0b9cfe2087b23614ec7fb720bdbbdece0380860b9aea23f17c05dde"
     },
@@ -4470,7 +4470,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "78819e5611fee40e57ce7802f2650cea18a5cf889d6b271ca66fd40802ad20f2"
@@ -4490,7 +4490,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "078ca53d33e2ff1d9b604fd3228d6276b8bedb0023cccb85dad0729d4e8dbdc0"
     },
@@ -4509,7 +4509,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ef5505474feb541ef6b635d0e0b12657e512aaf5b9292c6d61491f1f323d98e4"
@@ -4700,7 +4700,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9d6dc4064c182c9b0b66dfa62d190472916dded36e6eca14512aaaba29b2913a"
     },
@@ -4909,7 +4909,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "360e35cde0abac2b7f3a1f09542096055a123fbdd62ea8e145aa95a8a45e3afc"
     },
@@ -5138,7 +5138,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0c61edc853d83cc671ee3420cb86728bed9517d639f9f407d170ee55dc969be0"
     },
@@ -5518,7 +5518,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "429d789085274dcd59de4c5b6fbd1ac0c3d57465e4221fbd02c0d800ed712974"
     },
@@ -5689,7 +5689,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "233378d69815d51e69c40652e1e4b4c0700bea0829a3843b2de987f4c6595a38"
     },
@@ -5708,7 +5708,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1684ed5af23253b20d94d6258a1b50dc6e2a6d4337ec560799695b21688205ed"
     },
@@ -5784,7 +5784,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "52a660a30d9fd3b177ff2b6ce4bbdf964d72f7ae4fc6a0ffbcdd711fc9f91758"
     },
@@ -5955,7 +5955,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ec3366a88d20453a676eba810d890468c0f762d508627d596b94b1a4baa86642"
     },
@@ -6031,7 +6031,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6c95fc8706bd2a9b8edf62cb7a0b99068b0d57527b9a6b2e0946b9701e671516"
     },
@@ -6069,7 +6069,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "70f5bc6cb01236e8afaf228727b47d35523718dfdd3a93856dd22f1b1d684191"
     },
@@ -6107,7 +6107,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5b6af0eaf1aa74a79525d3b03baa57ac5a34e8cb1764c5c539d2720eea9b507b"
     },
@@ -6126,7 +6126,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9665d4e857864058e941850e74ac850907c97dc87cf516e765473dda3ef08d17"
     },
@@ -6145,7 +6145,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "439e75c1231db47045a47a03f32d6f358cc4ee05a3a70a93e414ec1191081adf"
     },
@@ -6164,7 +6164,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3fbd5e64de20278b4b88fb49b38f049d55ed70cd043ccc5622ed9d3b8de9654f"
     },
@@ -6183,7 +6183,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9b1f7febde1a6c91ac301a5a6d358e31ed03e4304760225915d53273423a0333"
     },
@@ -6202,7 +6202,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ef8dba2360577f0302bb31442a5c8034297c314246ccb038adbc53e52cabc8ac"
     },
@@ -6221,7 +6221,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9771307f6647952f57cc7e60652bb7c3d3c4e0dc870a3a372e1d818cfddfa10c"
     },
@@ -6278,7 +6278,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "770c1d092a5add918dfacb44a2d6e5a6b93a8d86c3698680ddf3438e6b06a521"
     },
@@ -6297,7 +6297,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fb93d12413d5c173f93c7e81c9e361d618ca2f3f785c99b125170337a26ab557"
     },
@@ -6335,7 +6335,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e00a84e93f6463738ee30ac5e4fa9686efd7363755ac343c05cc9462ed89ec76"
     },
@@ -6354,7 +6354,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b76fe5ec2a8e5c0f5968044f7470cc978ae0b1917d9d241b53282feea5cc4d7b"
@@ -6374,7 +6374,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "092887eee6b263c81272a433a04dd08dd30ba4b8350fa052e03e19deb7f5b232"
@@ -6394,7 +6394,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4fb5064d4d85f4c2d9302956708eb5171d203881b81bb489446c03013d111f2e"
@@ -6414,7 +6414,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0bd597d9ea46ed43617afe368666473d51ebc17e97f85fc44ebbf321084ace72"
@@ -6434,7 +6434,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4bbb4a9f94b70d001325bdecba79aef8ddc2e2066420128b6843ba2d864476d9"
@@ -6454,7 +6454,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2cd3dc6d2c50110631eee9f2d89e946b756c7323f72e37ef72d4827064f88c6f"
@@ -6474,7 +6474,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8a067bbf79bb92ddbcb581c1b7f57ce997bf2cf31c92504d992a357734e7a3c0"
@@ -6514,7 +6514,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "767295565d2a51eafd81345a80120c03a64016035f4709e01848483b20beb2dc"
@@ -6534,7 +6534,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "49161cf7e94a2209f46ea7e5f03a9478afa34db7dae5010529bd6db5f5b6c4b9"
     },
@@ -6553,7 +6553,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "dabed4cb23d4b7946dd2864ecb2d5c398e9c9429480698f27c967204d3fd3469"
     },
@@ -6572,7 +6572,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ab1cf10b4c0365cc53e419da024a7e1acbb07ccb3a09888e9ddda917d18d5998"
@@ -6592,7 +6592,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0914f026961dbb4df373c3babdc4d0be09b93da64cd95810cab8ef89a7cb821a"
@@ -6612,7 +6612,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "633ff6e6c2dfca89aff5f596de67005447b1bca81684e0bc95e6d4ce58af574a"
@@ -6632,7 +6632,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "174a5d5de00165f20c252b0a3888e11b766eeccb1ac6e09844f6874f3877df67"
@@ -6652,7 +6652,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "37fecbeeb6864e136f8ed3287202942ffa27b80e4d5d59f6b880209956a4b256"
@@ -6692,7 +6692,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fef03369758845b11eb7493b1e2e8c1dc943be03c3f6c908d6d6ccf4f59ea3cd"
     },
@@ -6711,7 +6711,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "839738b808b13d40db10ec47489ea92dc2844afc8feadeb790e8199af188cf9a"
     },
@@ -6730,7 +6730,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "47f5746ce11eec07dd4ba828a73c8a3e4ef03cadaa4ce1de5581324c0a990669"
     },
@@ -6749,7 +6749,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0bd3cdfa24631b1d023d90507e47f46e1d6b26d067b834dc9d6ab99799305f6f"
     },
@@ -6768,7 +6768,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "36fad9da57264a558c689d7499d9793856f8f228a20c871711bc7a348b1f16a5"
     },
@@ -6787,7 +6787,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2931bbe136f4290fac93f6f78011cafd36b3415d29ebe538bedd4cfd60e0a153"
     },
@@ -6806,7 +6806,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5395d9425c1c4a01cf72b00cb69d81ecc976131fa2d0212a77442142e44161e9"
     },
@@ -6825,7 +6825,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "46aaeb8d65110e5828a017fa854eb8976c21b121b9bdd31669453b03fb7e41f1"
     },
@@ -6844,7 +6844,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9ccb10de59327fe70450a51c07454a47d8c68b9e7fd32a30c383b488533eb366"
     },
@@ -6863,7 +6863,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d2cf67d431eda097bb3e14b0286f66de3cb02c0c72304327192cc8b0636f1fde"
     },
@@ -6882,7 +6882,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "35746344a685cf4cc96c454171f262b5087a48d8ef064498953d74bf471ed2c1"
     },
@@ -6901,7 +6901,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "58f38aa6c1da98608c111fd6d1cf1d4a0e22496f9873196fd849a05088ea3c32"
     },
@@ -6920,7 +6920,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b612f7ebc32485e71d992258d8ab93f7787c5b2ef24f5b7f317a0b13cd6656a7"
     },
@@ -6939,7 +6939,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "cba42c63124ed40b2e30a43806f6974339fcc95e73b15c2632c2709b189b9402"
     },
@@ -6958,7 +6958,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f5b145f818d6786e8f1b53fcd5973d8413aa8db5955f306c900192d05ee46602"
     },
@@ -6977,7 +6977,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ab74f9dfc10dc699e4d4c011e894e89da22f023dff6bc17e0f8cdb234575fc76"
     },
@@ -6996,7 +6996,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3edc76b9b7455be994d3a4b1c08437c5d30d09ef2bd2dfd44c5ee013aa4c1835"
     },
@@ -7015,7 +7015,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8c5acd36c23f35fb6bc93d29ba27add4d4c3118dc7525d49cc71341a57b5e828"
     },
@@ -7034,7 +7034,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4a5393ca63fbce1432ed57169743aa9d7145987dfe7cf0d65c9a44cf5917cf75"
     },
@@ -7091,7 +7091,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e7c39247720f678ce2f29c75e6e02130c4b1ad18e18be0dfbb5e48756101e149"
     },
@@ -7110,7 +7110,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "95d49382ddc60c9210637b8e7cf39e8791182452ea908153545117fbb57a03e5"
     },
@@ -7129,7 +7129,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3de9bd9f4c00b91bc552c3e0e9e89d8eaa5c1551c15d2c775a0db6450437d15f"
@@ -7149,7 +7149,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "08e2d60c9830a10e07f74b5985a427caaa617368b6cd11d6d4a17d47af8d7822"
@@ -7169,7 +7169,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0802b44784469ea794faebca63fd1473e3606d17b40b8d0340bad185c9dd24d2"
     },
@@ -7188,7 +7188,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c18b5f90c3468f5def9590c8389c5c02a46d6379f86638c7033a825c8f1aacc8"
@@ -7208,7 +7208,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8efad01ce6b59d709de5c9ab92ce9e5d006f28e2fa7ee339e0badce31ede89ff"
@@ -7228,7 +7228,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "678f4cde2df74ca380b32f38dd7f245709b2359c2658c65e5654facdda38e8ed"
@@ -7248,7 +7248,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ea332c2aa516fa1d260ba772fc0a5cbb832bb5d09cd5b4f079b495dfc08baeb7"
     },
@@ -7267,7 +7267,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "bfeb3dcc87f9f2a4a0031194948ff56a294d6c6d1fdba536b174d4389d2d415a"
     },
@@ -7286,7 +7286,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2dd5d88c9946953144c3da2851184b9d6b54ac2a1c21e78bec146327cd4755f6"
     },
@@ -7305,7 +7305,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "da9f9a887dd3654087bfdb8cff9e8ce5ed70715606552409942872c0d5eec129"
     },
@@ -7324,7 +7324,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "91d721fe3efd5d591a2f5d17ae950673799761748e3120e1b29f697bd7f7fb0a"
     },
@@ -7343,7 +7343,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "678c8c8efecb92e9ab52c2e209a66677fc4785afb0c50080f2460ebb438f9c5e"
     },
@@ -7362,7 +7362,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "cf89829a8c2fc121eec51b66f984f2a5ff56d7f873279b59eebb4afacc992c9e"
     },
@@ -7381,7 +7381,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5ef651a13da226b43b2df68a8c21265b3633059b3f06b594ee59ef2e87d6a542"
     },
@@ -7400,7 +7400,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "15869c1126eb666589b4129af8f280419db1b4d93edbb12e2789cd7a14dbd6f5"
     },
@@ -7419,7 +7419,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "464dc8a0af17ac6febb2ba1a9a8ff5205e988371f9541f942d94b7c3afa21aaa"
     },
@@ -7438,7 +7438,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "93b9e9cac87572e79c0ecd8bff1f6967641a8549d4c16af4417728127cf24b10"
     },
@@ -7457,7 +7457,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "93a1610472ea506c5ffa51f8f23bf6883cdc9ece5f273087ea053631b8249f30"
     },
@@ -7476,7 +7476,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "72759d22415e1d4505e4c6577b369d4cee87a5f86165c3274e0bdb75615aa526"
@@ -7496,7 +7496,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b9b37a3526cff699aedc81e8f7fa26c9072c5126d41004081e402c3eaaded6c3"
     },
@@ -7515,7 +7515,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2a4a305616f2c1932885d5d7abb67702f3d8cd0acb584cf97b021a07ee719cc9"
     },
@@ -7534,7 +7534,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "06d85d8a6bfbc408d90cc7fb123e97aa942980da6f52ae3768b794e31636fe59"
     },
@@ -7553,7 +7553,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8a794f3e8aad32f28f8588fed59fecb2b66ea31a9674ca498e35ed9c5af93ad4"
     },
@@ -7572,7 +7572,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2fc3ca71e31665a8e9175142f7f8dc1edee069604457e299b4e9bbdd5c2281a3"
     },
@@ -7591,7 +7591,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7f092a1c9a339e62662aec79e94f1bb6b980458c92b080f900d4e3c2ab564669"
     },
@@ -7610,7 +7610,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8f75481ef7c85fef9fa8a85e6527ebacc1f05567859ae286dd93e96886e18f4b"
     },
@@ -7648,7 +7648,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0a680ab6da63db708a7635b5aa79b28de506dc439fb85817412e3121fd908b9f"
     },
@@ -7667,7 +7667,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2388658478af4b543a8bb4f82f7907732e9bd367e86c739a3e09fa8eba049733"
     },
@@ -7686,7 +7686,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7c8c6d19688154aacf0734895f630a6c90c445c307173e3864780c8c52726134"
     },
@@ -7705,7 +7705,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "226f98a92ba0af97a8f26d34f1ef24ef35074800b362d979b1cbdf0dd1e4f8cc"
     },
@@ -7724,7 +7724,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "aee35997fc2f513d211c27d01dc97f20b56bef468487cc51d033f7705a6b6c1c"
     },
@@ -7743,7 +7743,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1d515b1ce205a23112c4bf2700e56ad9df2adb9f977df68d81f2fb8f33a2a1ff"
     },
@@ -7762,7 +7762,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "41c92b86d490ee7ffc69946e2bcc7b87c0ddd99b6afa7e264b79fcaec3254110"
     },
@@ -7781,7 +7781,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5a3a8e35e98b11647e74614b5b82f96e9b936eedb9adf63fefef36b5828512ca"
     },
@@ -7800,7 +7800,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8601135ce530cfdd3dcb7de2d8fd6f302800c0dfa160a934fa1d05458686bde0"
     },
@@ -7819,7 +7819,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b8aded9dc2821500ad8755c0e4e1943a11c4ce2c491eb0ba93ff649b62ec28c7"
@@ -7839,7 +7839,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "808ae58729ead0de474f796bb3d7e986dfd4b8964ab70cc87c7ea102452b6967"
     },
@@ -7897,7 +7897,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "30777762ea8fb147ce285c3922b67f729d8854a8a306d4d99ba05943839c4981"
@@ -7917,7 +7917,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b0f7dc03ea31af6a4c0052ba598d608997e0725e245b9437e1f7f0916be6f9a5"
@@ -7937,7 +7937,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e7d645c4814ce4b92a3ed5535e2ad5a5dea0cde949ecea2f34c071323616d6d8"
     },
@@ -7956,7 +7956,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1d1642e9e28808d640542a7bb0543582340922e47f65cea6a7c2554ce52965f2"
     },
@@ -7975,7 +7975,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4badde6b7a7a7392241a55fb5a8fb51275afc07b895aa6a9fb565b122dde8510"
     },
@@ -7994,7 +7994,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "01f5c7d96dc5961041895d6d25f27df5dea694edaaa1daf72ce8dc7aa36d3fc2"
     },
@@ -8013,7 +8013,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0b7b32c7087875dbb5c1965dddb7d8a384d18b07b1b49d50872b8a1064ec6c50"
     },
@@ -8032,7 +8032,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "58bb533056007e3b7f0132321c6f9a2ce1c9dac3669a7e2dfcdea299078ce06e"
     },
@@ -8070,7 +8070,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1da57344c31a96e5a1ac88fc44675e95f507623706685b65cda0f646adf1b63f"
     },
@@ -8089,7 +8089,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "eec3feff9cb4a69aa2446da75e7d293696232d3ea922ae4995dbe17143b51341"
     },
@@ -8108,7 +8108,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "292579308b23fb49f225177ba4ea02ac705562b93676133a0358d4d5d47e49c1"
     },
@@ -8127,7 +8127,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0602294db9876ca0201e53f9a811f6f5e3052ba5d5cdf8e9428ff6d7ef1ae243"
     },
@@ -8146,7 +8146,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b9c7f6a0e56785fdec2470fc9df8bec160cfee7ee33be751a55db7c04fc33787"
     },
@@ -8165,7 +8165,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "88b6845202d7b3cc9195125fb4c817d0b46f0afbd1f32b86f4ecb60e8e215378"
     },
@@ -8184,7 +8184,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b52dfcaf96c36bada7ad062a498ccc7266685865ca436f82296c0cc62835a5c5"
     },
@@ -8203,7 +8203,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "cdafac799364146a9cbba4864c3b980d82e16856efd8fb8fb58797f3ee632352"
     },
@@ -8241,7 +8241,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1b5ad0fcb332742ebf9f41397fa4b2e002393cd8a663687feb08b5b7c62ab921"
     },
@@ -8260,7 +8260,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "679ec32b13f8e996c97fadeca2ab860e0dcdb07f58f4ec7d62fb8d4fe01de771"
     },
@@ -8298,7 +8298,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b465baec9ac803410003031bf9bc1e45c8492b5495c65899049799fbf35e4bed"
     },
@@ -8317,7 +8317,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "38623aa3f84631094ca3622a2d71c95bdc0e2a12d696a8a8614f8778937ada01"
     },
@@ -8336,7 +8336,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e1d5c29b2bb634bc2d85940133ebd63b4c53f6fa9941068abd7a07daed12e7b7"
     },
@@ -8355,7 +8355,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "df4ab61a49c93a1ab9a6cfb8ca94e1a601e116cba1e512504bff764992627a27"
     },
@@ -8374,7 +8374,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2dca90eee0a90b199c21aa382eb07671df4dc775e17a472f77dcafa9509a09d7"
     },
@@ -8393,7 +8393,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1a0c98c68b2a977e38402d4c772b4688b8f8357780d8b183e9f2ad5baacd8775"
     },
@@ -8412,7 +8412,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b7fae064d2345d3de203aa895450a0f89ad4e88b23e508cee93783c8db64f293"
     },
@@ -8431,7 +8431,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "22df72d8f10dada0b1880398d00f1c629a73cde49d5e10e3cb6c30c83b31cd1f"
     },
@@ -8450,7 +8450,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ac360ef42f04a5ae15a65b5298570e4a8d1e40031a702e7d247190927b3e5221"
     },
@@ -8469,7 +8469,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7ae6e304692af8394fc511a8025305e2d25d1dce566df8e15508bfd25ce2fb4e"
     },
@@ -8488,7 +8488,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "05522490d828fc5a71906d7455904e71f70f556a764aa7e8de1ef7dabfb34e97"
     },
@@ -8507,7 +8507,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "18943144a38c119228b515ea604d5853abd427c8893d50635190627e69331f6e"
     },
@@ -8526,7 +8526,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f3a6a4b52af552b5daefaa184e3a31a00c7fe971fcd233d28c0b0a3478f96996"
     },
@@ -8564,7 +8564,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "db9c80916100c97a836198a1399959e449d2325ab226f4f2500dfd66e3930117"
     },
@@ -8583,7 +8583,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "97818855238e8dbd16af4f86fd7db4926de41f6282349ce0bf92ad67328a5f8b"
     },
@@ -8621,7 +8621,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2536c9e363655a3c544cf5bc8ea27fb4687849c71183d36608622c8338b48807"
     },
@@ -8659,7 +8659,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9448fee4b1bad46e3e66d36ab6b4f7e9127d26987fae1ce427c752319b2ce444"
     },
@@ -8678,7 +8678,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6bb4ad417566bdb48401e9e1ea784476d495dee61f268e2df7697c6ca01ec335"
     },
@@ -8697,7 +8697,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5e4b277f1e963f9662d897befac57554facb168ec3612b8e115a6a65f8ec66c3"
     },
@@ -8716,7 +8716,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7f4784bad4cef0e8c16c01603815e5e4ec7cd25068d850080d01ec8b5dc60c0c"
     },
@@ -8735,7 +8735,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "cfce9ea72f15f5f70c4c0dfb7838284734f2ae8751f54d737ed352fccee778a6"
     },
@@ -8754,7 +8754,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "da23c3f5c103785fa9c8ba32df1ede386c31638ca786bb1687a242d6011d36f6"
     },
@@ -8773,7 +8773,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9feefd3b4510f98fa681ad62b9a2957a02f720d0a4488baeacef2c34eef9e2bd"
     },
@@ -8792,7 +8792,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ac92bf3c229e8af5296dc29e7ac94d86b606d00be61fc4c19e1092aea95e1e8a"
     },
@@ -8811,7 +8811,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a430991325e18024d30d33654cd52d88875abc919204c4385f9531073f640bd7"
     },
@@ -8906,7 +8906,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "25d02ad30cabe07790959159e4a2be8d27f3a93f9c66745e66cfcf7b0ffc7f6b"
     },
@@ -8963,7 +8963,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1e99203db392cbfb195dd3e3b0bdc540fbd48ad252a60eb1a429983fb116d727"
     },
@@ -8982,7 +8982,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "42bdae2ffce7bceedb632926ca370112cb41d016442f376998175d4b52824a75"
     },
@@ -9001,7 +9001,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4128b6a9a26425de88f52cc1aee3df80df7abf792b3246fe3fe078fc4834d783"
     },
@@ -9020,7 +9020,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0c2cda3de9f4e48bd586e74df071d3320a0e8a6ee11ffe78d799e7e0ef904d67"
     },
@@ -9039,7 +9039,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "bd6afacc3d8131770bdfddaf32b60828e02628ded84dcf9d9d8ce30738d71bd6"
     },
@@ -9058,7 +9058,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5ed34fe8b993deda93c02a35e6276f3c3486a4d5ece3650fc646b081af434a97"
     },
@@ -9115,7 +9115,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f1df45f2c03051ecf0c5a005f2f9ae5795a5ffddce36d32e2fd3d18090faae06"
     },
@@ -9191,7 +9191,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "bd7c4dc3df70b9310745d362f49403c8a0ae99175d3a5249db98714d1d99ce4f"
     },
@@ -9286,7 +9286,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7a23eec77a0cb492e7abb0d18661a53bf30b21fddf9114388a7c166946d72f4b"
     },
@@ -9305,7 +9305,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1288917bee12deb39bab1fff41d74eeac8893012d954b224d524b2bb319299fc"
     },
@@ -9343,7 +9343,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2ae08c20b624e8ddd1bf513537ef8ecfda90fdb7d2ae8b127a9331b35f7793ce"
     },
@@ -9362,7 +9362,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e37981088978339b2a6c5f9d7a89d31c4cd145d1c0873bd7a9ccf6282dab47e9"
     },
@@ -9457,7 +9457,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8d89f90bc22f72f31c4d59c76778d0b952932a9fbbc7b56851734b02d64735e9"
     },
@@ -9476,7 +9476,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "045e4d92c4c7fba6a5cc640b48229414cf3d4fae1253ae260a8744005f803999"
     },
@@ -9495,7 +9495,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "faf3cb9d964af82e4161a345803ef18a435ac6204b23f2cc660e8ebc1bdc0677"
     },
@@ -9552,7 +9552,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "750adc44f4324fb07abbc1f1da78e119d3a6fb85aaeac8d995e5d9b69e196a91"
     },
@@ -9571,7 +9571,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d3038ea48057188fb3032cd608e7c41f10e504045ff4ef85a5476fed7ee61f87"
     },
@@ -9590,7 +9590,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "268fef700a9154ce81ea20247141ba93ff1d598ffd9a7606e45541eafe2d1bec"
     },
@@ -9628,7 +9628,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "273db905616527ef701233e75a98435b2682b85a9c9d628fb4ce03c81d5625d9"
     },
@@ -9647,7 +9647,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a0e35fc6b255e5826bd5004745829af9d0950012ab609bfd2ed2e47202f80cb4"
     },
@@ -9666,7 +9666,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "92cc87d183218d8711ddf8d78a2de05393daa1071522fd7040926d1b4bd5b00d"
     },
@@ -9685,7 +9685,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "88e45e97694dcde87ce69eb8f352f5c95b6dc181f5586ec02228d720880e8354"
     },
@@ -9780,7 +9780,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3864397503a116fb32d274373dcfeef02cb6961639c822e23f46169215abb81b"
     },
@@ -9799,7 +9799,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f589f5968110ab0951df91cef1788961adbc1334f0297841e524a8d3bff3a7a2"
     },
@@ -9856,7 +9856,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "47dc47d31326a4b9d0bd3892c51889c9eb2439457ac7b27057eac9dd57d794c3"
     },
@@ -9875,7 +9875,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8a1c5098dcd17776f46df2c14db23b208ad351773f665ae4d0e94de0a26369d6"
     },
@@ -9913,7 +9913,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "25d52a9967950178fac0350263df5a4b69ff3ee932bc4e5fb6586189942d3ce5"
     },
@@ -9932,7 +9932,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "659df6bb9c7906b5e9d01f26d33ea971fe991c352032a862a732da44f4c451d1"
     },
@@ -9951,7 +9951,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b3ad172233b73abfd998bc8807def7c7180c721bcfc4d9ddf9ff9e7cd92eacc7"
     },
@@ -9970,7 +9970,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6a2eb7a24944e20ae90b0f348bcb2ed498d2d4d7dcf95333213cfb1a3de6f1bb"
     },
@@ -9989,7 +9989,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1d92781d70d72c508dffb6eb8b037d03ec6cde2a990a3d0643e29b46ff931aee"
     },
@@ -10008,7 +10008,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e00a69a729fa05090934a611152a9a7c29de360e38e5b65cea13c2a6a4364807"
     },
@@ -10027,7 +10027,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "046601dec432622f4e763f57df3a1d8b014eae22b9999c0354d3b538340beec2"
     },
@@ -10065,7 +10065,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0d7ed352f9584dc620a3fc545aff34158e4e2734653c629b4f52667dad16ddbb"
     },
@@ -10084,7 +10084,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c2b03266f9a2bb211d19aa346613c9dc25d7debc41d8fa2e075144b731bc23dd"
     },
@@ -10103,7 +10103,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e541726dafc814011c27a7fb2dfde79f3ac9aa69127d9e015b8e6e5251948a24"
     },
@@ -10141,7 +10141,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "63% 50%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5bbe881643aead1861881e0974d0fbeb89028ebf18e37a4a3fb52bfd41cb366e"
     },
@@ -10160,7 +10160,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a849188931f1bd966b6b6a66fc5b0fcd848da59d1a4823fdab362f66beaa61c6"
     },
@@ -10198,7 +10198,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b50c905e8351bf735760955fda8b8c66df1cbc69a7d5a533999b926f71607be6"
     },
@@ -10217,7 +10217,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fc840842da8c09c7dd4373367308958bb32e029a5aa6421486f3ac6e3e73df47"
     },
@@ -10236,7 +10236,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a683177a286eac9e383c1a38e15ee0dbbbbeea02080d36820ee6497b925101f7"
     },
@@ -10255,7 +10255,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f6ddd81287ace1bac905ef3efd3a69cccea9deabd4f436106a128e86f648b378"
     },
@@ -10274,7 +10274,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b245d403defbdf8172bca703098bba5b42fb57149c3756ca2128f4e300461cca"
     },
@@ -10293,7 +10293,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "75c3902e10b33d4095dc86b30f438c164417371d9eb67f7f2c13a876e062fba7"
     },
@@ -10312,7 +10312,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a99e81a9174749c9c30ea1f4ff19f0f949f4e4114742ecf0f53a301f9aa5a7fd"
     },
@@ -10331,7 +10331,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "df63403f3db28b3cdd300ddb7d20ddc025bbf8e161918a14dcb3e5a1ab836010"
     },
@@ -10350,7 +10350,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "da12a78106a3a53e156e78deb98be7591ea4af37b60cdfbd6f1dd7390f3f3b94"
     },
@@ -10407,7 +10407,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5bc5f2f5286a4bebd030c68ded241d6af77ea4ebf1334bb0cbc5f64df23a4433"
     },
@@ -10426,7 +10426,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c0cbf958bf42523ac78e0a34c5909e87ce906bc10f5005c58d9bc9f6f47d9cfa"
     },
@@ -10445,7 +10445,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "77e0800861c32b8d629c0bbbe0d284d57e0682dbdd0cb1e40d24107411d8dcb8"
     },
@@ -10464,7 +10464,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "119fc8eb96bd2b6b734614c29c0f0886215555cd5bf410c2a6eb74a0e51bf4fd"
     },
@@ -10559,7 +10559,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2ffabcba90762aef37e9a05eb33a5fe9407b295b10d8eda669885ef06f12eaa8"
     },
@@ -10597,7 +10597,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e401773dd3329cb672714bbec7f5e448b981849dda225b0e5e60d9b4091ca79d"
     },
@@ -10616,7 +10616,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1a5c39ccdcb0522989181e30fc7b2e5d51088465cdc38c8151c12ce212c16299"
     },
@@ -10673,7 +10673,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7bc2ede19efb04de38c7b4c259ad13623e882b72c03ac67f515e474b8aeabbdf"
     },
@@ -10711,7 +10711,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8008bd47a17d0d4e345a673201c30733ed9e9b65f6823c18ccbe3ce0e089fe62"
     },
@@ -10730,7 +10730,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "eed0584f9b58e4da7d5cf64fb3f95af7de2f2caa1a5a08e7c7d9510a2f341189"
     },
@@ -10768,7 +10768,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "97b1f52d84914265336b5a42555ee3fcd6729537be2a61a0330d0bca53d73adf"
     },
@@ -10787,7 +10787,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3d9743042da5d70fb48e02c7166284f6312e66952e23fd4c782ecc56da22a8e7"
     },
@@ -10806,7 +10806,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b0f6bd328af64900cc076665d270320ec55c0c68f8f145679512e01eaae6570e"
     },
@@ -10825,7 +10825,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c3ada65096c8b337e9fb6e5868c473e0759b1f979b1a1efda87f856b64709ed8"
     },
@@ -10863,7 +10863,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3b5d386b2ae15da0a79dd499023c41da9e1c7fd697e07b21d5dd5f61cbbaf393"
     },
@@ -10882,7 +10882,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7cfffdbd586b02e0479b8d16b5e5ec8272b81aa00dc3c2462087e1fae1372d19"
     },
@@ -10939,7 +10939,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1d2fd11131190be15855b8f7dbaa5b1f4e982c8334ee1ef25c554d1c725bc82a"
     },
@@ -10958,7 +10958,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4a6094561049a5b58f985871e1b0d0fa809bce285827f21c0138ddbb86640928"
     },
@@ -11015,7 +11015,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "860337df137e6c475e007c0c5f00463a6e9e9bc849e9d4ca89bf0d3cbe780968"
     },
@@ -11072,7 +11072,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9e9be919e0737cc2872fc76ac74d7bb595332aaeeb66473c60dbc033539d0459"
     },
@@ -11129,7 +11129,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "97ce8d279b2eb1f763528d0c1e95d8fc22bd8681acbc88946519e7f0de015502"
     },
@@ -11452,7 +11452,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a4c145e60795bd410aa906c41ae5e85d3b6c572aed1b47e105055516ed765d19"
     },
@@ -11509,7 +11509,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "42d27ef9bd839b1bbee27efdc67b5d9e47eb09b49d3ab5baf52ca74cc7d35ab3"
     },
@@ -11566,7 +11566,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1a7c0327434d590b836af327c67dd32fbbf31462d2435b198f33f278204e2d41"
     },
@@ -11604,7 +11604,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5bcba92872fb8901b5dc723c65cd4a973dfce5f1caae241f9b4c9b96341a8be1"
     },
@@ -11661,7 +11661,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ce663ed6a7f23f6993d5fd795671a5a2a16c39840d3dd070c76a9ed86fb9336c"
     },
@@ -11680,7 +11680,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5a838ae1206245936849b1fb498806b3ec161471f72ce36db16bf127b1b8d8f9"
     },
@@ -11699,7 +11699,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "009c3536b763dd8428564dd3db1ae49a6c15e0710b3b2df7c66b8665fe68d9d7"
     },
@@ -11718,7 +11718,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e000bee65ae0799b018af50219d2d20d7ecba798b162ae1ec355fa93b5e91cb8"
     },
@@ -11756,7 +11756,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "65fa3075c111cda409caa86f0df910692995da454b86663e5611ad6a7a79186d"
     },
@@ -11775,7 +11775,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4ab9fca9f1e7ec0e122597c6834cdac38cf289c88a285b5163c19101c4724e91"
     },
@@ -11794,7 +11794,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b703d9f6210a2f673f7956f88eed2b5919a89475a7115c1758005fd04d7f47e3"
     },
@@ -11813,7 +11813,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0bd598047a9491f8f8a381ffde85300dad7c0d680c599fcd65f1f51fa48dd437"
     },
@@ -11851,7 +11851,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a6ac6d07c1130cff7717683a7d6121778917ae4deb23a3ad6abf2fca7c345b63"
     },
@@ -11927,7 +11927,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7ae90515fdca49c154e413368050bf3087b76a1069b9f267e890b3135a583906"
     },
@@ -11946,7 +11946,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ab93c4e4d03bb5601e517563989a93f27fbe7ecd2ffeb7b8b4073e31322d6ab8"
     },
@@ -11984,7 +11984,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4e84b2e2706ae722d5ed3cbbde83c0406c6ab46332ff1bbeaa0b8192dd6c25b1"
     },
@@ -12003,7 +12003,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f80563cb971c33bb276e0a7fbaeb763295163f86d1f55b2d5091fff8abc07bc6"
     },
@@ -12022,7 +12022,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a120be63231eab6f9e0a3cc252ff6eef849412bb513fd45c690ed509240bf515"
     },
@@ -12041,7 +12041,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4af22c24994918d37c5778e86e960fabaf7f6dd87ab1b7db34cb7195453a4ea5"
     },
@@ -12060,7 +12060,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6d13d1fc4df5f51c0e984930006378a3f4ff3c2f8cbb3d8a22bb880faaefbc84"
     },
@@ -12079,7 +12079,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4754cac8e8e00dd293cec838ef82820dbec951482eae90e9e5f33ae5fcb993a8"
     },
@@ -12098,7 +12098,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b2f6a02d24682fb2c20262e7c8e861e33ca6f2477961a7a3b2fcfebb4b6b5d0c"
     },
@@ -12117,7 +12117,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8d0e02c07a558ccf62dfb9583897fdbe599ed567453b2049ebae351e3066f35e"
     },
@@ -12136,7 +12136,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d904afddf0e2c5b0caf0dad461fe7670d20cf2842f77a3e56ecee87655563139"
     },
@@ -12155,7 +12155,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c854f26ee55db9cb367e48bb5a561e3ca0357e04e1ad007a1ae0e6db2f25d1b9"
     },
@@ -12174,7 +12174,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5655bf5323dbfc74c3bf7115d79cfa2c0c2c7c7ba6aaf8e65b41d2860d4b4fb5"
     },
@@ -12193,7 +12193,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c0959fec3ff9896b0a82f1740b1a94337e06800b5284a00f563285bb23427cea"
     },
@@ -12212,7 +12212,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5843f91df2d7b83736019f1db2736f4fba4a51b6c45f3581ceb07851375bf047"
     },
@@ -12250,7 +12250,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "27a8dbb8d18cb6c6b432f48123a0f2f58d72e11f00fcc8054fa0c22792e84798"
     },
@@ -12326,7 +12326,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5f848a8c40c32edfc9b8e53ce32ff8cbbd8d14b77995c021afc372c13ed7c0d0"
     },
@@ -12364,7 +12364,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2eb3754ce2cc0e367aa17daa33dbd44f07513d61cbd946bf130241c7d5912ca8"
@@ -12384,7 +12384,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "99bc573dc71eecf9ec5fb9385e0a3429d1ca9a05ff8a240af23d058faf20b3ee"
     },
@@ -12403,7 +12403,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "87246ef835907fcb463b66ef15c8a98888c4ee4dc96a0c16234c196d73f44186"
     },
@@ -12422,7 +12422,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "62a3506154c357e1a85d9cf32f1a5a71587f992a6b6bd795aa6349190da906de"
     },
@@ -12441,7 +12441,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a79eb9c4f1260a6064e74ea8be56bcd638d2a44570cd8d7b1e2bd8b38cb3cf62"
     },
@@ -12460,7 +12460,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "26cd859fc4a4f5972cc0121228edef01c8cb8450253aec71a443dfe5c18f91ff"
     },
@@ -12498,7 +12498,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b73013af46cf586ee6072835a8ece7894ea79e316dd3ecee38720e94bc952907"
     },
@@ -12555,7 +12555,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e0a2808e255da5f37f485afcd87a5e99dd1ceb2bd017d7fb09162c515aec3529"
     },
@@ -12593,7 +12593,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a72e970492de130503d15dc750068efecd19bfafc23d42271d60deb050b3f9ab"
     },
@@ -12650,7 +12650,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2739b0229bc26ddd0c1c16f543fd48cebf45fbc75ba60032188608b5503c9917"
     },
@@ -12707,7 +12707,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "144825826cf9079ede4affac29bcfe10127140ff1aa90b5d0ff8e380fe063cde"
     },
@@ -12726,7 +12726,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7aa07301a493950cb89a0f79fe2d186ced80683559f960a20093a1266056c5e7"
     },
@@ -12745,7 +12745,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2df5a4e68eee81beb2a36ab3aa5dcef5fcf720e271ce6211ba97865d3de10c9c"
     },
@@ -12783,7 +12783,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5322e30e96cfb154100d6164d22c88fb0c0c6e7c12bb9569b809d84844ad5926"
     },
@@ -12802,7 +12802,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8594be3fe3edcf45fec737277424724becd9a4c2045e39b787814f3fe98f5537"
     },
@@ -12821,7 +12821,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e58ad2174a29e004fe625821ba5e2b493da0cc7bae26178af31b16c1bf24602f"
     },
@@ -12840,7 +12840,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0d9132c540c096e1177d4455086caf20f3267e5c626f2b077e527712a0076b6a"
     },
@@ -12859,7 +12859,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "48fb69bec0ca5a6f910c4691dbef13b7fc354df514f0dda3b4c25eda04a106b1"
     },
@@ -12954,7 +12954,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8dc93f2396c59620dd9b8ba0e3d74de31112a42741e758a8c3fac61c9903abf5"
     },
@@ -12973,7 +12973,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6005779461e8f252ce939ff4173eeb3e833d348766674e86571bd17f6598818c"
     },
@@ -13011,7 +13011,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6eeff14469b20e52c27a6c1141a0b4e2096d35fbdbe13c3c3c35462e3f2adc1a"
     },
@@ -13049,7 +13049,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ea05507c6c78d7e2795eda479dd2ff0606eaa63ff6d08e905be5e0da944fc42b"
     },
@@ -13087,7 +13087,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a491bc91cdb75181a49b56301e8d275338bda69684f113d0adbbef1f1e111b39"
     },
@@ -13106,7 +13106,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2e1896c147b0d9f0a296518c1a591666be8626979c5cb3b54dd317e6d4e34109"
     },
@@ -13144,7 +13144,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a08392c397abb1f06298813231582cfd5ab317528311b01641db7a3253a34cb1"
     },
@@ -13182,7 +13182,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "77577fdc95a9b8b4a0130a6571fd5193321f1dd2edf7c791766888eaf5b80a1b"
     },
@@ -13201,7 +13201,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6848e6b23c19ca29f833129ef0670af7daed8f79a3a67d1f4d8ee8b2e824bb0a"
     },
@@ -13220,7 +13220,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c51cfac2100142adac8ed0a7f796c7236a5b1ce8666efe26d9b488cca4ab9027"
     },
@@ -13277,7 +13277,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4803793ce6bf862dc0aa7e80e1fbc25b38c6e66357054276062423197dd2183d"
     },
@@ -13353,7 +13353,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6356f5d5493d05f94136c551fe1d8ae84524d32461e6208b108b6cc3fef3609f"
     },
@@ -13410,7 +13410,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "dc427ee23b5c7e9174073688f6cec2c3d8f7ff5db40f8bcdd6b0942a2c6d7994"
     },
@@ -13562,7 +13562,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "31052c557b9db1dc83ebbe4a526eace0339496d70f9e63802e81202934a96fed"
     },
@@ -13600,7 +13600,7 @@
       "ok": true,
       "category": "ceremony",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2f0e0c7b09b234bc470363143acac3ff03ea820ceb35298cfc56ce5856f94062"
     },
@@ -13676,7 +13676,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "faf139dfa5031ee3b139b5609240eb0f9a2e0e2103901c48a3d4db182208b40b"
     },
@@ -13942,7 +13942,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "86b66d76eda433a785bffd7c024232c3fe075a6e0d3f84950b3a906b8ea0f0e4"
     },
@@ -14132,7 +14132,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1b4437f2d04041a35409fd7f12712998bc20a68a81851580b7384b90f7b10422"
     },
@@ -14379,7 +14379,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fa738eb3680a1d1029252145e57d1700402e309aa4e234044317c649f243c059"
     },
@@ -14398,7 +14398,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6f8d51ddc012a9f1f5f90a661de56bb9355903e446aa7af5a0f1b977a9f798cf"
     },
@@ -14493,7 +14493,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7e81b5820ad0d440f60da255156ee083e1c052cf7692d06b8712fe469a58573a"
     },
@@ -14721,7 +14721,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "dd77b2b315e792afdec86be831539887d9e36d4963d66fb0cab353e3f407341f"
     },
@@ -14930,7 +14930,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "89e28d8e0c720d340a67f8f77ee2c595891be34283d45752870e4ae7b0fe953f"
     },
@@ -15006,7 +15006,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c3f1b51b77859cea57a0081348a7b647aa1dc15ca9db4b385aaa3aa79009f3bc"
     },
@@ -15025,7 +15025,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9fc04a335ddec3ec55d682d332ee65b72c4dd6d9b90bdab3e9332d9a2f732596"
     },
@@ -15082,7 +15082,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d7dd23d32d8231e7cafafbc19500f9edf4baec7d9aae53c4d652ce340f8e236b"
     },
@@ -15139,7 +15139,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "91c3efff55e18f8f1828499791bbfec7f0fbf63571440f52e44f63f1a44c9561"
     },
@@ -15177,7 +15177,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d2376d6e0d5f10ab0b97cabb073ace41a4e33a24fa1c7ce3b14f034ae77a7b7b"
     },
@@ -15234,7 +15234,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "570e9d9cf1e4b596b6f1832e1d4e6ce5ee608a2cb32109d99e618e190dd1954d"
     },
@@ -15386,7 +15386,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1bd72ad1c9045e194ee29c5eb19368cd53d03a79bc52f41eb0e3c5ac935a67fc"
     },
@@ -15424,7 +15424,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8520d9dc0bd82f5510f0428f508fd456df880b971a83ed3a0defa7d9e698a759"
     },
@@ -15481,7 +15481,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1d46bf1896f3b56c46203aec9510cdc9364467d2b48408fbeaaeb9088619e4b7"
     },
@@ -15557,7 +15557,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ff3365cd3fa82f698049191ed429a86446ceb903d254e004220b6f409f6c3e24"
     },
@@ -15804,7 +15804,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "234cb2c434c6b8f6d2a36263b4bb0005067d00c75cdf0ae4ff045a41b6c65358"
     },
@@ -15823,7 +15823,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ee386684a6d4398788aac57cdeb0c2100592aa65f93eb14f7746b64419bfa1da"
     },
@@ -15842,7 +15842,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3e8887f894008539d5cd980b9326e90de3c12cfeeb755c034571b8f4eebd134c"
     },
@@ -15861,7 +15861,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5b1d4558bdb05119c1e0571f3aa3013106b143db55c413dd725e32417a8193b8"
     },
@@ -15880,7 +15880,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6e9815d4091d6a73c516c8a557c87c890b80e1f709aee4f8d41de7e1c29b29b1"
     },
@@ -15899,7 +15899,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8fb546126e7c61a8257bfc8744bb3f9f03abb65e974ca88519cf88f883e05873"
     },
@@ -15918,7 +15918,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3048a62b9eb10d8591e01d4e251f629b1ef2654f3f55ef988ed3c3eb38cde400"
@@ -15938,7 +15938,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6f35911509f7655eccbcfa9b7626db3a85f400cd0e6e9b063fffb171b8975653"
     },
@@ -15957,7 +15957,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4e11904f5fcd1b86479b20b6af75130a4bb8d4a2742db8659e696e5bd8539707"
     },
@@ -16071,7 +16071,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a9c7d12ee8522f5991b62a3eaff4ec9d71e726f227f5fd6879e0afe9894a3833"
     },
@@ -16090,7 +16090,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "475d9abd04c678da6c323c3e80fc639fde14d152313832a7c5f06c5758f81cc9"
     },
@@ -16128,7 +16128,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "33839c37f04033d0cc3f7b2630c2e899f69ada0eec1db1212b0fd738b21de184"
     },
@@ -16166,7 +16166,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "91799a4a3fab144d8cc3b13c2cf530546899bb542f7c5475ee39665269b4d819"
     },
@@ -16185,7 +16185,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b43603cc92965c9b0a4f75859544c6dc22c8410896741d24286cf468e644ffc1"
     },
@@ -16223,7 +16223,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "80a66868418133aa62ba838f9a86b00fd5b0dd41beb844c83081ca657f7d377d"
     },
@@ -16242,7 +16242,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "26fcdc020bacba758286c369c8fe763c7e8bdb688e801dec2ef55d346d3b7deb"
     },
@@ -16337,7 +16337,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ef259a0511117ac8eeb2f40a49a5e88cd7c79a65dd73a526cf6d227e45e634b4"
     },
@@ -16394,7 +16394,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c4d7c37fd58c108c09d61fde263480b0dec80a8994ad562dfe16f105bad22a83"
     },
@@ -16432,7 +16432,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8e6f563c49942859c66dedbc92d6e6224254615968d4a96b027f9d851c5991e5"
     },
@@ -16451,7 +16451,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "6b570b41c9b269fa44f7a33380b8d9c567eb618993168a9754d6725cdb497b21"
     },
@@ -16470,7 +16470,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "213f8df5f7f85643b8dae7695f628ce127edc92d997dad62179ab6f08a6349e5"
     },
@@ -16489,7 +16489,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c7acbd78c1de777f71487dfd3fa0b64af99fc208687fb9f58c8a48fec26083cb"
     },
@@ -16565,7 +16565,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a4ecd8ec087a2148f068c6683d84829a8d386199f58c5ff195ec7080cacc9999"
     },
@@ -16603,7 +16603,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f00437b55ae6ede6d24ac497de973d0c9d7c93d0cf4e655d57da738fc0252397"
     },
@@ -16642,7 +16642,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "05c1a13332fd51fa5859f91314ffc32864666558c93ab9943e1bcc9efa0d4f42"
     },
@@ -16661,7 +16661,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9f523fa54986862656a008a57fc9d016e9fb586a7e9ac01110fe19c25763135d"
     },
@@ -16851,7 +16851,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c367e69257f256a9ff095edf8f9a3636ba7315a433fae0cb4733beafc4ed054b"
     },
@@ -16870,7 +16870,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "52e596153cd530075b9d6009dd41b58a77247a19adf6a9d20aae99d5afa30ab5"
     },
@@ -16889,7 +16889,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d1496f8ac4f3806773062c9cc55add98f8f261246de4988342187e1d75e9412b"
     },
@@ -16948,7 +16948,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7767892dbe365acce80f60f2cf34c316eb07c182abff9809706e0c5f2d659148"
     },
@@ -16967,7 +16967,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ff1f048d8642e40f52310c2decb08d82ce79edabb272601a429f87351ba4be05"
     },
@@ -17119,7 +17119,7 @@
       "ok": true,
       "category": "reception",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4ff7321e53e49670c217d9e3e9f47d9d8c6d141f7fc0bd148b194fca38f8d950"
     },
@@ -17328,7 +17328,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "64aa39d0c91b0700e2382391910a0f9ecb291a674ac9409b34f7484e6b5133dc"
     },
@@ -17347,7 +17347,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "464777f34cf6a02609a84a3bd35d62681b6f8152c5fd9e1f2f3df9830d392326"
     },
@@ -17423,7 +17423,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "0c5f31ca1cb58dad061ca1e2c8350869e3e9bdeff0b2a419971ff989b80c244e"
     },
@@ -17442,7 +17442,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "cdf01141b3455caaf9bd0792ed723eaef214dde31fe699b216a5e70c7f93376b"
     },
@@ -17480,7 +17480,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "bd0acb7a42e5abf4aa00d4e8c35c3fc9c00f59a25b4a0fe5e54fb15e2de55a10"
     },
@@ -17518,7 +17518,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3825bfaecb4017cfe49f0bf414e78f3f01aff4a51c521ed5d8d1d6f073ed694b"
     },
@@ -17556,7 +17556,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c1f2a6782db90bca5ed5352dd957311164a9d73eb7c2f19196755706eecba181"
     },
@@ -17575,7 +17575,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9dc60b0f3de4955bc7419037296604790d71b56bcc5632283218b82e99adee17"
     },
@@ -17613,7 +17613,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "15b98f3b6bb0831ceb433d5196066e8e88e54173c322ccf59bee76b2865d6c68"
     },
@@ -17651,7 +17651,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d6648b3b9fe61201e6fd67b4fc910a2f65493c620feabaf7e6cf2b41654d6af4"
     },
@@ -17670,7 +17670,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "937eb0d66f15f1c04770eeecee60cfb72611d05fe9ebfd68d65ac1e48b9a80c8"
     },
@@ -17689,7 +17689,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5c6afab072d7895fb27eaea22e45b0bbbd4d382b97fe88911f58c005cdf495ec"
     },
@@ -17727,7 +17727,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c75074dc4511c9d1f8939b86378743087205ac2c6775afc062a2ef644dbe5422"
     },
@@ -17746,7 +17746,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "502d1872e08f3c1171e781360d9d01821e73d9e7cd654d504219e1aa577e7025"
     },
@@ -17765,7 +17765,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b370c8a88bb988991496a6b0ade49cf595d78bf8006fc75b7a5e211bfafc40b4"
     },
@@ -17784,7 +17784,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "5546cf52081fb09e783540e1d2110f7c8956e9bac52c4d43834ad2ee008baf7a"
     },
@@ -17822,7 +17822,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "53d5cf91b892c711f30ff5f19febb295c165c9bd68c4f7887edd8370dab4996b"
     },
@@ -17898,7 +17898,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "240e524ae6beea1c2c7c775c3e73e122268d7fce44d36dae35b74bf1f4c90328"
     },
@@ -17936,7 +17936,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "378a54c3dc28499f7343cbaf03433955c96a1666bcc0cb82b5aa157626c23175"
     },
@@ -17974,7 +17974,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d15d54b655525d211cca93d9a8c3f57fd5830df6a57075c0918d4c9fff1527da"
     },
@@ -17993,7 +17993,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e8f761486feba1dd22a4af4ac5a363e8e63eb30a99dbe382bc9d7e2d73df4926"
     },
@@ -18012,7 +18012,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fd35bdf4730f7064059c8b177f1671a8fb47b98cbcd210ca132b19ebcc8ddb7f"
     },
@@ -18050,7 +18050,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4909d034d10d0b2e08d59bf70ca2616f4a112c2afa89b143bd5f9eb794555c97"
     },
@@ -18069,7 +18069,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f2c934e1836c7adf161b7b944fb1bcfedaf96f6b6cdc0b073e812760cd1c2b81"
     },
@@ -18107,7 +18107,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fba3b769918da7f22ad0bc80e7ab31a882676feaa97915d6721df11f13d97e6f"
     },
@@ -18126,7 +18126,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c15ffa197e74c276536db8989a41945eec91af02b84feb6c5ecc78a104a4af94"
     },
@@ -18145,7 +18145,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f8fb0b1589eb51cdbb86f73641fee9ead520deff9b42c32ccc86e90d102fb9f0"
     },
@@ -18242,7 +18242,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fe8207cfd8e80afdc042df4b20eeb988b1f5411c0a416d4cc22759e3b35c6e01"
     },
@@ -18261,7 +18261,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "53d408ec84a4c2f3992a5680c875a6b0585d4de290d499967e2c5cc38223f39f"
@@ -18319,7 +18319,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "a94ffbf40a232cf3386161c7d9274502eea0c1891ca691cc8fd4884a6313ab11"
     },
@@ -18338,7 +18338,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "dfcbd2fb6a880454d7362a25482ff1dc9c6ae58e18675087851d83e61b2d1154"
     },
@@ -18357,7 +18357,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "1d8a12f72edacce3a3e8b4f52798e637e5284b01d07188de72d4fe2c067e3d9d"
     },
@@ -18395,7 +18395,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7ab56e06b5d1013157e79819926117ff72540f6ec2b3dd58da53d6183e0bdb96"
     },
@@ -18433,7 +18433,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "afd694b7f4851b469ba51b4a2c98c3ad423481bd1d46328e323a97b261f017cc"
     },
@@ -18490,7 +18490,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "643920d0118c76d0912b518986cdfe9e5ebf12c560fe51dd8b52f3ecea270c07"
     },
@@ -18509,7 +18509,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ab03d8f2b557738fdc4c9030433d8023bfa6cd6b1dfe70c3ada110a61269799a"
     },
@@ -18528,7 +18528,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "2704a63327fff6661ceed0afba9d1671a9b3c832af46764a6b39cbdb29fa3e8a"
     },
@@ -18547,7 +18547,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ff8899cac3f1d4051b74419531ccdb3c265d515384ee954d40f3a5b8c7941e9b"
     },
@@ -18566,7 +18566,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d908ba2270a8339ab80ccdace323fa915717abbbe1290f5e4680a8dfb202401a"
     },
@@ -18585,7 +18585,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "664735742b688634c333f9735218f226d1ce41108e3c02ba0b9da82f7b51192c"
     },
@@ -18604,7 +18604,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "f5dd172bddc37c78ab26367bca9f618bf01eaa27ee110b390fe69503d0aa5e68"
     },
@@ -18623,7 +18623,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "ba9a80e0e52c528a877c385c9d440a3d5bc3cf2d3b3714923c8318124eb077be"
     },
@@ -18642,7 +18642,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "de242f8c93f39b71d64c3b290859f6abc767c3968cf4caf28f4931afb9fb3576"
     },
@@ -18699,7 +18699,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "af78c59eb222b86421e077fe94c5f6d91d50631cf0aff3c6f6143468681dde49"
     },
@@ -18718,7 +18718,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "20ccc039c42a089ae797c3ad75eb4e4454386bda2bc2e694ef7577ed1ce48960"
     },
@@ -18756,7 +18756,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 10%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "d4b00f9b427f460458a0d102cde1c4ae86546b5fece9fbdf484f0ee3edc206d8"
     },
@@ -18775,7 +18775,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "726c3a8479bdb45feeb0fc38a83f0cfc6a894d2484e451db855bc9b04af95aa4"
     },
@@ -18794,7 +18794,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "b99bcf7846642ecee09c62ce9c41a18ff09f40b98efb25e1f058c4d40b5e33f8"
     },
@@ -18813,7 +18813,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "3370bccdd320330c988088ff3975ecba61526dc710a24d98a020195a6b3e1de4"
     },
@@ -18832,7 +18832,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "14b1caf84ad5f9c3fb994f7865674f7f4ca9226e7426e873e4576a461c2ff3eb"
     },
@@ -18870,7 +18870,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "4d384ebbf2bdd96480e756b74c6c4a53408cacffe3f1536e0400d217de8b8f59"
     },
@@ -18889,7 +18889,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "42d7037e70082ef81085e28bf1d0d2e408cdccb1f19be0570cb5ad723b80cdc0"
     },
@@ -19103,7 +19103,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "714397b27c1d13b52b86724bdcef4798f13475a11e3c10759e5fa99e6f06b54b"
     },
@@ -19179,7 +19179,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "e27107e3a15fd3c20cb31782474d582b67feb3847d39a4e1953bffe009f65552"
     },
@@ -19217,7 +19217,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "949c7f6b75764ffd78031cdf8c5409a55f39da4444dd4bb6e74e8fb3454112f0"
     },
@@ -19255,7 +19255,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9042af04208105e167dd5f34705c9460fa5881d26c4487e6b17a0769b83eea8d"
     },
@@ -19372,7 +19372,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "manualRotation": 90,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c16905c498633e9c67afb8b0cb52fbfd78a2208989ad189e49355f62469129cc"
@@ -19392,7 +19392,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c44e4db658283b466f7e8684a16ee61165d0fa9eb0e0b6d5212a7e45ec8b51b0"
     },
@@ -19430,7 +19430,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "800aec2bdf73df8f9358be53fe041e3f9d6ef84f82e562d77b4db584859fa04a"
     },
@@ -19468,7 +19468,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "7e2309081b88c3da45f419c5920e129c300ed20586f21a837db4ffeddb0a0a24"
     },
@@ -19487,7 +19487,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "c272605ba23879d9bd268c046f9f8961d28689467eeba03ff21fac83e67bc261"
     },
@@ -19506,7 +19506,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "940fbeb50b9efb6eac6a8fea7fa7b20742f4ba6b23e8c4f779140a9ad2ac4d26"
     },
@@ -19525,7 +19525,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "022205cf99c148f1d1f18b6a08a347a4f8c481fc7611bb6063891c02d7fb64b5"
     },
@@ -19544,7 +19544,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "94f68e7eff29797e946e9bd43eeaf677c12e1eb3ea9382455a2103fba26cba71"
     },
@@ -19582,7 +19582,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "fc4935b5b4306b86ee0a4f59bff83113d6c14849880a4ffcedc5fcb151edc9ac"
     },
@@ -19601,7 +19601,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "df520733c4d58d305c7eca8e791e022c3f9d902921582aff5020f1f7895fa295"
     },
@@ -19658,7 +19658,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "85121bab1f6ded43f1467593351454c7ecf802e08cfde8187cdacff85ef5e184"
     },
@@ -19677,7 +19677,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "8aa125f4ba7d9fd43579066e53abdd226feeafd331ea2938881a0eb3d29987fa"
     },
@@ -19696,7 +19696,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9148686e16c59e3633b471cd9878cce405f92f06e52108a5eadf21e671970b3d"
     },
@@ -19715,7 +19715,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "9eff9f55a2bb90e86e15d48bd0e86be59739a3dc7fa87026af4d67c4e491fde2"
     },
@@ -19734,7 +19734,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "470e34e6017274082dd4feb2e3760f60ccef166623edccb584fe85ac9669f4bd"
     },
@@ -19753,7 +19753,7 @@
       "ok": true,
       "category": "portraits",
       "focus": "50% 20%",
-      "hidden": false,
+      "hidden": true,
       "editor": "Adobe Lightroom Classic",
       "lightroomExportSHA256": "67513a038c486296089be4d162378189c4e9cae89398d34f9062f8047e714e56"
     },
@@ -19797,15 +19797,113 @@
     }
   ],
   "featured": [
-    "10B3ohO0Vjt35nikBgLrYPauR7oRSX7DF",
-    "1qIiR9_S_PpRlSoUwoMAU7Hp8zXJWXqJX",
-    "1Sm62dnoQUEV2W4nQHcZ7C8iftxs99LIX",
-    "1Umx86vYuQDxWpQYEvb5IQlMkY7ao5ZYD",
-    "16xrMvIGLq0ROqhZk50EuHaKuNV8YtUol",
-    "1JC2INOI_cgsiqiCQmq-tPHEMgOtI4QL7",
-    "14VOINm7ERx4Xb1UrLFwMkIiiPP0ud41I",
-    "1BKPIPUt4e0vLegdBOaBvQyPXR0RQ_bGE",
-    "1zPyJtanlhSQ1miZbno4XeSnwCJeZRECk",
-    "1Yl90hZ8qQvbIB-3SFKOd9vPvnH9QrYSo"
+    "1YA8ulBrmpvLiJEQTfeRByRw0czJsP6kW",
+    "1XuTeFsbnAgvZAxPHGepY0nve0xyIJeDs",
+    "1KEDySpxz0EReBZqG1TXx-sl7a88FUTHC",
+    "1iVCeyeXFEtsyRJLBvr0P_yFJkny5IN1v",
+    "1td8cyGNoEChr7mlZpCNljTdCDHaRks7a",
+    "1weX4jxl_budNiUWehSR5sif4Frcwv-uO",
+    "1QyuxjrPyLNnsm8FaV5kEQN6dz6o_fSt8",
+    "1KvUYkKy7Dx_Sn8AE4ivKOZTwnRJWE7Nm",
+    "1OzVCqsDZVJKyqfe2unr-AIv5N7d7YEvK",
+    "1StwFdyF0sq5vyTmvD8g_UU253f1ikDA4",
+    "15G1HO2RnhRWznHJalO4nuLkMziiZssTw",
+    "1lh5Jnb2JgeYHUKRLMwr17ePYpzERGuyy",
+    "1rLgXegd1iG3QuVBWf8nfBriFGu5xZFP-",
+    "1BuOZ48YesvLRELNk8StdYF3781oP9wxL",
+    "1Bh71gP4OyHau1ynxuN_n-OGJaSosuKl9",
+    "1OMgV7UBaq3VF-CZlLGINU0PNfOq3EU-6",
+    "1hgsjp64LaAnWhZszHxgRpmyOuf28sGyb",
+    "1dbXT3zpu4F8xJd5O3TSvOfxfGEl0AEny",
+    "1mzl9m7RyO00_3bt1q6YRgsZ4-epTiuZu",
+    "1yZ6YC6gKxvunyfHrLIK5ikUoedHOnmQf",
+    "1qvi75uj2ReH7jUI2j0LkzzGeCQBENCXy",
+    "1cAFm3-JAxkROk7I4B72Jrg2QQjaO-KTA",
+    "19bv_haSM97abuT3IT3xUpXY8eGTnUAWJ",
+    "1OTFki9q_huAkWP9Yg2yRASBRz-CuCW44",
+    "1OrbqNwc2CX_MztRIyp3jMH7Sz6CLfv5X",
+    "1F0xwc4vF_Dw6yvxTtWSZiWxUuF_oTtE1",
+    "1Cz706R1ymQiZ4FbbE3SulsBwnnIEALn7",
+    "1ZpiRt9gg67sX-scKJvcxU7D3hpqpVtM6",
+    "1D1LhibPSxBe8rcENoCJ-vDFmFHeQPDxc",
+    "1zr9xYclDlcAH5iv-fcfbw31gxnUDx1GO",
+    "1c0FtMzBWT6KwFcTShxhEph7Qyux1Af-c",
+    "1uvp0Lx3CeH-ghqo9WC37WpPihptlcG8S",
+    "17GK__ixKOcQbRo1RCKBO4TMpeYoVxTwX",
+    "18I5LgJ8cBBXRDXwI1c1YvIEtiACVBTRC",
+    "1TsoAKlrzMDh4mOuzCapttBbjYa3tFGyB",
+    "1rYX_9xYi1zCaITHsDbdtJ0Un9auP1wUr",
+    "1NDxpYD-UhYhFPAfEcEwUBw7-_KXhO0xs",
+    "1-JEB_LFfWRna1gogXuc5Sw6SujmCnf5T",
+    "1VR0IUiU9Wp5vzGZ5VT1eouK2QQ3ofN_M",
+    "1qpEhe-qusaJzoHGfEm-k1g7agCEgUWQK",
+    "1esYMnmuEAe4_oVUkanrF8ILAzFFZF72S",
+    "1AabUWgkOwYMuJKdT1WH6hTWUskOUfwob",
+    "1GZFH10MsUj1iMj7sO8yiLUk6JLHCUvoV",
+    "11kn8CCRtP-NR8TcTHUV6FGPbDGbbMceO",
+    "1hzO-5e8yY0FqwhZVkTSbzHh44eEBY09s",
+    "17R8OxuNr31emgC62WqLacRboIoWbgYKi",
+    "1lxlrD6c9yEglRqP8M9Bu2HZO2d6P7eym",
+    "1_vneYO7ygAvmSErGHoLF2ZNHvrLwFK80",
+    "1xu_ycnKlrCFg0zndrXILUP45xA1pPaGk",
+    "1n98vd-88hTlDDe-Hbu8zw7cSKKYxzEjR",
+    "18RImli4WqJFPfOYi3coR3VmDFz8YRBdF",
+    "1x6B8n_BLx21JKrVTWFmb8zeYvlq1PvbB",
+    "1R3uY2PwER0NRVrRL7ztbNWBnQMi4S_Gt",
+    "1anaNgEbDHtgvDngQw6E91lOPCAOdOuhW",
+    "1een5sbCmFZKD9A89YZsnVl6m7DvBy19K",
+    "19Xqqm2iEawFnqOgY827cnok7cBJi1ZCy",
+    "1YnUXLPc0xUCFARmKnPC_AL8aTZlWJa6f",
+    "1lok7QOxVFK3LW_uhibW4PfsWONJZwfdO",
+    "1LYI-1ZuWzslN-Ykc07WN-GrMPPTbXjfJ",
+    "14O3-sTmgSP6dgnJ6tP1OayOZkFA3ZYg9",
+    "1y_5fPrYpHSx8vo7wGN166iFdhbVdlzBJ",
+    "16ix1RPRfbKD57hWlbkWWN4lxEdUPl_17",
+    "16si88aMjyRVZgY4ghKDo3j10XRlwqRHS",
+    "1_5BaZilc8QkECpJV7QNOl8_r42wHCFmW",
+    "1-7drOgInBAL9ecjERayxsxNerQEUzpcm",
+    "1dTxawol_DrQYeWzFNVngWWi_FIzwHbTR",
+    "1JeOfyEQLjXfth4XumXiGpjex3OwTqcXW",
+    "1DFkyT2WBKMr_0V5U542X4tCLOJTcG5z4",
+    "1X86dQmu9hi8IjIwBldG7q76C3wMqUmPM",
+    "1GKEAiqya87o7SvtCMXXMeItgD0v7FMQF",
+    "1O1uL-M9xx3Sl0OBV_YYufKkm-D0oNwEx",
+    "1DQhEUC-kV-f4Yy6-d2sTyKgTbDDnwNWM",
+    "1E64ZJYY0WVi2TS6vwU-wiUz_gf9q9qzt",
+    "1J3FkHwQCJz9485h4J1hJHxdGcUh92O7M",
+    "1THdJz5oKLmvN7fZ-FBQhF-4kUstkBnTl",
+    "1T0pQsMF06T_qnmRg4PWTyv1kEGBmBieU",
+    "1cxrIzCpRHEUiqQPr4rMPIt2_SNsUtgzA",
+    "18dpqdFMxG2HwVwEIy0CN1fU_BMaU7ARK",
+    "1BDvyNP4VpsNzQ3bFy3QYHqui5vk0xbO9",
+    "1BR5kzGFhGt-kn-68iCAqBKGPhfnhhJBP",
+    "1zjWttgMeSFpyZjG3jWFdveJmQ4U8OYri",
+    "1-vP859pZT51jM6Y6XmnALOHqoquvfFQT",
+    "1TDTQae01MSCBfL0GqR-q-5U11DAR7uA_",
+    "1e_ikRBylMLrpymbGxVbpGVKdsg1tv9bu",
+    "1oleiZbyLSJ7dPgLNLzc1I5yr1P_F9N55",
+    "1kotvglBkquwujSnQve6V0Z2_M8X3w2jd",
+    "1djdc4XkNygFu2DHm9D1w8o_3VzxhEkcc",
+    "1BxGAQda3-fNKwLUNlKkYzGziymLwnncp",
+    "1cEimm4bj5k6vNiEv-tZW-6adyjH4f_83",
+    "1HXfpuwSwLn9hqMZnDqL8J6vJpqSOYe4X",
+    "1Myw6yVF_BW9NT73PenWOpUIpG07b0Z1U",
+    "18j0NfNRwJyNGr8TQ0C97XkIk8rPOA4hA",
+    "1nbywD5bp2Dp0kwsJ5sN7BkY_1Itm9SH_",
+    "1K88YUl5dp1g8_-JC3b1zBUpwEpcHULVv",
+    "1MuRf9VvGdwCC0deaJ-rUw6uuLkDq4c9S",
+    "10OcOyznMY24KvQ1tHJiYY9xiCGXxk171",
+    "1FiODa8M7aWfRQTcfNK7VOMBVcPpn_y9k",
+    "1vYqK6_BR2PmjfimBMEkRaJeJlq7xNH8h",
+    "1FaVMz-XY9stJe9aWZ4vN97pup8TVde3m",
+    "1HhFfIy3xkLoeT0gMZf_6F0o3YnzMYhtO",
+    "1Qps5ZMCFZQoDaUrRuFeUL_-f4HZe2xuf",
+    "17IzhW_T1egaabWOR-IxfDP1SJsVn6TSu",
+    "16vR0FXalm_4wm2FQn9u5h_ksQLrZZ1zq",
+    "1uF6Kan53OfOCyRZFkkX2m_VE5o5uLen-",
+    "1z7h6PjBrb8YNDBZnrNCnUnWY9fRj2goS",
+    "1B1KGUbUR8H4WrMJIY6H9BjKGjeZQ94rD",
+    "1NbQkGt3VBTuX36p1QbTH7knz4Fd3xbJQ",
+    "1YbQ81ABRUQvB8nFFEoUtmJ4xQV9xxOwD"
   ]
 }

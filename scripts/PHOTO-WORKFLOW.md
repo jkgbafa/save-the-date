@@ -62,7 +62,7 @@ copies; the website serves smaller 2400 px copies for fast viewing.
 python scripts/export-original-jpegs.py --originals /path/to/Originals --output /path/to/Full-resolution-JPEGs
 ```
 
-## Lightroom Classic and red labels
+## Lightroom Classic and Finder selections
 
 The local Lightroom RAWs folder contains links to the same unchanged camera files,
 using their original camera filenames. Existing reviewed orientation corrections
@@ -73,14 +73,24 @@ the web JPEGs and thumbnails while preserving IDs, links, categories and exclusi
 It refuses an incomplete export batch. Never apply one photo's exposure values to
 all photos: Lightroom Auto should analyze each image separately.
 
-`sync-red-labels.py /path/to/Lightroom-RAWs` reads Lightroom's red XMP color labels
-and macOS red Finder tags. It writes `photos/red-labels.json`, which curation combines
-with the manual `exclude` list. It hides photos from the album and carousel while
-retaining RAWs and JPEGs. Removing a red label restores the photo unless manually
-excluded too. Lightroom must write XMP (Catalog Settings → Metadata → Automatically
+Apply Finder tags to the original-name JPEGs in the sibling `Full-resolution JPEGs`
+folder. **Green** selects photos for the gallery; **Blue** selects the front-page
+carousel and also includes the photo in the gallery. The site uses the corresponding
+Lightroom-edited JPEGs, rather than those older selection copies. Removing both
+selection tags hides a photo. `photos/finder-selection.json` records the selected
+original filenames and is reapplied during every Drive sync, so new arrivals stay
+hidden until selected locally. The current blue edited full-resolution exports
+were also copied to `~/Downloads/Joshua & Lucia - Carousel Photos`.
+
+`sync-red-labels.py /path/to/Lightroom-RAWs` reads these selections, Lightroom's red
+XMP color labels, and macOS red Finder tags on RAWs or selection JPEGs. It writes
+`photos/red-labels.json`, which curation combines with the manual `exclude` list.
+Red always hides a photo from the album and carousel, even when green or blue,
+while retaining RAWs and JPEGs. Removing red restores a selected photo unless
+manually excluded too. Lightroom must write XMP (Catalog Settings → Metadata → Automatically
 write changes into XMP, or select photos and save metadata).
 
-`--publish` updates a clean checkout and commits only generated gallery exclusions.
+`--publish` updates a clean checkout and commits only generated gallery selections.
 It skips publication while other work is pending. The local label watcher, when
 installed, runs every two minutes while this Mac is awake; GitHub Pages deployment
 then usually takes a few minutes. It does not permanently delete photos.

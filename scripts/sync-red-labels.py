@@ -1,6 +1,6 @@
-"""Read red Lightroom XMP labels / Finder tags; hide, never delete, those photos.
+"""Sync Finder green/blue selections and red Lightroom/Finder exclusions.
 Automatically writing XMP in Lightroom makes color-label changes visible here.
-With --publish, a clean checkout is required and only the generated exclusions,
+With --publish, a clean checkout is required and only the generated selections,
 manifest and featured images are committed/pushed. Unrelated edits are skipped.
 """
 import argparse,json,os,plistlib,subprocess,sys,xml.etree.ElementTree as ET
@@ -14,9 +14,21 @@ if a.publish:
  if git('status','--porcelain'):raise SystemExit('Checkout has pending edits; skipping automatic label publication.')
  subprocess.run(['git','-C',str(root),'pull','--rebase','origin','main'],check=True)
 manifest=json.loads((root/'photos/wedding/manifest.json').read_text());red=[]
+selection_folder=a.originals.parent/'Full-resolution JPEGs'
+selection_enabled=selection_folder.is_dir() and any(selection_folder.glob('*.jpg'))
+green=[];blue=[]
+previous_red=set(json.loads((root/'photos/red-labels.json').read_text()))
+def finder_tags(path):
+ try:
+  result=subprocess.run(['xattr','-px','com.apple.metadata:_kMDItemUserTags',str(path)],capture_output=True)
+  tags=plistlib.loads(bytes.fromhex(result.stdout.decode())) if result.returncode==0 else []
+  colors={'2':'green','4':'blue','6':'red'}
+  return {colors.get(t.rsplit('\n',1)[-1],t.split('\n')[0].lower()) for t in tags}
+ except (OSError,ValueError,plistlib.InvalidFileException):return set()
+
 for photo in manifest['photos']:
  raw=a.originals/photo['original'];sidecar=raw.with_suffix('.xmp');is_red=False
- if not raw.exists():raise SystemExit('Originals are incomplete; keeping existing exclusions.')
+ if not raw.exists():is_red=photo['original'] in previous_red
  if sidecar.exists():
   try:
    tree=ET.parse(sidecar)
@@ -24,19 +36,28 @@ for photo in manifest['photos']:
    values += [el.text or '' for el in tree.iter('{http://ns.adobe.com/xap/1.0/}Label')]
    is_red=any(v.strip().lower()=='red' for v in values)
   except ET.ParseError:raise SystemExit('Lightroom is writing metadata; retry later.')
- try:
-  result=subprocess.run(['xattr','-px','com.apple.metadata:_kMDItemUserTags',str(raw)],capture_output=True)
-  tags=plistlib.loads(bytes.fromhex(result.stdout.decode())) if result.returncode==0 else []
-  is_red |= any(t.lower().split('\n')[0]=='red' or t.endswith('\n6') for t in tags)
- except OSError:pass
+ tags=finder_tags(raw)
+ if selection_enabled:
+  jpeg_tags=finder_tags(selection_folder/(Path(photo['original']).stem+'.jpg'))
+  tags |= jpeg_tags
+  if 'green' in jpeg_tags:green.append(photo['original'])
+  if 'blue' in jpeg_tags:blue.append(photo['original'])
+ is_red |= 'red' in tags
  if is_red:red.append(photo['original'])
 path=root/'photos/red-labels.json';text=json.dumps(sorted(red),indent=2)+'\n'
-if path.exists() and path.read_text()==text:print(f'No label changes ({len(red)} red photos).');sys.exit(0)
+changes=not path.exists() or path.read_text()!=text
+selection_path=root/'photos/finder-selection.json'
+if selection_enabled:
+ selected={'include':sorted(set(green+blue)),'featured':sorted(blue)}
+ selection_text=json.dumps(selected,indent=2)+'\n'
+ if not selection_path.exists() or selection_path.read_text()!=selection_text:
+  selection_path.write_text(selection_text);changes=True
+if not changes:print(f'No label changes ({len(red)} red, {len(green)} green, {len(blue)} blue photos).');sys.exit(0)
 path.write_text(text)
 subprocess.run([sys.executable,str(root/'scripts/curate-wedding-photos.py')],check=True)
-print(f'{len(red)} red-labeled photos hidden; all originals retained.')
+print(f'Selection: {len(green)} green, {len(blue)} blue, {len(red)} red; originals retained.')
 if a.publish:
- subprocess.run(['git','-C',str(root),'add','photos/red-labels.json','photos/wedding/manifest.json','photos/featured.jpg','photos/featured-2.jpg','photos/featured-3.jpg'],check=True)
+ subprocess.run(['git','-C',str(root),'add','photos/red-labels.json','photos/finder-selection.json','photos/wedding/manifest.json','photos/featured.jpg','photos/featured-2.jpg','photos/featured-3.jpg'],check=True)
  if git('diff','--cached','--name-only'):
-  subprocess.run(['git','-C',str(root),'commit','-m','Update wedding gallery from red photo labels'],check=True)
+  subprocess.run(['git','-C',str(root),'commit','-m','Update wedding gallery from Finder photo selections'],check=True)
   subprocess.run(['git','-C',str(root),'push','origin','main'],check=True)
